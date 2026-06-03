@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand: #4F46E5;
+  --color-brand-purple: #7C3AED;
+  --color-brand-fuchsia: #9333EA;
+  --color-dark-bg: #0F0A1E;
+  --color-green-accent: #10B981;
+  --color-amber-accent: #F59E0B;
+  --color-light-bg: #F8FAFC;
+  --color-text-dark: #0F172A;
+  --color-text-gray: #4B5563;
+  --color-text-muted: #6B7280;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ─── Base ─────────────────────────────────────────────── */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-assistant), var(--font-heebo), system-ui, sans-serif;
+  direction: rtl;
+  color: #0F172A;
+}
+
+/* ─── Gradient text ─────────────────────────────────────── */
+
+.gradient-text {
+  background: linear-gradient(135deg, #4F46E5 0%, #9333EA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Dot grid (Hero bg) ────────────────────────────────── */
+
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(79, 70, 229, 0.13) 1.2px, transparent 1.2px);
+  background-size: 30px 30px;
+}
+
+/* ─── Primary button glow ────────────────────────────────── */
+
+.btn-glow {
+  box-shadow: 0 0 30px rgba(79, 70, 229, 0.4);
+}
+
+/* ─── Shimmer light sweep on CTA buttons ─────────────────── */
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 80%
+  );
+  transform: translateX(160%) skewX(-20deg);
+  animation: shimmer-sweep 3s ease-in-out infinite;
+}
+
+@keyframes shimmer-sweep {
+  0%   { transform: translateX(160%) skewX(-20deg); }
+  100% { transform: translateX(-160%) skewX(-20deg); }
+}
+
+/* ─── Float animation (phone mockup) ────────────────────── */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3.2s ease-in-out infinite;
+}
+
+/* ─── Badge pulse ────────────────────────────────────────── */
+
+@keyframes badge-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(16,185,129,0.2); }
+  50%       { transform: scale(1.03); box-shadow: 0 4px 30px rgba(16,185,129,0.35); }
+}
+
+.badge-pulse {
+  animation: badge-pulse 2.6s ease-in-out infinite;
+}
+
+/* ─── Final CTA button pulse ─────────────────────────────── */
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 28px rgba(255, 255, 255, 0.35); }
+  50%       { box-shadow: 0 0 60px rgba(255, 255, 255, 0.65); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2.2s ease-in-out infinite;
+}
+
+/* ─── Marquee (templates) ────────────────────────────────── */
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 38s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────── */
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 9px; }
+
+/* ─── Gradient border card on hover ─────────────────────── */
+
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(79, 70, 229, 0.1);
+  border-color: #C7D2FE !important;
+}
+
+/* ─── Section dividers ───────────────────────────────────── */
+
+.divider-fade {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E0E7FF 30%, #E0E7FF 70%, transparent);
+}
+
+/* ─── Subtle noise overlay on dark sections ──────────────── */
+
+.dark-section-glow {
+  background: radial-gradient(ellipse at 50% 0%, rgba(79,70,229,0.12) 0%, transparent 65%);
 }
