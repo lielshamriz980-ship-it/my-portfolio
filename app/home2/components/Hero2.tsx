@@ -27,7 +27,7 @@ export default function Hero2() {
           {h.badge}
         </motion.div>
 
-        <h1 className="font-black text-[#1E1B4B] mb-6"
+        <h1 className="font-black text-[#1E1B4B] mb-6 text-center"
           style={{ fontSize: "clamp(44px, 7vw, 88px)", lineHeight: 1.08 }}>
           <motion.span className="block"
             initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }}

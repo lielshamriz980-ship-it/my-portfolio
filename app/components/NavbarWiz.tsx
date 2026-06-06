@@ -6,7 +6,7 @@ import {
   Palette, Home, Briefcase, HardHat, Rocket, Scale, User, Building2, Building, Heart,
   FileText, EyeOff, CreditCard, UserCheck, Film, Megaphone, Camera,
   BookOpen, PlayCircle, BookMarked, GraduationCap, HelpCircle, MessageCircle, Phone, Terminal, GitBranch, Webhook,
-  Info, Users2, Newspaper, Mail, Lock, ShieldAlert, CheckSquare,
+  Info, Users2, Newspaper, Mail, Lock, ShieldAlert, CheckSquare, Handshake,
   ChevronDown, ArrowRight, Languages, Check,
 } from "lucide-react";
 import { useLang } from "../lib/LanguageContext";
@@ -180,6 +180,15 @@ function useMenuConfig(t: ReturnType<typeof useLang>["t"]) {
             { Icon: Lock,        label: m.companyMenu.privacy,    desc: null },
             { Icon: ShieldAlert, label: m.companyMenu.security,   desc: null },
             { Icon: ShieldCheck, label: m.companyMenu.compliance, desc: null },
+          ],
+        },
+        {
+          header: m.companyMenu.col3,
+          items: [
+            { Icon: BookMarked,  label: m.companyMenu.blog,      desc: m.companyMenu.blogDesc,     key: "blog" },
+            { Icon: Briefcase,   label: m.companyMenu.careers,   desc: m.companyMenu.careersDesc,  key: "careers" },
+            { Icon: TrendingUp,  label: m.companyMenu.investors, desc: m.companyMenu.investorsDesc, key: "investors" },
+            { Icon: Handshake,   label: m.companyMenu.partners,  desc: m.companyMenu.partnersDesc,  key: "partners" },
           ],
         },
       ],

@@ -87,8 +87,8 @@ export function GooeyMorphText({
   const longest = texts.reduce((a, b) => (a.length > b.length ? a : b), "");
 
   return (
-    // inline-block so it flows naturally inside an h1 span.block
-    <span className={`relative inline-block ${className}`} style={{ verticalAlign: "baseline" }}>
+    // inline-block so it flows naturally inside an h1 span.block, centered
+    <span className={`relative inline-block mx-auto ${className}`} style={{ verticalAlign: "baseline", display: "inline-block" }}>
       {/* Invisible placeholder — determines width/height, inherits all parent styles */}
       <span className="invisible select-none pointer-events-none whitespace-nowrap" aria-hidden="true">
         {longest}
@@ -101,13 +101,13 @@ export function GooeyMorphText({
       >
         <span
           ref={text1Ref}
-          className={`absolute inset-0 flex items-center ${className}`}
+          className={`absolute inset-0 flex items-center justify-center ${className}`}
           aria-hidden="true"
           style={{ opacity: "0%" }}
         />
         <span
           ref={text2Ref}
-          className={`absolute inset-0 flex items-center ${className}`}
+          className={`absolute inset-0 flex items-center justify-center ${className}`}
         />
       </span>
     </span>

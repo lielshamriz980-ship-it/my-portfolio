@@ -52,11 +52,15 @@ export type T = {
       github: string; webhooks: string;
     };
     companyMenu: {
-      col1: string; col2: string;
+      col1: string; col2: string; col3: string;
       about: string; aboutDesc: string;
       team: string; teamDesc: string;
       press: string; pressDesc: string;
       contact: string; contactDesc: string;
+      blog: string; blogDesc: string;
+      careers: string; careersDesc: string;
+      investors: string; investorsDesc: string;
+      partners: string; partnersDesc: string;
       terms: string; privacy: string; security: string; compliance: string;
     };
   };
@@ -227,11 +231,15 @@ const he: T = {
       github: "GitHub", webhooks: "Webhooks",
     },
     companyMenu: {
-      col1: "DealLayer", col2: "מדיניות",
+      col1: "DealLayer", col2: "מדיניות", col3: "צמיחה",
       about: "אודות", aboutDesc: "הסיפור שלנו, המשימה, והחזון",
       team: "הצוות", teamDesc: "הכירו את האנשים מאחורי DealLayer",
       press: "עיתונות ומדיה", pressDesc: "כתבות, לוגואים, ומשאבי מדיה",
       contact: "צרו קשר", contactDesc: "נשמח לשמוע מכם",
+      blog: "בלוג DealLayer", blogDesc: "טיפים, עדכונים, ותובנות שימושיות",
+      careers: "קריירה", careersDesc: "הצטרפו לצוות שלנו",
+      investors: "משקיעים", investorsDesc: "פרטים לגבי סבב ההשקעות",
+      partners: "שותפים", partnersDesc: "הפכו לשותף ב-DealLayer",
       terms: "תנאי שימוש", privacy: "מדיניות פרטיות",
       security: "דו״ח אבטחה", compliance: "תאימות ורגולציה",
     },
@@ -682,11 +690,15 @@ const en: T = {
       github: "GitHub", webhooks: "Webhooks",
     },
     companyMenu: {
-      col1: "DealLayer", col2: "Policies",
+      col1: "DealLayer", col2: "Policies", col3: "Growth",
       about: "About Us", aboutDesc: "Our story, mission, and vision",
       team: "Our Team", teamDesc: "Meet the people behind DealLayer",
       press: "Press & Media", pressDesc: "Press coverage, logos, and media assets",
       contact: "Contact Us", contactDesc: "We'd love to hear from you",
+      blog: "DealLayer Blog", blogDesc: "Tips, updates, and useful insights",
+      careers: "Careers", careersDesc: "Join our growing team",
+      investors: "For Investors", investorsDesc: "Investment rounds and financials",
+      partners: "Partnerships", partnersDesc: "Become a DealLayer partner",
       terms: "Terms of Service", privacy: "Privacy Policy",
       security: "Security Report", compliance: "Compliance & Regulations",
     },
@@ -1129,11 +1141,15 @@ const ar: T = {
       github: "GitHub", webhooks: "Webhooks",
     },
     companyMenu: {
-      col1: "DealLayer", col2: "السياسات",
+      col1: "DealLayer", col2: "السياسات", col3: "النمو",
       about: "من نحن", aboutDesc: "قصتنا ومهمتنا ورؤيتنا",
       team: "فريقنا", teamDesc: "تعرّف على الأشخاص وراء DealLayer",
       press: "الصحافة والإعلام", pressDesc: "تغطية صحفية وشعارات وأصول إعلامية",
       contact: "اتصل بنا", contactDesc: "يسعدنا سماعك",
+      blog: "مدونة DealLayer", blogDesc: "نصائح وتحديثات ورؤى مفيدة",
+      careers: "الوظائف", careersDesc: "انضم إلى فريقنا",
+      investors: "للمستثمرين", investorsDesc: "جولات الاستثمار والتمويل",
+      partners: "الشراكات", partnersDesc: "كن شريك DealLayer",
       terms: "شروط الخدمة", privacy: "سياسة الخصوصية",
       security: "تقرير الأمان", compliance: "الامتثال واللوائح",
     },

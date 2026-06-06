@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle, Zap, Shield, Users, Code, Bell, Globe } from "lucide-react";
+import { ArrowRight, CheckCircle, Zap, Shield, Users, Code, Bell, Globe, Rocket, TrendingUp, Handshake } from "lucide-react";
 import NavbarWiz from "../../../components/NavbarWiz";
 import CTA2 from "../../../home2/components/CTA2";
 import Footer2 from "../../../home2/components/Footer2";
@@ -42,6 +42,11 @@ export async function generateStaticParams() {
     { category: "resources", item: "faq" },
     { category: "resources", item: "live-chat-support" },
     { category: "resources", item: "api-documentation" },
+    // Company
+    { category: "company", item: "blog" },
+    { category: "company", item: "careers" },
+    { category: "company", item: "investors" },
+    { category: "company", item: "partners" },
   ];
 }
 
@@ -204,6 +209,86 @@ const serviceContent: Record<string, any> = {
       { title: "Seamless Workflow", desc: "Use tools you already know" },
       { title: "Automation", desc: "Reduce manual work by 80%" },
       { title: "No Switching", desc: "Stay in your favorite apps" }
+    ]
+  },
+  "blog": {
+    title: "DealLayer Blog",
+    subtitle: "Insights & Updates",
+    description: "Stay updated with latest tips, contract trends, and best practices for managing your deals.",
+    icon: Zap,
+    color: "#7C3AED",
+    features: [
+      "Weekly articles on contract management",
+      "Best practices and case studies",
+      "Industry news and trends",
+      "Expert insights from our team",
+      "Free downloadable guides",
+      "Email newsletter subscription"
+    ],
+    benefits: [
+      { title: "Stay Informed", desc: "Get the latest contract management tips" },
+      { title: "Learn from Experts", desc: "Real-world strategies and best practices" },
+      { title: "Grow Your Business", desc: "Apply proven techniques to your work" }
+    ]
+  },
+  "careers": {
+    title: "Careers at DealLayer",
+    subtitle: "Join Our Team",
+    description: "We're hiring talented people who want to revolutionize contract management. Build your career with us.",
+    icon: Rocket,
+    color: "#F59E0B",
+    features: [
+      "Competitive salary and benefits",
+      "Remote-friendly work environment",
+      "Professional development budget",
+      "Health insurance and wellness programs",
+      "Flexible working hours",
+      "Equity compensation"
+    ],
+    benefits: [
+      { title: "Grow with Us", desc: "Work on product used by thousands" },
+      { title: "Great Culture", desc: "Collaborative and supportive team" },
+      { title: "Make Impact", desc: "Help businesses manage contracts better" }
+    ]
+  },
+  "investors": {
+    title: "For Investors",
+    subtitle: "Investment Opportunity",
+    description: "DealLayer is raising capital to accelerate growth. Learn about our funding rounds and vision.",
+    icon: TrendingUp,
+    color: "#DC2626",
+    features: [
+      "Series A funding round open",
+      "Proven market demand and growth",
+      "Experienced founding team",
+      "Clear path to profitability",
+      "Strategic partnerships in place",
+      "International expansion plans"
+    ],
+    benefits: [
+      { title: "Growing Market", desc: "Contract management is a $20B+ TAM" },
+      { title: "Strong Unit Economics", desc: "High retention and net MRR growth" },
+      { title: "Market Leader", desc: "First in Hebrew, expanding globally" }
+    ]
+  },
+  "partners": {
+    title: "Become a Partner",
+    subtitle: "Partnership Opportunities",
+    description: "Build your business with DealLayer. Resell, integrate, or co-market with us.",
+    icon: Handshake,
+    color: "#10B981",
+    features: [
+      "Reseller partnership program",
+      "Integration partnerships with platforms",
+      "Co-marketing opportunities",
+      "Dedicated partner support",
+      "Competitive commission structure",
+      "Partner portal and resources"
+    ],
+    benefits: [
+      { title: "New Revenue Stream", desc: "Earn commissions on every deal" },
+      { title: "Trusted Solution", desc: "Add value to your customer base" },
+      { title: "Full Support", desc: "Partner success team ready to help" }
     ]
   }
 };
