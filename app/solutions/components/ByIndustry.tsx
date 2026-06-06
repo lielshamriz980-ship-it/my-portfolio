@@ -31,7 +31,7 @@ const INDUSTRIES = [
 
 export default function ByIndustry() {
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="py-24 md:py-32 bg-white" style={{ direction: "rtl" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-16">
           <motion.p

@@ -5,62 +5,10 @@ import { useLang } from "../../lib/LanguageContext";
 
 export default function Comparison() {
   const { t } = useLang();
-
-  const comparisonData = [
-    {
-      feature: "חוזה מקצועי בדקות",
-      deallayer: true,
-      competitors: false,
-    },
-    {
-      feature: "AI שמבין חוק ישראל",
-      deallayer: true,
-      competitors: false,
-    },
-    {
-      feature: "חתימה דיגיטלית מחייבת",
-      deallayer: true,
-      competitors: true,
-    },
-    {
-      feature: "דשבורד ניהול חוזים",
-      deallayer: true,
-      competitors: true,
-    },
-    {
-      feature: "29+ תבניות משפטיות",
-      deallayer: true,
-      competitors: false,
-    },
-    {
-      feature: "ניהול לקוחות (CRM)",
-      deallayer: true,
-      competitors: false,
-    },
-    {
-      feature: "20+ אינטגרציות",
-      deallayer: true,
-      competitors: false,
-    },
-    {
-      feature: "תמיכה בעברית",
-      deallayer: true,
-      competitors: false,
-    },
-    {
-      feature: "חוזים בלתי מוגבלים",
-      deallayer: true,
-      competitors: false,
-    },
-    {
-      feature: "מחיר שקוף ללא הפתעות",
-      deallayer: true,
-      competitors: false,
-    },
-  ];
+  const comparisonData = t.platform.comparison;
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-blue-50 to-white">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-blue-50 to-white" style={{ direction: t.dir }}>
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-16">
           <motion.h2
@@ -68,14 +16,14 @@ export default function Comparison() {
             viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="font-black leading-tight mb-4"
             style={{ fontSize: "clamp(32px, 4.5vw, 52px)", color: "#1E1B4B" }}>
-            למה לבחור ב-DealLayer?
+            {t.platform.comparisonHeading}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg"
             style={{ color: "#6B7280" }}>
-            השוואה עם פתרונות אחרים בשוק
+            {t.platform.comparisonSub}
           </motion.p>
         </div>
 
@@ -83,14 +31,14 @@ export default function Comparison() {
           <table className="w-full">
             <thead>
               <tr style={{ borderBottom: "2px solid #E5E7EB" }}>
-                <th className="text-right py-4 px-4 font-bold" style={{ color: "#1E1B4B" }}>
-                  תכונה
+                <th className="py-4 px-4 font-bold" style={{ color: "#1E1B4B", textAlign: t.dir === "rtl" ? "right" : "left" }}>
+                  {t.dir === "rtl" ? "תכונה" : "Feature"}
                 </th>
                 <th className="text-center py-4 px-4 font-bold" style={{ color: "#4F46E5" }}>
                   DealLayer
                 </th>
                 <th className="text-center py-4 px-4 font-bold" style={{ color: "#9CA3AF" }}>
-                  פתרונות אחרים
+                  {t.dir === "rtl" ? "פתרונות אחרים" : "Other Solutions"}
                 </th>
               </tr>
             </thead>

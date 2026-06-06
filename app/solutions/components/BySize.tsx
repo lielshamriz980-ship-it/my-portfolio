@@ -36,7 +36,7 @@ const SIZES = [
 export default function BySize() {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #F8FAFC 0%, #EEF2FF 50%, #F3E8FF 100%)" }}>
+      style={{ background: "linear-gradient(160deg, #F8FAFC 0%, #EEF2FF 50%, #F3E8FF 100%)", direction: "rtl" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-16">
           <motion.p

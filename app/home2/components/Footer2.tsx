@@ -4,16 +4,15 @@ import { useLang } from "../../lib/LanguageContext";
 export default function Footer2() {
   const { t } = useLang();
   const f = t.footer;
-  const m = t.nav;
 
   const cols = [
-    { title: m.platform, links: ["התחל בחינם", "פיצ'רים", "תבניות", "תמחור", "Lex AI"] },
-    { title: m.resources, links: ["מרכז עזרה", "שאלות נפוצות", "בלוג", "אבטחה"] },
-    { title: m.company, links: ["אודות", "צרו קשר", "תנאי שימוש", "מדיניות פרטיות"] },
+    { title: f.product, links: f.footerLinks.product },
+    { title: f.resources, links: f.footerLinks.resources },
+    { title: f.company, links: f.footerLinks.company },
   ];
 
   return (
-    <footer style={{ background: "#1E1B4B" }}>
+    <footer style={{ background: "#1E1B4B", direction: t.dir }}>
       <div className="max-w-6xl mx-auto px-6 lg:px-10 py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="col-span-2 md:col-span-1">
@@ -21,7 +20,7 @@ export default function Footer2() {
               deal<span style={{ color: "#818CF8" }}>|</span>awyer
             </div>
             <p className="text-sm leading-relaxed mb-4 text-white">{f.tagline}</p>
-            <p className="text-xs text-white/60">DealLayer v2.0 · ישראל</p>
+            <p className="text-xs text-white/60">DealLayer v2.0 · {f.country}</p>
           </div>
           {cols.map(col => (
             <div key={col.title}>

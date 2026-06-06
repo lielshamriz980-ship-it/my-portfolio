@@ -90,9 +90,9 @@ export type T = {
       platform: string;
     }[];
   };
-  stats: { heading: string; l1: string; l2: string; l3: string; l4: string; s1: string; s2: string; s3: string; s4: string };
+  stats: { heading: string; l1: string; l2: string; l3: string; l4: string; s1: string; s2: string; s3: string; s4: string; statDisplay: string };
   cta: { heading: string; accent: string; sub: string; btn: string; trust: string[] };
-  footer: { tagline: string; product: string; resources: string; company: string; rights: string };
+  footer: { tagline: string; product: string; resources: string; company: string; rights: string; footerLinks: { product: string[]; resources: string[]; company: string[] }; country: string };
   // Platform page
   platform: {
     badge: string; h1: string; sub: string; cta: string;
@@ -103,6 +103,8 @@ export type T = {
     security: { title: string; desc: string }[];
     securityHeading: string; securitySub: string; securitySpecial: string;
     certifications: string[];
+    comparisonHeading: string; comparisonSub: string;
+    comparison: { feature: string; deallayer: boolean; competitors: boolean }[];
   };
   // Pricing page
   pricing: {
@@ -279,13 +281,14 @@ const he: T = {
     heading: "המספרים מדברים בעצמים",
     l1: "חוזים נחתמו", l2: "מהרעיון לחוזה", l3: "תבניות משפטיות", l4: "חוקי ומחייב",
     s1: "ועדיין סופרים", s2: "ממוצע עם Lex AI", s3: "מותאמות לחוק ישראלי", s4: "חוק החתימה האלקטרונית",
+    statDisplay: "2 דקות",
   },
   cta: {
     heading: "מוכן לראות את", accent: "DealLayer בפעולה?",
     sub: "3 חוזים ראשונים חינם לגמרי. ללא כרטיס אשראי. ללא התחייבות.",
     btn: "קבל הדגמה", trust: ["ביטול בכל עת","ללא כרטיס אשראי","תמיכה בעברית"],
   },
-  footer: { tagline: "חוזה חכם. הגנה אמיתית. בדקות.", product: "מוצר", resources: "משאבים", company: "חברה", rights: "כל הזכויות שמורות." },
+  footer: { tagline: "חוזה חכם. הגנה אמיתית. בדקות.", product: "מוצר", resources: "משאבים", company: "חברה", rights: "כל הזכויות שמורות.", footerLinks: { product: ["התחל בחינם", "פיצ'רים", "תבניות", "תמחור", "Lex AI"], resources: ["מרכז עזרה", "שאלות נפוצות", "בלוג", "אבטחה"], company: ["אודות", "צרו קשר", "תנאי שימוש", "מדיניות פרטיות"] }, country: "ישראל" },
 
   // Platform
   platform: {
@@ -329,6 +332,20 @@ const he: T = {
     securitySpecial: "אבטחה מיוחדת",
     securitySub: "אנחנו מבינים שהחוזים שלך הם ערך קריטי. ממוצא עמודי החוקית עד לנתונים הרגישים ביותר שלך - הכל מוגן בסטנדרטים הגבוהים ביותר בתעשייה.",
     certifications: ["ISO 27001", "SOC 2 Type II", "GDPR Compliant", "חוק הגנת הפרטיות ישראלי"],
+    comparisonHeading: "למה לבחור ב-DealLayer?",
+    comparisonSub: "השוואה עם פתרונות אחרים בשוק",
+    comparison: [
+      { feature: "חוזה מקצועי בדקות", deallayer: true, competitors: false },
+      { feature: "AI שמבין חוק ישראל", deallayer: true, competitors: false },
+      { feature: "חתימה דיגיטלית מחייבת", deallayer: true, competitors: true },
+      { feature: "דשבורד ניהול חוזים", deallayer: true, competitors: true },
+      { feature: "29+ תבניות משפטיות", deallayer: true, competitors: false },
+      { feature: "ניהול לקוחות (CRM)", deallayer: true, competitors: false },
+      { feature: "20+ אינטגרציות", deallayer: true, competitors: false },
+      { feature: "תמיכה בעברית", deallayer: true, competitors: false },
+      { feature: "חוזים בלתי מוגבלים", deallayer: true, competitors: false },
+      { feature: "מחיר שקוף ללא הפתעות", deallayer: true, competitors: false },
+    ],
   },
 
   // Pricing
@@ -718,13 +735,14 @@ const en: T = {
     heading: "The numbers speak for themselves",
     l1: "Contracts signed", l2: "Idea to contract", l3: "Legal templates", l4: "Legally binding",
     s1: "and counting", s2: "avg. with Lex AI", s3: "tailored to Israeli law", s4: "Electronic Signature Act",
+    statDisplay: "2 mins",
   },
   cta: {
     heading: "Ready to see", accent: "DealLayer in action?",
     sub: "First 3 contracts completely free. No credit card. No commitment.",
     btn: "Get a Demo", trust: ["Cancel anytime","No credit card","Hebrew support"],
   },
-  footer: { tagline: "Smart contract. Real protection. In minutes.", product: "Product", resources: "Resources", company: "Company", rights: "All rights reserved." },
+  footer: { tagline: "Smart contract. Real protection. In minutes.", product: "Product", resources: "Resources", company: "Company", rights: "All rights reserved.", footerLinks: { product: ["Start for Free", "Features", "Templates", "Pricing", "Lex AI"], resources: ["Help Center", "FAQ", "Blog", "Security"], company: ["About", "Contact", "Terms of Service", "Privacy Policy"] }, country: "Israel" },
 
   platform: {
     badge: "Everything you need in one place",
@@ -767,6 +785,20 @@ const en: T = {
     securitySpecial: "Advanced Security",
     securitySub: "We understand your contracts are critical value. From legal origins to the most sensitive data - everything is protected by the highest industry standards.",
     certifications: ["ISO 27001", "SOC 2 Type II", "GDPR Compliant", "Israeli Privacy Protection Law"],
+    comparisonHeading: "Why Choose DealLayer?",
+    comparisonSub: "Comparison with other solutions on the market",
+    comparison: [
+      { feature: "Professional contract in minutes", deallayer: true, competitors: false },
+      { feature: "AI that understands Israeli law", deallayer: true, competitors: false },
+      { feature: "Legally binding digital signature", deallayer: true, competitors: true },
+      { feature: "Contract management dashboard", deallayer: true, competitors: true },
+      { feature: "29+ legal templates", deallayer: true, competitors: false },
+      { feature: "Client management (CRM)", deallayer: true, competitors: false },
+      { feature: "20+ integrations", deallayer: true, competitors: false },
+      { feature: "Hebrew language support", deallayer: true, competitors: false },
+      { feature: "Unlimited contracts", deallayer: true, competitors: false },
+      { feature: "Transparent pricing, no surprises", deallayer: true, competitors: false },
+    ],
   },
 
   pricing: {
@@ -1149,13 +1181,14 @@ const ar: T = {
     heading: "الأرقام تتحدث عن نفسها",
     l1: "عقد موقّع", l2: "من الفكرة إلى العقد", l3: "قوالب قانونية", l4: "ملزم قانوناً",
     s1: "ولا تزال تتزايد", s2: "متوسط مع Lex AI", s3: "مُكيَّفة مع القانون الإسرائيلي", s4: "قانون التوقيع الإلكتروني",
+    statDisplay: "دقيقتان",
   },
   cta: {
     heading: "هل أنت مستعد لرؤية", accent: "DealLayer في العمل؟",
     sub: "أول 3 عقود مجانية تماماً. بدون بطاقة ائتمان. بدون التزام.",
     btn: "احصل على عرض", trust: ["إلغاء في أي وقت","بدون بطاقة ائتمان","دعم بالعبرية والعربية"],
   },
-  footer: { tagline: "عقد ذكي. حماية حقيقية. في دقائق.", product: "المنتج", resources: "الموارد", company: "الشركة", rights: "جميع الحقوق محفوظة." },
+  footer: { tagline: "عقد ذكي. حماية حقيقية. في دقائق.", product: "المنتج", resources: "الموارد", company: "الشركة", rights: "جميع الحقوق محفوظة.", footerLinks: { product: ["ابدأ مجاناً", "الميزات", "القوالب", "الأسعار", "Lex AI"], resources: ["مركز المساعدة", "الأسئلة الشائعة", "المدونة", "الأمان"], company: ["حولنا", "اتصل بنا", "شروط الخدمة", "سياسة الخصوصية"] }, country: "إسرائيل" },
 
   platform: {
     badge: "كل مما تحتاجه في مكان واحد",
@@ -1198,6 +1231,20 @@ const ar: T = {
     securitySpecial: "أمان متقدم",
     securitySub: "نحن نفهم أن عقودك ذات قيمة حرجة. من الأصول القانونية إلى البيانات الحساسة - كل شيء محمي بأعلى معايير الصناعة.",
     certifications: ["ISO 27001", "SOC 2 Type II", "GDPR Compliant", "قانون حماية الخصوصية الإسرائيلي"],
+    comparisonHeading: "لماذا تختار DealLayer؟",
+    comparisonSub: "مقارنة مع الحلول الأخرى في السوق",
+    comparison: [
+      { feature: "عقد احترافي في دقائق", deallayer: true, competitors: false },
+      { feature: "ذكاء اصطناعي يفهم القانون الإسرائيلي", deallayer: true, competitors: false },
+      { feature: "توقيع رقمي ملزم قانوناً", deallayer: true, competitors: true },
+      { feature: "لوحة تحكم إدارة العقود", deallayer: true, competitors: true },
+      { feature: "29+ قالب قانوني", deallayer: true, competitors: false },
+      { feature: "إدارة العملاء (CRM)", deallayer: true, competitors: false },
+      { feature: "20+ تكامل", deallayer: true, competitors: false },
+      { feature: "دعم اللغة العربية", deallayer: true, competitors: false },
+      { feature: "عقود غير محدودة", deallayer: true, competitors: false },
+      { feature: "أسعار شفافة بدون مفاجآت", deallayer: true, competitors: false },
+    ],
   },
 
   pricing: {

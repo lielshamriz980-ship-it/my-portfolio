@@ -9,7 +9,7 @@ export default function CTA2() {
 
   return (
     <section className="py-24 md:py-36 relative overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #EEF2FF 0%, #F5F3FF 50%, #EDE9FE 100%)" }}>
+      style={{ background: "linear-gradient(160deg, #EEF2FF 0%, #F5F3FF 50%, #EDE9FE 100%)", direction: t.dir }}>
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-30%] right-[-10%] w-[600px] h-[600px] rounded-full opacity-50"
           style={{ background: "radial-gradient(circle, #C7D2FE 0%, transparent 65%)" }} />

@@ -7,7 +7,7 @@ export default function SolutionsHero() {
   const s = t.solutions;
 
   return (
-    <section className="py-20 md:py-32 bg-white relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-white relative overflow-hidden" style={{ direction: t.dir }}>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-30 blur-3xl"
           style={{ background: "radial-gradient(circle, #C7D2FE 0%, transparent 70%)" }} />

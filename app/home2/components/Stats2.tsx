@@ -6,7 +6,7 @@ import { useLang } from "../../lib/LanguageContext";
 function getStats(t: any) {
   return [
     { end: 9000, display: "9,000+", label: t.l1, sub: t.s1 },
-    { end: 2,    display: "2 דקות", label: t.l2, sub: t.s2, literal: true },
+    { end: 2,    display: t.statDisplay, label: t.l2, sub: t.s2, literal: true },
     { end: 29,   display: "29+",    label: t.l3, sub: t.s3 },
     { end: 100,  display: "100%",   label: t.l4, sub: t.s4 },
   ];
@@ -37,7 +37,7 @@ export default function Stats2() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-white" style={{ direction: t.dir }}>
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-14">
           <motion.h2
