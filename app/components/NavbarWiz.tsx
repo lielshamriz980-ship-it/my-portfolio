@@ -12,109 +12,119 @@ import {
 import { useLang } from "../lib/LanguageContext";
 import type { Lang } from "../lib/translations";
 
-/* ─── Menu structure (icons fixed, labels from translations) ─── */
+/* ─── Menu structure (with URL keys for proper routing) ─── */
+const menuKeys = [
+  { key: "platform", items: { lex_ai: "lex-ai", sign: "digital-signature", manage: "contract-management", clients: "client-management", alerts: "alerts", security: "security-privacy", api: "api", integrations: "integrations", analytics: "analytics", international: "international-contracts" } },
+  { key: "solutions", items: { freelancers: "freelancers-creators", realestate: "property-owners", business: "small-business-owners", contractors: "contractors-tradespeople", startups: "entrepreneurs-startups", lawyers: "lawyers-consultants" } },
+  { key: "templates", items: {} },
+  { key: "resources", items: {} },
+];
+
 function useMenuConfig(t: ReturnType<typeof useLang>["t"]) {
   const m = t.nav;
   return [
     {
       label: m.platform,
+      key: "platform",
       columns: [
         {
           header: m.platformMenu.col1,
           items: [
-            { Icon: Sparkles,    label: m.platformMenu.lexAI,        desc: m.platformMenu.lexAIDesc },
-            { Icon: PenLine,     label: m.platformMenu.sign,         desc: m.platformMenu.signDesc },
-            { Icon: FolderOpen,  label: m.platformMenu.manage,       desc: m.platformMenu.manageDesc },
-            { Icon: Users,       label: m.platformMenu.clients,      desc: m.platformMenu.clientsDesc },
+            { Icon: Sparkles,    label: m.platformMenu.lexAI,        desc: m.platformMenu.lexAIDesc,        key: "lex-ai" },
+            { Icon: PenLine,     label: m.platformMenu.sign,         desc: m.platformMenu.signDesc,         key: "digital-signature" },
+            { Icon: FolderOpen,  label: m.platformMenu.manage,       desc: m.platformMenu.manageDesc,       key: "contract-management" },
+            { Icon: Users,       label: m.platformMenu.clients,      desc: m.platformMenu.clientsDesc,      key: "client-management" },
           ],
         },
         {
           header: m.platformMenu.col2,
           items: [
-            { Icon: Bell,        label: m.platformMenu.alerts,       desc: m.platformMenu.alertsDesc },
-            { Icon: ShieldCheck, label: m.platformMenu.security,     desc: m.platformMenu.securityDesc },
-            { Icon: Code2,       label: m.platformMenu.api,          desc: m.platformMenu.apiDesc },
-            { Icon: Zap,         label: m.platformMenu.integrations, desc: m.platformMenu.integrationsDesc },
+            { Icon: Bell,        label: m.platformMenu.alerts,       desc: m.platformMenu.alertsDesc,       key: "alerts" },
+            { Icon: ShieldCheck, label: m.platformMenu.security,     desc: m.platformMenu.securityDesc,     key: "security-privacy" },
+            { Icon: Code2,       label: m.platformMenu.api,          desc: m.platformMenu.apiDesc,          key: "api" },
+            { Icon: Zap,         label: m.platformMenu.integrations, desc: m.platformMenu.integrationsDesc, key: "integrations" },
           ],
         },
         {
           header: m.platformMenu.col3,
           items: [
-            { Icon: TrendingUp,  label: m.platformMenu.analytics,     desc: m.platformMenu.analyticsDesc },
-            { Icon: Globe,       label: m.platformMenu.international, desc: m.platformMenu.internationalDesc },
+            { Icon: TrendingUp,  label: m.platformMenu.analytics,     desc: m.platformMenu.analyticsDesc,     key: "analytics" },
+            { Icon: Globe,       label: m.platformMenu.international, desc: m.platformMenu.internationalDesc, key: "international-contracts" },
           ],
         },
       ],
     },
     {
       label: m.solutions,
+      key: "solutions",
       columns: [
         {
           header: m.solutionsMenu.col1,
           items: [
-            { Icon: Palette,    label: m.solutionsMenu.freelancers,  desc: m.solutionsMenu.freelancersDesc },
-            { Icon: Home,       label: m.solutionsMenu.realestate,   desc: m.solutionsMenu.realestateDesc },
-            { Icon: Briefcase,  label: m.solutionsMenu.business,     desc: m.solutionsMenu.businessDesc },
-            { Icon: HardHat,    label: m.solutionsMenu.contractors,  desc: m.solutionsMenu.contractorsDesc },
-            { Icon: Rocket,     label: m.solutionsMenu.startups,     desc: m.solutionsMenu.startupsDesc },
-            { Icon: Scale,      label: m.solutionsMenu.lawyers,      desc: m.solutionsMenu.lawyersDesc },
+            { Icon: Palette,    label: m.solutionsMenu.freelancers,  desc: m.solutionsMenu.freelancersDesc,  key: "freelancers-creators" },
+            { Icon: Home,       label: m.solutionsMenu.realestate,   desc: m.solutionsMenu.realestateDesc,   key: "property-owners" },
+            { Icon: Briefcase,  label: m.solutionsMenu.business,     desc: m.solutionsMenu.businessDesc,     key: "small-business-owners" },
+            { Icon: HardHat,    label: m.solutionsMenu.contractors,  desc: m.solutionsMenu.contractorsDesc,  key: "contractors-tradespeople" },
+            { Icon: Rocket,     label: m.solutionsMenu.startups,     desc: m.solutionsMenu.startupsDesc,     key: "entrepreneurs-startups" },
+            { Icon: Scale,      label: m.solutionsMenu.lawyers,      desc: m.solutionsMenu.lawyersDesc,      key: "lawyers-consultants" },
           ],
         },
         {
           header: m.solutionsMenu.col2,
           items: [
-            { Icon: User,       label: m.solutionsMenu.individuals, desc: null },
-            { Icon: Building2,  label: m.solutionsMenu.smb,         desc: null },
-            { Icon: Building,   label: m.solutionsMenu.enterprise,  desc: null },
-            { Icon: Heart,      label: m.solutionsMenu.government,  desc: null },
+            { Icon: User,       label: m.solutionsMenu.individuals, desc: null, key: "individuals" },
+            { Icon: Building2,  label: m.solutionsMenu.smb,         desc: null, key: "smb" },
+            { Icon: Building,   label: m.solutionsMenu.enterprise,  desc: null, key: "enterprise" },
+            { Icon: Heart,      label: m.solutionsMenu.government,  desc: null, key: "government" },
           ],
         },
         {
           header: m.solutionsMenu.col3,
           items: [
-            { Icon: Code2,    label: m.solutionsMenu.tech,     desc: null },
-            { Icon: Home,     label: m.solutionsMenu.property, desc: null },
-            { Icon: Camera,   label: m.solutionsMenu.media,    desc: null },
-            { Icon: CreditCard, label: m.solutionsMenu.finance, desc: null },
+            { Icon: Code2,    label: m.solutionsMenu.tech,     desc: null, key: "tech" },
+            { Icon: Home,     label: m.solutionsMenu.property, desc: null, key: "property" },
+            { Icon: Camera,   label: m.solutionsMenu.media,    desc: null, key: "media" },
+            { Icon: CreditCard, label: m.solutionsMenu.finance, desc: null, key: "finance" },
           ],
         },
       ],
     },
     {
       label: m.templates,
+      key: "templates",
       columns: [
         {
           header: m.templatesMenu.col1,
           items: [
-            { Icon: FileText,  label: m.templatesMenu.serviceGeneral, desc: null },
-            { Icon: Briefcase, label: m.templatesMenu.freelance,       desc: null },
-            { Icon: Building2, label: m.templatesMenu.founders,        desc: null },
-            { Icon: Users,     label: m.templatesMenu.partnership,     desc: null },
+            { Icon: FileText,  label: m.templatesMenu.serviceGeneral, desc: null, key: "general-service-agreement" },
+            { Icon: Briefcase, label: m.templatesMenu.freelance,       desc: null, key: "freelance-contract" },
+            { Icon: Building2, label: m.templatesMenu.founders,        desc: null, key: "founders-agreement" },
+            { Icon: Users,     label: m.templatesMenu.partnership,     desc: null, key: "business-partnership" },
           ],
         },
         {
           header: m.templatesMenu.col2,
           items: [
-            { Icon: Home,      label: m.templatesMenu.rental,          desc: null },
-            { Icon: Building,  label: m.templatesMenu.commercial,      desc: null },
-            { Icon: FolderOpen,label: m.templatesMenu.assetManagement, desc: null },
+            { Icon: Home,      label: m.templatesMenu.rental,          desc: null, key: "residential-rental" },
+            { Icon: Building,  label: m.templatesMenu.commercial,      desc: null, key: "commercial-lease" },
+            { Icon: FolderOpen,label: m.templatesMenu.assetManagement, desc: null, key: "asset-management" },
           ],
         },
         {
           header: m.templatesMenu.col3,
           items: [
-            { Icon: EyeOff,    label: m.templatesMenu.nda,             desc: null },
-            { Icon: CreditCard,label: m.templatesMenu.loan,            desc: null },
-            { Icon: UserCheck, label: m.templatesMenu.employment,      desc: null },
-            { Icon: Scale,     label: m.templatesMenu.mediation,       desc: null },
+            { Icon: EyeOff,    label: m.templatesMenu.nda,             desc: null, key: "nda-confidentiality" },
+            { Icon: CreditCard,label: m.templatesMenu.loan,            desc: null, key: "loan-agreement" },
+            { Icon: UserCheck, label: m.templatesMenu.employment,      desc: null, key: "employment-contract" },
+            { Icon: Scale,     label: m.templatesMenu.mediation,       desc: null, key: "mediation-agreement" },
           ],
         },
         {
           header: m.templatesMenu.col4,
           items: [
-            { Icon: Film,      label: m.templatesMenu.photography,     desc: null },
-            { Icon: Megaphone, label: m.templatesMenu.sponsored,       desc: null },
-            { Icon: Camera,    label: m.templatesMenu.brand,           desc: null },
+            { Icon: Film,      label: m.templatesMenu.photography,     desc: null, key: "photography-video" },
+            { Icon: Megaphone, label: m.templatesMenu.sponsored,       desc: null, key: "sponsored-content" },
+            { Icon: Camera,    label: m.templatesMenu.brand,           desc: null, key: "brand-ambassador" },
           ],
         },
       ],
@@ -122,30 +132,31 @@ function useMenuConfig(t: ReturnType<typeof useLang>["t"]) {
     },
     {
       label: m.resources,
+      key: "resources",
       columns: [
         {
           header: m.resourcesMenu.col1,
           items: [
-            { Icon: BookOpen,       label: m.resourcesMenu.guides,    desc: m.resourcesMenu.guidesDesc },
-            { Icon: PlayCircle,     label: m.resourcesMenu.videos,    desc: m.resourcesMenu.videosDesc },
-            { Icon: BookMarked,     label: m.resourcesMenu.blog,      desc: m.resourcesMenu.blogDesc },
-            { Icon: GraduationCap, label: m.resourcesMenu.knowledge,  desc: m.resourcesMenu.knowledgeDesc },
+            { Icon: BookOpen,       label: m.resourcesMenu.guides,    desc: m.resourcesMenu.guidesDesc, key: "user-guides" },
+            { Icon: PlayCircle,     label: m.resourcesMenu.videos,    desc: m.resourcesMenu.videosDesc, key: "tutorial-videos" },
+            { Icon: BookMarked,     label: m.resourcesMenu.blog,      desc: m.resourcesMenu.blogDesc, key: "deallayer-blog" },
+            { Icon: GraduationCap, label: m.resourcesMenu.knowledge,  desc: m.resourcesMenu.knowledgeDesc, key: "legal-knowledge-base" },
           ],
         },
         {
           header: m.resourcesMenu.col2,
           items: [
-            { Icon: HelpCircle,     label: m.resourcesMenu.faq,  desc: m.resourcesMenu.faqDesc },
-            { Icon: MessageCircle,  label: m.resourcesMenu.chat, desc: m.resourcesMenu.chatDesc },
-            { Icon: Phone,          label: m.resourcesMenu.call, desc: m.resourcesMenu.callDesc },
-            { Icon: Terminal,       label: m.resourcesMenu.docs, desc: m.resourcesMenu.docsDesc },
+            { Icon: HelpCircle,     label: m.resourcesMenu.faq,  desc: m.resourcesMenu.faqDesc, key: "faq" },
+            { Icon: MessageCircle,  label: m.resourcesMenu.chat, desc: m.resourcesMenu.chatDesc, key: "live-chat-support" },
+            { Icon: Phone,          label: m.resourcesMenu.call, desc: m.resourcesMenu.callDesc, key: "phone-support" },
+            { Icon: Terminal,       label: m.resourcesMenu.docs, desc: m.resourcesMenu.docsDesc, key: "api-documentation" },
           ],
         },
         {
           header: m.resourcesMenu.col3,
           items: [
-            { Icon: GitBranch, label: m.resourcesMenu.github,   desc: null },
-            { Icon: Webhook,   label: m.resourcesMenu.webhooks, desc: null },
+            { Icon: GitBranch, label: m.resourcesMenu.github,   desc: null, key: "github" },
+            { Icon: Webhook,   label: m.resourcesMenu.webhooks, desc: null, key: "webhooks" },
           ],
         },
       ],
@@ -177,11 +188,10 @@ function useMenuConfig(t: ReturnType<typeof useLang>["t"]) {
 }
 
 /* ─── Dropdown panel ─── */
-function DropdownPanel({ item, isRtl }: { item: ReturnType<typeof useMenuConfig>[0]; isRtl: boolean }) {
-  // Generate URL slug from label
-  const getHref = (label: string, parentLabel: string) => {
-    const slugify = (str: string) => str.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
-    return `/service/${slugify(parentLabel)}/${slugify(label)}`;
+function DropdownPanel({ item, isRtl }: { item: any; isRtl: boolean }) {
+  // Generate URL using the key property
+  const getHref = (itemKey: string, categoryKey: string) => {
+    return `/service/${categoryKey}/${itemKey}`;
   };
 
   return (
@@ -189,13 +199,13 @@ function DropdownPanel({ item, isRtl }: { item: ReturnType<typeof useMenuConfig>
       style={{ minWidth: 700 }}>
       <div className="max-w-7xl mx-auto px-8 py-7">
         <div className={`flex gap-8 ${isRtl ? "flex-row-reverse" : ""}`}>
-          {item.columns.map((col, ci) => (
+          {item.columns.map((col: any, ci: number) => (
             <div key={ci} className="flex-1 min-w-0">
               <p className="text-xs font-black uppercase tracking-widest mb-4 pb-2 border-b border-gray-100"
                 style={{ color: "#9CA3AF" }}>{col.header}</p>
               <div className="flex flex-col gap-1">
-                {col.items.map((it, ii) => (
-                  <a key={ii} href={getHref(it.label, item.label)}
+                {col.items.map((it: any, ii: number) => (
+                  <a key={ii} href={getHref(it.key || it.label, item.key || "platform")}
                     className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-indigo-50 transition-colors group"
                     style={{ textDecoration: "none" }}>
                     <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors"
