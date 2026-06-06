@@ -10,7 +10,7 @@ export default function Hero2() {
 
   return (
     <section className="relative overflow-hidden pt-28 pb-0"
-      style={{ background: "linear-gradient(180deg, #EEF2FF 0%, #F5F3FF 40%, #ffffff 100%)" }}>
+      style={{ background: "linear-gradient(180deg, #EEF2FF 0%, #F5F3FF 40%, #ffffff 100%)", direction: t.dir }}>
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full opacity-40"
           style={{ background: "radial-gradient(circle, #C7D2FE 0%, transparent 65%)" }} />

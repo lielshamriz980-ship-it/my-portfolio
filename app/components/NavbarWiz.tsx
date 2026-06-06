@@ -301,7 +301,8 @@ export default function NavbarWiz() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white"}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between" style={{ height: 68 }}>
+        <div className="flex items-center justify-between" style={{ height: 68, direction: t.dir }}>
+          {isRtl && <style>{`nav { direction: rtl; } nav > * { direction: rtl; }`}</style>}
 
           {/* Logo */}
           <a href="/" className="flex-shrink-0 text-xl font-black select-none" style={{ color: "#4F46E5" }}>
