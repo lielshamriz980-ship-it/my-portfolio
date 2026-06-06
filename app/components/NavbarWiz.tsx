@@ -178,6 +178,12 @@ function useMenuConfig(t: ReturnType<typeof useLang>["t"]) {
 
 /* ─── Dropdown panel ─── */
 function DropdownPanel({ item, isRtl }: { item: ReturnType<typeof useMenuConfig>[0]; isRtl: boolean }) {
+  // Generate URL slug from label
+  const getHref = (label: string, parentLabel: string) => {
+    const slugify = (str: string) => str.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
+    return `/service/${slugify(parentLabel)}/${slugify(label)}`;
+  };
+
   return (
     <div className="absolute top-full left-0 right-0 bg-white z-50 shadow-xl border-t border-gray-100"
       style={{ minWidth: 700 }}>
@@ -189,7 +195,7 @@ function DropdownPanel({ item, isRtl }: { item: ReturnType<typeof useMenuConfig>
                 style={{ color: "#9CA3AF" }}>{col.header}</p>
               <div className="flex flex-col gap-1">
                 {col.items.map((it, ii) => (
-                  <a key={ii} href="#"
+                  <a key={ii} href={getHref(it.label, item.label)}
                     className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-indigo-50 transition-colors group"
                     style={{ textDecoration: "none" }}>
                     <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors"
@@ -208,7 +214,7 @@ function DropdownPanel({ item, isRtl }: { item: ReturnType<typeof useMenuConfig>
         </div>
         {(item as any).footer && (
           <div className="mt-5 pt-4 border-t border-gray-100">
-            <a href="#" className="text-sm font-bold flex items-center gap-1.5 hover:opacity-70 transition-opacity"
+            <a href={`/${item.label.toLowerCase()}`} className="text-sm font-bold flex items-center gap-1.5 hover:opacity-70 transition-opacity"
               style={{ color: "#4F46E5" }}>
               {(item as any).footer}
             </a>
@@ -302,25 +308,38 @@ export default function NavbarWiz() {
             deal<span style={{ color: "#7C3AED" }}>|</span>awyer
           </a>
 
-          {/* Desktop nav items */}
+          {/* Desktop nav items with dropdowns */}
           <div className="hidden lg:flex items-center gap-1">
-            <a href="/platform" className="px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all">
-              {t.nav.platform}
-            </a>
-            <a href="/solutions" className="px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all">
-              {t.nav.solutions}
-            </a>
-            <a href="/templates" className="px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all">
-              {t.nav.templates}
-            </a>
+            {menu.map((item, i) => (
+              <div key={i} className="relative"
+                onMouseEnter={() => openDropdown(i)}
+                onMouseLeave={scheduleClose}>
+                <button
+                  className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${open === i ? "bg-indigo-50 text-[#4F46E5]" : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"}`}>
+                  {item.label}
+                  <ChevronDown size={13} strokeWidth={2.5}
+                    className={`transition-transform duration-200 ${open === i ? "rotate-180" : ""}`} />
+                </button>
+
+                <AnimatePresence>
+                  {open === i && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -4 }}
+                      transition={{ duration: 0.15 }}
+                      onMouseEnter={() => openDropdown(i)}
+                      onMouseLeave={scheduleClose}
+                      style={{ position: "fixed", top: 68, left: 0, right: 0, zIndex: 100 }}>
+                      <DropdownPanel item={item} isRtl={isRtl} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+            {/* Pricing (no dropdown) */}
             <a href="/pricing" className="px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all">
               {t.nav.pricing}
-            </a>
-            <a href="/resources" className="px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all">
-              {t.nav.resources}
-            </a>
-            <a href="/about" className="px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all">
-              {t.nav.company}
             </a>
           </div>
 
