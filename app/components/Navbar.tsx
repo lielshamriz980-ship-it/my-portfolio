@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowLeft } from "lucide-react";
 
-const NAV_LINKS = ["מוצר", "תבניות", "תמחור", "שאלות נפוצות"];
+type NavItem = string | { label: string; href: string };
+const NAV_LINKS: NavItem[] = ["מוצר", "תבניות", "תמחור", "שאלות נפוצות", { label: "עמוד בית 2", href: "/home2" }];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,16 +32,18 @@ export default function Navbar() {
 
           {/* Nav links */}
           <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map(link => (
-              <a
-                key={link}
-                href="#"
-                className="text-[15px] font-medium transition-colors hover:text-[#4F46E5]"
-                style={{ color: "#6B7280" }}
-              >
-                {link}
-              </a>
-            ))}
+            {NAV_LINKS.map(link => {
+              const label = typeof link === "string" ? link : link.label;
+              const href = typeof link === "string" ? "#" : link.href;
+              const isSpecial = typeof link !== "string";
+              return (
+                <a key={label} href={href}
+                  className="text-[15px] font-medium transition-colors hover:text-[#4F46E5]"
+                  style={{ color: isSpecial ? "#4F46E5" : "#6B7280", fontWeight: isSpecial ? 700 : undefined }}>
+                  {label}
+                </a>
+              );
+            })}
           </div>
 
           {/* CTAs */}
@@ -77,9 +80,11 @@ export default function Navbar() {
               className="md:hidden overflow-hidden border-t border-gray-100"
             >
               <div className="flex flex-col gap-4 py-6">
-                {NAV_LINKS.map(link => (
-                  <a key={link} href="#" className="text-base font-medium text-gray-600 hover:text-[#4F46E5]">{link}</a>
-                ))}
+                {NAV_LINKS.map(link => {
+                  const label = typeof link === "string" ? link : link.label;
+                  const href = typeof link === "string" ? "#" : link.href;
+                  return <a key={label} href={href} className="text-base font-medium text-gray-600 hover:text-[#4F46E5]">{label}</a>;
+                })}
                 <div className="flex flex-col gap-3 pt-2">
                   <button className="w-full py-3 text-base font-semibold text-[#4F46E5] border border-[#C7D2FE] rounded-xl">כניסה</button>
                   <button className="btn-shimmer w-full py-3 text-base font-bold text-white rounded-xl"

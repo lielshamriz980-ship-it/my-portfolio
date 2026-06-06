@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Assistant, Heebo } from "next/font/google";
+import { ClientProviders } from "./ClientProviders";
 import "./globals.css";
 
 const assistant = Assistant({
@@ -34,6 +35,7 @@ export default function RootLayout({
       className={`${assistant.variable} ${heebo.variable}`}
     >
       <body className="min-h-full antialiased">
+        <ClientProviders>
         {/* Global SVG filter for GooeyMorphText - placed once, zero layout impact */}
         <svg
           aria-hidden="true"
@@ -54,6 +56,7 @@ export default function RootLayout({
           </defs>
         </svg>
         {children}
+        </ClientProviders>
       </body>
     </html>
   );

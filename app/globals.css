@@ -23,6 +23,46 @@ body {
   color: #0F172A;
 }
 
+/* RTL/LTR automatic handling */
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+[dir="ltr"] nav {
+  flex-direction: row;
+}
+
+[dir="ltr"] nav a,
+[dir="ltr"] nav button {
+  text-align: left;
+}
+
+[dir="ltr"] [dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] [dir="ltr"] {
+  direction: ltr;
+}
+
+/* LTR specific adjustments */
+[dir="ltr"] .flex {
+  flex-direction: row;
+}
+
+[dir="ltr"] .flex-col {
+  flex-direction: column;
+}
+
+[dir="ltr"] .justify-start {
+  justify-content: flex-start;
+}
+
+[dir="ltr"] .justify-end {
+  justify-content: flex-end;
+}
+
 /* ─── Gradient text ─────────────────────────────────────── */
 
 .gradient-text {

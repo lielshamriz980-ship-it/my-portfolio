@@ -1,41 +1,27 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import ProblemSection from "./components/ProblemSection";
-import HowItWorks from "./components/HowItWorks";
-import LexAISection from "./components/LexAISection";
-import FeaturesGrid from "./components/FeaturesGrid";
-import Templates from "./components/Templates";
-import Stats from "./components/Stats";
-import ActivityTicker from "./components/ActivityTicker";
-import AppPreview from "./components/AppPreview";
-import ForWhom from "./components/ForWhom";
-import Security from "./components/Security";
-import Pricing from "./components/Pricing";
-import FAQ from "./components/FAQ";
-import FinalCTA from "./components/FinalCTA";
-import Footer from "./components/Footer";
+import NavbarWiz from "./components/NavbarWiz";
+import Hero2 from "./home2/components/Hero2";
+import TrustBar from "./home2/components/TrustBar";
+import PainPoints from "./home2/components/PainPoints";
+import Features2 from "./home2/components/Features2";
+import Testimonials from "./home2/components/Testimonials";
+import Stats2 from "./home2/components/Stats2";
+import CTA2 from "./home2/components/CTA2";
+import Footer2 from "./home2/components/Footer2";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <NavbarWiz />
       <main>
-        <Hero />
-        <ActivityTicker />
-        <ProblemSection />
-        <HowItWorks />
-        <LexAISection />
-        <FeaturesGrid />
-        <Templates />
-        <Stats />
-        <AppPreview />
-        <ForWhom />
-        <Security />
-        <Pricing />
-        <FAQ />
-        <FinalCTA />
+        <Hero2 />
+        <TrustBar />
+        <PainPoints />
+        <Features2 />
+        <Testimonials />
+        <Stats2 />
+        <CTA2 />
       </main>
-      <Footer />
+      <Footer2 />
     </>
   );
 }
