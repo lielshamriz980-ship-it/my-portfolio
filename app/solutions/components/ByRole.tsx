@@ -15,7 +15,7 @@ export default function ByRole() {
           viewport={{ once: true }} transition={{ duration: 0.6 }}
           className="font-black leading-tight mb-12 text-center"
           style={{ fontSize: "clamp(32px, 4.5vw, 52px)", color: "#1E1B4B" }}>
-          לפי תפקיד וסוג עסק
+          {t.solutions.byRole}
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

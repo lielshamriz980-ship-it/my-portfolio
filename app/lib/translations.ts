@@ -101,7 +101,7 @@ export type T = {
     integrations: { name: string; desc: string }[];
     integrationsHeading: string; integrationsSub: string; integrationsReq: string;
     security: { title: string; desc: string }[];
-    securityHeading: string; securitySub: string;
+    securityHeading: string; securitySub: string; securitySpecial: string;
     certifications: string[];
   };
   // Pricing page
@@ -118,6 +118,7 @@ export type T = {
   // Solutions page
   solutions: {
     badge: string; h1: string; sub: string;
+    byRole: string;
     roles: { title: string; desc: string; highlights: string[] }[];
     sizes: { title: string; desc: string; badge: string }[];
     industries: { title: string; desc: string; sectors: string[] }[];
@@ -260,7 +261,7 @@ const he: T = {
     f1: ["שיחה פשוטה - לא צריך ידע משפטי","ניתוח סיכונים וציון הגנה אוטומטי","29+ תבניות לכל תחום","עדכון שוטף לחוק הישראלי"],
     f2: ["שליחה ישירה לוואטסאפ או SMS","תיעוד IP, שעה, תאריך, ומספר טלפון","PDF חתום עם מספר אסמכתא","תקן חוק החתימה האלקטרונית"],
     f3: ["פילטור לפי סטטוס, לקוח, ותאריך","ניהול לקוחות עם היסטוריית עסקאות","התראות SMS כשחוזה עומד לפוג","ייצוא מלא ל-PDF ולאקסל"],
-    learnMore: "למד עוד",
+    learnMore: "למד עוד →",
   },
   testimonials: {
     badge: "ביקורות",
@@ -325,6 +326,7 @@ const he: T = {
       { title: "GDPR & Compliance", desc: "עומדים בדרישות GDPR, ISO 27001 ודרישות ישראליות." },
     ],
     securityHeading: "החוזים שלך בידיים בטוחות",
+    securitySpecial: "אבטחה מיוחדת",
     securitySub: "אנחנו מבינים שהחוזים שלך הם ערך קריטי. ממוצא עמודי החוקית עד לנתונים הרגישים ביותר שלך - הכל מוגן בסטנדרטים הגבוהים ביותר בתעשייה.",
     certifications: ["ISO 27001", "SOC 2 Type II", "GDPR Compliant", "חוק הגנת הפרטיות ישראלי"],
   },
@@ -405,6 +407,7 @@ const he: T = {
     badge: "בנוי לכל אחד",
     h1: "בין אם אתה עצמאי\nאו ארגון שלם",
     sub: "DealLayer יודעת את צורך שלך. בחרו משלוש זוויות - לפי התפקיד שלכם, גודל הארגון, או את התחום שלכם.",
+    byRole: "לפי תפקיד וסוג עסק",
     roles: [
       { title: "פרילנסרים & יוצרים", desc: "הגן על עבודתך. קבל תשלום בזמן. לא עוד לקוחות שלא משלמים.", highlights: ["חוזי שירות", "הצעות מחיר", "ניהול זמן"] },
       { title: "משכירי נכסים", desc: "חוזי שכירות מעודכנים. כל מה שצריך בשיטה חוקית.", highlights: ["שכירות דיור", "שכירות מסחרית", "ניהול נכסים"] },
@@ -697,7 +700,7 @@ const en: T = {
     f1: ["Simple conversation - no legal knowledge needed","Risk analysis and automatic protection score","29+ templates for every use case","Always updated to Israeli law"],
     f2: ["Send directly to WhatsApp or SMS","IP, time, date, and phone number recorded","Signed PDF with unique reference number","Electronic Signature Act compliant"],
     f3: ["Filter by status, client, and date","Client management with transaction history","SMS alerts when contracts are about to expire","Full export to PDF and Excel"],
-    learnMore: "Learn more",
+    learnMore: "Learn more →",
   },
   testimonials: {
     badge: "Reviews",
@@ -761,6 +764,7 @@ const en: T = {
       { title: "GDPR & Compliance", desc: "Meet GDPR, ISO 27001, and Israeli requirements." },
     ],
     securityHeading: "Your contracts in safe hands",
+    securitySpecial: "Advanced Security",
     securitySub: "We understand your contracts are critical value. From legal origins to the most sensitive data - everything is protected by the highest industry standards.",
     certifications: ["ISO 27001", "SOC 2 Type II", "GDPR Compliant", "Israeli Privacy Protection Law"],
   },
@@ -839,6 +843,7 @@ const en: T = {
     badge: "Built for everyone",
     h1: "Whether you're a freelancer\nor an entire organization",
     sub: "DealLayer knows your needs. Choose from three angles - by your role, organization size, or industry.",
+    byRole: "By Role and Business Type",
     roles: [
       { title: "Freelancers & Creators", desc: "Protect your work. Get paid on time. No more clients who don't pay.", highlights: ["Service contracts", "Quotations", "Time tracking"] },
       { title: "Property Owners", desc: "Up-to-date rental agreements. Everything you need in a legal way.", highlights: ["Residential rental", "Commercial lease", "Property management"] },
@@ -1126,7 +1131,7 @@ const ar: T = {
     f1: ["محادثة بسيطة - لا حاجة لمعرفة قانونية","تحليل المخاطر ودرجة الحماية التلقائية","أكثر من 29 قالباً لكل حالة","محدّث دائماً للقانون الإسرائيلي"],
     f2: ["إرسال مباشر عبر واتساب أو SMS","تسجيل IP والوقت والتاريخ ورقم الهاتف","PDF موقّع برقم مرجعي فريد","متوافق مع قانون التوقيع الإلكتروني"],
     f3: ["تصفية حسب الحالة والعميل والتاريخ","إدارة العملاء مع سجل المعاملات","تنبيهات SMS عند انتهاء صلاحية العقود","تصدير كامل إلى PDF وExcel"],
-    learnMore: "اقرأ المزيد",
+    learnMore: "اقرأ المزيد ←",
   },
   testimonials: {
     badge: "مراجعات",
@@ -1190,6 +1195,7 @@ const ar: T = {
       { title: "GDPR والامتثال", desc: "استيفاء GDPR و ISO 27001 والمتطلبات الإسرائيلية." },
     ],
     securityHeading: "عقودك بأيد آمنة",
+    securitySpecial: "أمان متقدم",
     securitySub: "نحن نفهم أن عقودك ذات قيمة حرجة. من الأصول القانونية إلى البيانات الحساسة - كل شيء محمي بأعلى معايير الصناعة.",
     certifications: ["ISO 27001", "SOC 2 Type II", "GDPR Compliant", "قانون حماية الخصوصية الإسرائيلي"],
   },
@@ -1268,6 +1274,7 @@ const ar: T = {
     badge: "مبني للجميع",
     h1: "سواء كنت مستقلاً\nأو منظمة كاملة",
     sub: "DealLayer تعرف احتياجاتك. اختر من ثلاث زوايا - حسب دورك أو حجم المنظمة أو الصناعة.",
+    byRole: "حسب الدور ونوع الأعمال",
     roles: [
       { title: "المستقلون والمبدعون", desc: "احمِ عملك. احصل على الدفع في الوقت المحدد. لا مزيد من العملاء الذين لا يدفعون.", highlights: ["عقود الخدمة", "الاستشهادات", "تتبع الوقت"] },
       { title: "أصحاب العقارات", desc: "عقود إيجار محدثة. كل ما تحتاجه بطريقة قانونية.", highlights: ["الإيجار السكني", "الإيجار التجاري", "إدارة الممتلكات"] },

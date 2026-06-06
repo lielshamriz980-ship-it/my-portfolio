@@ -19,7 +19,7 @@ export default function Security() {
             viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <p className="text-sm font-semibold uppercase tracking-widest mb-4"
               style={{ color: "#4F46E5" }}>
-              אבטחה מיוחדת
+              {t.platform.securitySpecial || "אבטחה מיוחדת"}
             </p>
             <h2 className="font-black leading-tight mb-4"
               style={{ fontSize: "clamp(32px, 4vw, 48px)", color: "#1E1B4B" }}>

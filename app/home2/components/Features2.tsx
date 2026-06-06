@@ -116,7 +116,7 @@ export default function Features2() {
                 </div>
                 <button className="mt-8 w-fit flex items-center gap-2 text-sm font-bold transition-colors hover:opacity-80"
                   style={{ color: tab.color }}>
-                  למד עוד ←
+                  {t.features.learnMore}
                 </button>
               </div>
 
