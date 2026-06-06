@@ -8,7 +8,7 @@ export default function TemplateGrid() {
   const categories = t.templates.categories;
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-white" style={{ direction: t.dir }}>
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         {categories.map((cat, i) => (
           <motion.div key={i} className="mb-16">

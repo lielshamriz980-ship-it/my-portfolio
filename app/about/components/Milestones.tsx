@@ -7,14 +7,14 @@ export default function MilestoneSection() {
   const milestones = t.about.milestones;
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-blue-50 to-white">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-blue-50 to-white" style={{ direction: t.dir }}>
       <div className="max-w-4xl mx-auto px-6 lg:px-10">
         <motion.h2
           initial={{ opacity: 0, y: 26 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}
           className="font-black leading-tight mb-12 text-center"
           style={{ fontSize: "clamp(32px, 4.5vw, 52px)", color: "#1E1B4B" }}>
-          דרך הנסע
+          {t.dir === "rtl" ? "דרך הנסע" : "Our Journey"}
         </motion.h2>
 
         <div className="space-y-5">

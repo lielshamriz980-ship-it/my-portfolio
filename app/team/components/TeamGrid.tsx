@@ -8,7 +8,7 @@ export default function TeamGrid() {
   const members = t.team.members;
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-white to-blue-50">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-white to-blue-50" style={{ direction: t.dir }}>
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {members.map((member, i) => (

@@ -10,7 +10,7 @@ export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-white" style={{ direction: t.dir }}>
       <div className="max-w-3xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-16">
           <motion.h2

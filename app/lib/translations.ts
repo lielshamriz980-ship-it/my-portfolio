@@ -110,6 +110,7 @@ export type T = {
   pricing: {
     badge: string; h1: string; sub: string;
     monthly: string; annual: string; save: string;
+    yearSuffix: string;
     plans: {
       name: string; desc: string; price: number | null; note: string; cta: string;
       features: { text: string; included: boolean }[];
@@ -409,6 +410,7 @@ const he: T = {
         ],
       },
     ],
+    yearSuffix: "/שנה",
     faqHeading: "כל מה שצריך לדעת על התמחור",
     faqs: [
       { q: "אפשר לעבור בין תוכניות בכל רגע?", a: "בהחלט! אפשר לעבור למעלה או למטה בכל זמן. אם תעברו למטה, קצת בהן תחזיר פרורציה." },
@@ -861,6 +863,7 @@ const en: T = {
         ],
       },
     ],
+    yearSuffix: "/year",
     faqHeading: "Everything you need to know about pricing",
     faqs: [
       { q: "Can I switch plans anytime?", a: "Absolutely! You can upgrade or downgrade anytime. If you downgrade, we'll give you a prorated refund." },
@@ -1307,6 +1310,7 @@ const ar: T = {
         ],
       },
     ],
+    yearSuffix: "/السنة",
     faqHeading: "كل ما تحتاج لمعرفته عن التسعير",
     faqs: [
       { q: "هل يمكنني التبديل بين الخطط في أي وقت؟", a: "بالتأكيد! يمكنك الترقية أو الخفض في أي وقت. إذا خفضت، سنعيد لك جزء الأموال." },

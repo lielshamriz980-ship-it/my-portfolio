@@ -12,13 +12,13 @@ export default function PricingTable() {
   const getPrice = (plan: any) => {
     if (plan.price === null) return plan.note;
     if (isAnnual && plan.price > 0) {
-      return `₪${Math.floor(plan.price * 12 * 0.8)}/שנה`;
+      return `₪${Math.floor(plan.price * 12 * 0.8)}${t.pricing.yearSuffix}`;
     }
     return plan.price === 0 ? "חינם" : `₪${plan.price}/חודש`;
   };
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-white to-blue-50">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-white to-blue-50" style={{ direction: t.dir }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex justify-center mb-12">
           <motion.div

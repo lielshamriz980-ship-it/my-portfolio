@@ -10,7 +10,7 @@ export default function ResourcesGrid() {
   const sections = t.resources.sections;
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-white" style={{ direction: t.dir }}>
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         {sections.map((sec, i) => (
           <motion.div key={i} className="mb-16">

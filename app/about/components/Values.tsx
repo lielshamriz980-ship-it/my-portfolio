@@ -8,14 +8,14 @@ export default function ValuesSection() {
   const values = t.about.values;
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-white" style={{ direction: t.dir }}>
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <motion.h2
           initial={{ opacity: 0, y: 26 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}
           className="font-black leading-tight mb-12 text-center"
           style={{ fontSize: "clamp(32px, 4.5vw, 52px)", color: "#1E1B4B" }}>
-          הערכים שלנו
+          {t.dir === "rtl" ? "הערכים שלנו" : "Our Values"}
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
