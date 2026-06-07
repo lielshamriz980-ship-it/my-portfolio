@@ -121,8 +121,8 @@ export function AlertsServicePageV2() {
             {[
               {
                 icon: Mail,
-                title: "דוא"ל",
-                desc: "קבל דוא"ל מוקדש ומעויתת עם כל ההפרטים."
+                title: `דוא"ל`,
+                desc: `קבל דוא"ל מוקדש ומעויתת עם כל ההפרטים.`
               },
               {
                 icon: Smartphone,

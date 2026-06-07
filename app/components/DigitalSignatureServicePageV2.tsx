@@ -77,7 +77,7 @@ export function DigitalSignatureServicePageV2() {
             {[
               { num: 1, title: "העלה חוזה", desc: "בחר קובץ מהמחשב שלך" },
               { num: 2, title: "הזמן חותמים", desc: "הוסף אנשים לחתימה" },
-              { num: 3, title: "שלח לחתימה", desc: "דוא"ל מיידי ישירה" },
+              { num: 3, title: "שלח לחתימה", desc: `דוא"ל מיידי ישירה` },
               { num: 4, title: "סיום מידי", desc: "קבל תיעוד מלא" },
             ].map((step, i) => (
               <div key={i} className="relative">
