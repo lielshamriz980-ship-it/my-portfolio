@@ -3,17 +3,17 @@ import NavbarWiz from "../../../components/NavbarWiz";
 import CTA2 from "../../../home2/components/CTA2";
 import Footer2 from "../../../home2/components/Footer2";
 import { RichServiceTemplate } from "../../../components/RichServiceTemplate";
-import { LexAIServicePagePro } from "../../../components/LexAIServicePagePro";
-import { DigitalSignatureServicePage } from "../../../components/DigitalSignatureServicePage";
-import { ContractManagementServicePage } from "../../../components/ContractManagementServicePage";
+import { LexAIServicePageV2 } from "../../../components/LexAIServicePageV2";
+import { DigitalSignatureServicePageV2 } from "../../../components/DigitalSignatureServicePageV2";
+import { ContractManagementServicePageV2 } from "../../../components/ContractManagementServicePageV2";
 import { FreelancersServicePage } from "../../../components/FreelancersServicePage";
-import { AnalyticsServicePage } from "../../../components/AnalyticsServicePage";
-import { AlertsServicePage } from "../../../components/AlertsServicePage";
-import { SecurityPrivacyServicePageV2 } from "../../../components/SecurityPrivacyServicePageV2";
-import { InternationalContractsServicePage } from "../../../components/InternationalContractsServicePage";
-import { APIServicePageV2 } from "../../../components/APIServicePageV2";
-import { IntegrationsServicePageV2 } from "../../../components/IntegrationsServicePageV2";
-import { ClientManagementServicePage } from "../../../components/ClientManagementServicePage";
+import { AnalyticsServicePageV2 } from "../../../components/AnalyticsServicePageV2";
+import { AlertsServicePageV2 } from "../../../components/AlertsServicePageV2";
+import { SecurityPrivacyServicePageV3 } from "../../../components/SecurityPrivacyServicePageV3";
+import { InternationalContractsServicePageV2 } from "../../../components/InternationalContractsServicePageV2";
+import { APIServicePageV3 } from "../../../components/APIServicePageV3";
+import { IntegrationsServicePageV3 } from "../../../components/IntegrationsServicePageV3";
+import { ClientManagementServicePageV2 } from "../../../components/ClientManagementServicePageV2";
 
 export async function generateStaticParams() {
   return [
@@ -401,8 +401,7 @@ export default async function ServicePage({ params }: any) {
       <>
         <NavbarWiz />
         <main className="mt-16">
-          <LexAIServicePagePro />
-          <CTA2 />
+          <LexAIServicePageV2 />
         </main>
         <Footer2 />
       </>
@@ -414,8 +413,7 @@ export default async function ServicePage({ params }: any) {
       <>
         <NavbarWiz />
         <main className="mt-16">
-          <DigitalSignatureServicePage />
-          <CTA2 />
+          <DigitalSignatureServicePageV2 />
         </main>
         <Footer2 />
       </>
@@ -427,8 +425,7 @@ export default async function ServicePage({ params }: any) {
       <>
         <NavbarWiz />
         <main className="mt-16">
-          <ContractManagementServicePage />
-          <CTA2 />
+          <ContractManagementServicePageV2 />
         </main>
         <Footer2 />
       </>
@@ -453,8 +450,7 @@ export default async function ServicePage({ params }: any) {
       <>
         <NavbarWiz />
         <main className="mt-16">
-          <AnalyticsServicePage />
-          <CTA2 />
+          <AnalyticsServicePageV2 />
         </main>
         <Footer2 />
       </>
@@ -466,8 +462,7 @@ export default async function ServicePage({ params }: any) {
       <>
         <NavbarWiz />
         <main className="mt-16">
-          <AlertsServicePage />
-          <CTA2 />
+          <AlertsServicePageV2 />
         </main>
         <Footer2 />
       </>
@@ -479,8 +474,7 @@ export default async function ServicePage({ params }: any) {
       <>
         <NavbarWiz />
         <main className="mt-16">
-          <SecurityPrivacyServicePageV2 />
-          <CTA2 />
+          <SecurityPrivacyServicePageV3 />
         </main>
         <Footer2 />
       </>
@@ -492,8 +486,7 @@ export default async function ServicePage({ params }: any) {
       <>
         <NavbarWiz />
         <main className="mt-16">
-          <InternationalContractsServicePage />
-          <CTA2 />
+          <InternationalContractsServicePageV2 />
         </main>
         <Footer2 />
       </>
@@ -505,8 +498,7 @@ export default async function ServicePage({ params }: any) {
       <>
         <NavbarWiz />
         <main className="mt-16">
-          <APIServicePageV2 />
-          <CTA2 />
+          <APIServicePageV3 />
         </main>
         <Footer2 />
       </>
@@ -518,8 +510,7 @@ export default async function ServicePage({ params }: any) {
       <>
         <NavbarWiz />
         <main className="mt-16">
-          <IntegrationsServicePageV2 />
-          <CTA2 />
+          <IntegrationsServicePageV3 />
         </main>
         <Footer2 />
       </>
@@ -531,8 +522,7 @@ export default async function ServicePage({ params }: any) {
       <>
         <NavbarWiz />
         <main className="mt-16">
-          <ClientManagementServicePage />
-          <CTA2 />
+          <ClientManagementServicePageV2 />
         </main>
         <Footer2 />
       </>
