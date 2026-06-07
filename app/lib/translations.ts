@@ -6,7 +6,7 @@ export type T = {
   nav: {
     platform: string; solutions: string; templates: string;
     pricing: string; resources: string; company: string;
-    cta: string; login: string;
+    cta: string; login: string; back: string;
     platformMenu: {
       col1: string; col2: string; col3: string;
       lexAI: string; lexAIDesc: string;
@@ -179,7 +179,7 @@ const he: T = {
   nav: {
     platform: "פלטפורמה", solutions: "פתרונות", templates: "תבניות",
     pricing: "תמחור", resources: "משאבים", company: "חברה",
-    cta: "קבל הדגמה", login: "כניסה",
+    cta: "קבל הדגמה", login: "כניסה", back: "חזור",
     platformMenu: {
       col1: "כלי הליבה", col2: "כלים מתקדמים", col3: "בקרוב",
       lexAI: "Lex AI", lexAIDesc: "יצור חוזה מקצועי בשיחה עם AI תוך 2 דקות",
@@ -638,7 +638,7 @@ const en: T = {
   nav: {
     platform: "Platform", solutions: "Solutions", templates: "Templates",
     pricing: "Pricing", resources: "Resources", company: "Company",
-    cta: "Get a Demo", login: "Login",
+    cta: "Get a Demo", login: "Login", back: "Back",
     platformMenu: {
       col1: "Core Tools", col2: "Advanced Features", col3: "Coming Soon",
       lexAI: "Lex AI", lexAIDesc: "Create a professional contract in a 2-minute AI conversation",
@@ -1089,7 +1089,7 @@ const ar: T = {
   nav: {
     platform: "المنصة", solutions: "الحلول", templates: "القوالب",
     pricing: "الأسعار", resources: "الموارد", company: "الشركة",
-    cta: "احصل على عرض", login: "دخول",
+    cta: "احصل على عرض", login: "دخول", back: "العودة",
     platformMenu: {
       col1: "الأدوات الأساسية", col2: "ميزات متقدمة", col3: "قريباً",
       lexAI: "Lex AI", lexAIDesc: "أنشئ عقداً احترافياً في محادثة AI مدتها دقيقتان",

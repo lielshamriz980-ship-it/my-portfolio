@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import NavbarWiz from "../components/NavbarWiz";
 import Hero2 from "./components/Hero2";
 import TrustBar from "./components/TrustBar";
 import PainPoints from "./components/PainPoints";
@@ -11,7 +11,7 @@ import Footer2 from "./components/Footer2";
 export default function Home2() {
   return (
     <>
-      <Navbar />
+      <NavbarWiz />
       <main>
         <Hero2 />
         <TrustBar />

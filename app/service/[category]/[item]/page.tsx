@@ -1,7 +1,19 @@
-import { ArrowRight, CheckCircle, Zap, Shield, Users, Code, Bell, Globe, Rocket, TrendingUp, Handshake } from "lucide-react";
+import { ArrowRight, CheckCircle, Zap, Shield, Users, Code, Bell, Globe, Rocket, TrendingUp, Handshake, BarChart3, LineChart, Gauge } from "lucide-react";
 import NavbarWiz from "../../../components/NavbarWiz";
 import CTA2 from "../../../home2/components/CTA2";
 import Footer2 from "../../../home2/components/Footer2";
+import { RichServiceTemplate } from "../../../components/RichServiceTemplate";
+import { LexAIServicePagePro } from "../../../components/LexAIServicePagePro";
+import { DigitalSignatureServicePage } from "../../../components/DigitalSignatureServicePage";
+import { ContractManagementServicePage } from "../../../components/ContractManagementServicePage";
+import { FreelancersServicePage } from "../../../components/FreelancersServicePage";
+import { AnalyticsServicePage } from "../../../components/AnalyticsServicePage";
+import { AlertsServicePage } from "../../../components/AlertsServicePage";
+import { SecurityPrivacyServicePageV2 } from "../../../components/SecurityPrivacyServicePageV2";
+import { InternationalContractsServicePage } from "../../../components/InternationalContractsServicePage";
+import { APIServicePageV2 } from "../../../components/APIServicePageV2";
+import { IntegrationsServicePageV2 } from "../../../components/IntegrationsServicePageV2";
+import { ClientManagementServicePage } from "../../../components/ClientManagementServicePage";
 
 export async function generateStaticParams() {
   return [
@@ -53,242 +65,302 @@ export async function generateStaticParams() {
 const serviceContent: Record<string, any> = {
   "lex-ai": {
     title: "Lex AI",
-    subtitle: "AI-Powered Contract Generation",
-    description: "Create professional contracts in minutes with conversational AI that understands Israeli law.",
+    subtitle: "יצירת חוזים באמצעות AI",
+    description: "צור חוזים מקצועיים תוך דקות עם AI יצירתי המבין את המשפט הישראלי.",
     icon: Zap,
     color: "#4F46E5",
+    stats: [
+      { label: "חוזים ליום", value: "2,500+", icon: BarChart3 },
+      { label: "דיוק משפטי", value: "99.9%", icon: Gauge },
+      { label: "זמן חיסכון", value: "80%", icon: TrendingUp }
+    ],
     features: [
-      "Natural conversation flow - no legal jargon needed",
-      "Automatic risk analysis and compliance check",
-      "29+ templates tailored to Israeli law",
-      "Real-time suggestions and improvements",
-      "Instant PDF generation",
-      "Contract quality score"
+      "שיחה טבעית ללא זרחון משפטי",
+      "ניתוח סיכונים אוטומטי וביקורת עמידה בתקנות",
+      "29+ תבניות מותאמות לחוק ישראלי",
+      "הצעות וחיזויים בזמן אמת",
+      "יצירת PDF מיידית",
+      "דירוג איכות החוזה"
     ],
     benefits: [
-      { title: "2 Minutes Average", desc: "Create contract in just a conversation" },
-      { title: "100% Legal", desc: "Full compliance with Israeli contract law" },
-      { title: "Smart AI", desc: "Learns from your preferences over time" }
+      { title: "2 דקות בממוצע", desc: "יצור חוזה בשיחה אחת עם AI" },
+      { title: "100% משפטי", desc: "עמידה מלאה בחוק החוזים הישראלי" },
+      { title: "AI חכם", desc: "לומד מההעדפות שלך לאורך הזמן" }
     ]
   },
   "digital-signature": {
-    title: "Digital Signature",
-    subtitle: "Legally Binding Electronic Signatures",
-    description: "Send contracts for signature via WhatsApp, SMS, or email. Full audit trail included.",
+    title: "חתימה דיגיטלית",
+    subtitle: "חתימות אלקטרוניות מחייבות משפטית",
+    description: "שלח חוזים לחתימה דרך WhatsApp, SMS או אימייל. כולל ביקורת מלאה.",
     icon: Shield,
     color: "#059669",
+    stats: [
+      { label: "קצב חתימה", value: "15 שניות", icon: TrendingUp },
+      { label: "עמידה חוקית", value: "100%", icon: Shield },
+      { label: "מקבלים מרובים", value: "אינסופי", icon: Users }
+    ],
     features: [
-      "Legally binding digital signatures",
-      "Full audit trail with IP and timestamp",
-      "Mobile-friendly signing experience",
-      "Multiple recipient support",
-      "Reminder notifications",
-      "Signature verification certificates"
+      "חתימות דיגיטליות מחייבות משפטית",
+      "רישום ביקורת מלא עם IP וחותמת זמן",
+      "חוויית חתימה ידידותית לנייד",
+      "תמיכה במקבלים מרובים",
+      "התראות תזכורת אוטומטיות",
+      "אישורי אמת חתימה"
     ],
     benefits: [
-      { title: "90% Faster", desc: "Recipients sign from their phone in seconds" },
-      { title: "Court-Ready", desc: "Legally defensible in Israeli courts" },
-      { title: "Zero Friction", desc: "No special software needed to sign" }
+      { title: "90% יותר מהר", desc: "מקבלים חותמים מהנייד תוך שניות" },
+      { title: "מוכן לבית משפט", desc: "ניתן להגנה בבתי משפט ישראליים" },
+      { title: "ללא מורכבות", desc: "לא צריך תוכנה מיוחדת לחתימה" }
     ]
   },
   "contract-management": {
-    title: "Contract Management",
-    subtitle: "Central Dashboard for All Your Deals",
-    description: "Track every contract's status in real-time. Know who signed, what's pending, and when it expires.",
+    title: "ניהול חוזים",
+    subtitle: "לוח בקרה מרכזי לכל העסקאות",
+    description: "עקוב אחר סטטוס כל חוזה בזמן אמת. דע מי חתם, מה עדיין ממתין ומתי הוא פוקע.",
     icon: Users,
     color: "#7C3AED",
+    stats: [
+      { label: "חוזים שנוראים", value: "50,000+", icon: BarChart3 },
+      { label: "זמן חיפוש", value: "< 1 שניה", icon: Gauge },
+      { label: "בקרות אוטומטיות", value: "24/7", icon: TrendingUp }
+    ],
     features: [
-      "Real-time contract status tracking",
-      "Smart filters and search",
-      "Expiration date alerts",
-      "Client-level organization",
-      "Archive and historical records",
-      "Bulk export to Excel/PDF"
+      "עקיבה אחר סטטוס חוזים בזמן אמת",
+      "סנונים וחיפוש חכמים",
+      "התראות תאריך פקיעה",
+      "ארגון ברמת הלקוח",
+      "ארכיון ורקורדים היסטוריים",
+      "ייצוא בתפזורת ל-Excel/PDF"
     ],
     benefits: [
-      { title: "Single Source of Truth", desc: "All contracts in one place" },
-      { title: "Never Miss a Deadline", desc: "Automatic expiration alerts" },
-      { title: "Client View", desc: "See all deals with each client instantly" }
+      { title: "מקור אמת יחיד", desc: "כל החוזים במקום אחד" },
+      { title: "אל תשכח מועד", desc: "התראות אוטומטיות על פקיעה" },
+      { title: "תצוגת לקוח", desc: "ראה את כל העסקאות עם כל לקוח מיד" }
     ]
   },
   "client-management": {
-    title: "Client Management",
-    subtitle: "Simple CRM for Contract Relationships",
-    description: "Keep all client information organized. Track every deal, payment term, and contract history.",
+    title: "ניהול לקוחות",
+    subtitle: "CRM פשוט ליחסי חוזים",
+    description: "שמור על כל פרטי הלקוח מסודרים. עקוב אחרי כל עסקה, תנאי תשלום והיסטוריית חוזים.",
     icon: Users,
     color: "#DB2777",
+    stats: [
+      { label: "נתונים לקוח", value: "סנכרון חי", icon: Gauge },
+      { label: "היסטוריית עסקאות", value: "מלא", icon: LineChart },
+      { label: "עמידות נתונים", value: "99.99%", icon: Shield }
+    ],
     features: [
-      "Client profiles and contact details",
-      "Transaction history per client",
-      "Deal value tracking",
-      "Payment term notes",
-      "Contact preferences",
-      "Export client lists"
+      "פרופילי לקוח ופרטי יצירת קשר",
+      "היסטוריית עסקאות לכל לקוח",
+      "עקיבה אחר ערך עסקה",
+      "הערות תנאי תשלום",
+      "העדפות יצירת קשר",
+      "ייצוא רשימות לקוחות"
     ],
     benefits: [
-      { title: "Quick Access", desc: "Find any client's info instantly" },
-      { title: "History Tracking", desc: "See all past deals with one click" },
-      { title: "Relationship View", desc: "Understand each client's value" }
+      { title: "גישה מהירה", desc: "מצא את פרטי הלקוח כל שניה" },
+      { title: "עקיבה היסטורית", desc: "ראה את כל העסקאות הקודמות בלחיצה" },
+      { title: "תצוגת קשר", desc: "הבין את שווי כל לקוח" }
     ]
   },
   "alerts": {
-    title: "Smart Alerts",
-    subtitle: "Get Notified When It Matters",
-    description: "SMS and push notifications keep you informed of every signature, deadline, and status change.",
+    title: "התראות חכמות",
+    subtitle: "קבל התראה כשחשוב",
+    description: "הודעות SMS ו-Push שמודיעות לך על כל חתימה, מועד ושינוי סטטוס.",
     icon: Bell,
     color: "#F59E0B",
+    stats: [
+      { label: "בדיקות ביום", value: "10,000+", icon: TrendingUp },
+      { label: "דיוק", value: "100%", icon: Gauge },
+      { label: "פיגור", value: "< 1 שניה", icon: Zap }
+    ],
     features: [
-      "SMS & push notifications",
-      "Real-time signature alerts",
-      "Deadline reminders",
-      "Custom alert rules",
-      "Multi-device support",
-      "Do not disturb scheduling"
+      "הודעות SMS ו-Push",
+      "התראות חתימה בזמן אמת",
+      "תזכורים מועדים",
+      "כללי התראה מותאמים",
+      "תמיכה ברמות התקן מרובות",
+      "תזמון 'אל תשדר' אוטומטי"
     ],
     benefits: [
-      { title: "Never Miss a Signature", desc: "Get notified instantly when someone signs" },
-      { title: "Deadline Protection", desc: "Never forget an expiring contract" },
-      { title: "Always in Control", desc: "Customize what notifications you get" }
+      { title: "אל תפספס חתימה", desc: "קבל התראה מיידית כשמישהו חותם" },
+      { title: "הגנה על מועדים", desc: "לעולם אל תשכח חוזה שפוקע" },
+      { title: "תמיד בשליטה", desc: "התאם אילו התראות אתה מקבל" }
     ]
   },
   "security-privacy": {
-    title: "Security & Privacy",
-    subtitle: "Enterprise-Grade Protection",
-    description: "Your data is protected with bank-level encryption, two-factor authentication, and compliance certifications.",
+    title: "אבטחה ופרטיות",
+    subtitle: "הגנה ברמת ארגון",
+    description: "הנתונים שלך מוגנים בהצפנה ברמת בנק, אימות דו-שלבי, והסמכות תאימות.",
     icon: Shield,
     color: "#DC2626",
+    stats: [
+      { label: "תקן הצפנה", value: "AES-256", icon: Shield },
+      { title: "הסמכות", value: "ISO 27001", icon: CheckCircle },
+      { label: "התקפות מונעות", value: "100%", icon: Gauge }
+    ],
     features: [
-      "SSL/TLS encryption in transit",
-      "AES-256 encryption at rest",
-      "Two-factor authentication (2FA)",
-      "ISO 27001 certified",
-      "SOC 2 Type II compliant",
-      "GDPR compliant"
+      "הצפנת SSL/TLS בעברת נתונים",
+      "הצפנת AES-256 במנוחה",
+      "אימות דו-שלבי (2FA)",
+      "מוסמך ISO 27001",
+      "עמידה ב-SOC 2 Type II",
+      "עמידה ב-GDPR"
     ],
     benefits: [
-      { title: "Bank-Level Security", desc: "Same encryption as financial institutions" },
-      { title: "Compliance Ready", desc: "Meet regulatory requirements instantly" },
-      { title: "Your Data, Your Control", desc: "Zero sharing with third parties" }
+      { title: "אבטחת בנקים", desc: "אותה הצפנה כמו במוסדות פיננסיים" },
+      { title: "מוכן לעמידה בתקנות", desc: "עמוד בדרישות רגולטוריות מיד" },
+      { title: "הנתונים שלך, השליטה שלך", desc: "אפס שיתוף עם צדדים שלישיים" }
     ]
   },
   "api": {
-    title: "API Access",
-    subtitle: "Build Custom Integrations",
-    description: "Full API for developers to build custom workflows and integrations with existing systems.",
+    title: "גישת API",
+    subtitle: "בנה אינטגרציות מותאמות",
+    description: "API מלא למפתחים לבניית תזרימי עבודה מותאמים ואינטגרציות עם מערכות קיימות.",
     icon: Code,
     color: "#0891B2",
+    stats: [
+      { label: "דרישות ליום", value: "1M+", icon: BarChart3 },
+      { label: "SLA", value: "99.99%", icon: Shield },
+      { label: "תיעוד", value: "מלא", icon: Code }
+    ],
     features: [
-      "REST API with full documentation",
-      "Webhook support for events",
-      "Rate limiting and scaling",
-      "OAuth 2.0 authentication",
-      "Sandbox environment",
-      "Developer dashboard"
+      "REST API עם תיעוד מלא",
+      "תמיכה ב-Webhook לאירועים",
+      "הגבלת קצב והרחבה",
+      "אימות OAuth 2.0",
+      "סביבת sandbox",
+      "לוח בקרה מפתחים"
     ],
     benefits: [
-      { title: "Full Control", desc: "Automate exactly what you need" },
-      { title: "Real-Time Sync", desc: "Webhooks keep systems in sync instantly" },
-      { title: "Enterprise Scale", desc: "Handle thousands of contracts daily" }
+      { title: "שליטה מלאה", desc: "בטל בדיוק את מה שצריך" },
+      { title: "סנכרון בזמן אמת", desc: "Webhooks שומרים מערכות מסונכרנות מיד" },
+      { title: "קנה מידה ארגוני", desc: "טופל עם אלפי חוזים ביום" }
     ]
   },
   "integrations": {
-    title: "Integrations",
-    subtitle: "Connect to 20+ Tools",
-    description: "Connect DealLayer to WhatsApp, Gmail, Zapier, and more. Keep everything in sync.",
+    title: "אינטגרציות",
+    subtitle: "חבר ל-20+ כלים",
+    description: "חבר את DealLayer ל-WhatsApp, Gmail, Zapier ועוד. שמור הכל מסונכרן.",
     icon: Globe,
     color: "#06B6D4",
+    stats: [
+      { label: "אינטגרציות", value: "20+", icon: Globe },
+      { label: "סנכרון", value: "real-time", icon: TrendingUp },
+      { label: "כישלונות", value: "0%", icon: CheckCircle }
+    ],
     features: [
-      "WhatsApp Business integration",
-      "Gmail and Outlook sync",
-      "Zapier automation",
-      "Slack notifications",
-      "Google Drive storage",
-      "20+ pre-built integrations"
+      "אינטגרציה WhatsApp Business",
+      "סנכרון Gmail ו-Outlook",
+      "אוטומציית Zapier",
+      "הודעות Slack",
+      "אחסון Google Drive",
+      "20+ אינטגרציות מובנות"
     ],
     benefits: [
-      { title: "Seamless Workflow", desc: "Use tools you already know" },
-      { title: "Automation", desc: "Reduce manual work by 80%" },
-      { title: "No Switching", desc: "Stay in your favorite apps" }
+      { title: "זרימת עבודה חלקה", desc: "משתמש בכלים שכבר מכיר" },
+      { title: "אוטומציה", desc: "הפחת עבודה ידנית ב-80%" },
+      { title: "אל תחליף", desc: "הישאר ביישומים האהובים עליך" }
     ]
   },
   "blog": {
-    title: "DealLayer Blog",
-    subtitle: "Insights & Updates",
-    description: "Stay updated with latest tips, contract trends, and best practices for managing your deals.",
+    title: "בלוג DealLayer",
+    subtitle: "תובנות ועדכונים",
+    description: "הישאר מעודכן עם טיפים אחרונים, מגמות חוזים ושיטות אופטימליות לניהול עסקאות.",
     icon: Zap,
     color: "#7C3AED",
+    stats: [
+      { label: "מאמרים בשנה", value: "52+", icon: BarChart3 },
+      { label: "קוראים", value: "10,000+", icon: Users },
+      { label: "ממוצע קריאה", value: "8 דק'", icon: TrendingUp }
+    ],
     features: [
-      "Weekly articles on contract management",
-      "Best practices and case studies",
-      "Industry news and trends",
-      "Expert insights from our team",
-      "Free downloadable guides",
-      "Email newsletter subscription"
+      "מאמרים שבועיים על ניהול חוזים",
+      "שיטות אופטימליות ומקרי מבחן",
+      "חדשות וטרנדים בתעשייה",
+      "תובנות מומחים מהצוות שלנו",
+      "מדריכים הניתנים להורדה בחינם",
+      "הרשמה לניוזלטר בדוא״ל"
     ],
     benefits: [
-      { title: "Stay Informed", desc: "Get the latest contract management tips" },
-      { title: "Learn from Experts", desc: "Real-world strategies and best practices" },
-      { title: "Grow Your Business", desc: "Apply proven techniques to your work" }
+      { title: "הישאר מעודכן", desc: "קבל טיפים אחרונים על ניהול חוזים" },
+      { title: "למד מחומרים מומחים", desc: "אסטרטגיות בעולם האמת וממארות אופטימליות" },
+      { title: "גדל את העסק שלך", desc: "יישם טכניקות מוכחות בעבודתך" }
     ]
   },
   "careers": {
-    title: "Careers at DealLayer",
-    subtitle: "Join Our Team",
-    description: "We're hiring talented people who want to revolutionize contract management. Build your career with us.",
+    title: "קריירה ב-DealLayer",
+    subtitle: "הצטרף לצוות שלנו",
+    description: "אנחנו משכרים אנשים מוכשרים שרוצים להחולל מהפכה בניהול חוזים. בנה קריירה איתנו.",
     icon: Rocket,
     color: "#F59E0B",
+    stats: [
+      { label: "מעמדות פתוחות", value: "10+", icon: Users },
+      { label: "צוות גלובלי", value: "50+", icon: Globe },
+      { label: "צמיחה שנתית", value: "40%", icon: TrendingUp }
+    ],
     features: [
-      "Competitive salary and benefits",
-      "Remote-friendly work environment",
-      "Professional development budget",
-      "Health insurance and wellness programs",
-      "Flexible working hours",
-      "Equity compensation"
+      "שכר ותנאים תחרותיים",
+      "סביבת עבודה ידידותית לעבודה מרחוק",
+      "תקציב פיתוח מקצועי",
+      "ביטוח בריאות ותוכניות כושר",
+      "שעות עבודה גמישות",
+      "פיצוי בדיוק מניות"
     ],
     benefits: [
-      { title: "Grow with Us", desc: "Work on product used by thousands" },
-      { title: "Great Culture", desc: "Collaborative and supportive team" },
-      { title: "Make Impact", desc: "Help businesses manage contracts better" }
+      { title: "גדל איתנו", desc: "עבוד על מוצר המשמש אלפים" },
+      { title: "תרבות מעולה", desc: "צוות שיתופי ותומך" },
+      { title: "הנח השפעה", desc: "עזור לעסקים לנהל חוזים בצורה טובה יותר" }
     ]
   },
   "investors": {
-    title: "For Investors",
-    subtitle: "Investment Opportunity",
-    description: "DealLayer is raising capital to accelerate growth. Learn about our funding rounds and vision.",
+    title: "למשקיעים",
+    subtitle: "הזדמנות השקעה",
+    description: "DealLayer גורפת הון להאיץ גדילה. דע עוד על סבבי הממון שלנו והחזון שלנו.",
     icon: TrendingUp,
     color: "#DC2626",
+    stats: [
+      { label: "MRR", value: "$2M+", icon: TrendingUp },
+      { label: "חודשי גדילה", value: "15%", icon: BarChart3 },
+      { label: "עמל", value: "ירוק", icon: Gauge }
+    ],
     features: [
-      "Series A funding round open",
-      "Proven market demand and growth",
-      "Experienced founding team",
-      "Clear path to profitability",
-      "Strategic partnerships in place",
-      "International expansion plans"
+      "סבב Series A פתוח",
+      "ביקוש שוק מוכח וגדילה",
+      "צוות מייסדים מנוסה",
+      "נתיב ברור לרווחיות",
+      "שותפויות אסטרטגיות בעמדה",
+      "תוכניות הרחבה בינלאומית"
     ],
     benefits: [
-      { title: "Growing Market", desc: "Contract management is a $20B+ TAM" },
-      { title: "Strong Unit Economics", desc: "High retention and net MRR growth" },
-      { title: "Market Leader", desc: "First in Hebrew, expanding globally" }
+      { title: "שוק גדל", desc: "ניהול חוזים הוא TAM של 20B+" },
+      { title: "כלכלת יחידות חזקה", desc: "שמירה גבוהה וגדילת MRR נטו" },
+      { title: "מנהיג שוק", desc: "ראשון בעברית, מתרחב לעולם" }
     ]
   },
   "partners": {
-    title: "Become a Partner",
-    subtitle: "Partnership Opportunities",
-    description: "Build your business with DealLayer. Resell, integrate, or co-market with us.",
+    title: "היו שותף",
+    subtitle: "הזדמנויות שותפות",
+    description: "בנה את העסק שלך עם DealLayer. מכור מחדש, בצע אינטגרציה או שיווק משותף איתנו.",
     icon: Handshake,
     color: "#10B981",
+    stats: [
+      { label: "שותפים", value: "100+", icon: Users },
+      { label: "פוטנציאל הכנסה", value: "$100K+", icon: TrendingUp },
+      { label: "תמיכה", value: "24/7", icon: Globe }
+    ],
     features: [
-      "Reseller partnership program",
-      "Integration partnerships with platforms",
-      "Co-marketing opportunities",
-      "Dedicated partner support",
-      "Competitive commission structure",
-      "Partner portal and resources"
+      "תוכנית שותפות מחדש מכרה",
+      "שותפויות אינטגרציה עם פלטפורמות",
+      "הזדמנויות שיווק משותף",
+      "תמיכת שותף ייעודית",
+      "מבנה עמלה תחרותי",
+      "פורטל שותף ומשאבים"
     ],
     benefits: [
-      { title: "New Revenue Stream", desc: "Earn commissions on every deal" },
-      { title: "Trusted Solution", desc: "Add value to your customer base" },
-      { title: "Full Support", desc: "Partner success team ready to help" }
+      { title: "זרם הכנסות חדש", desc: "הרוויח עמלות על כל עסקה" },
+      { title: "פתרון מהימן", desc: "הוסף ערך לבסיס הלקוחות שלך" },
+      { title: "תמיכה מלאה", desc: "צוות הצלחת שותפים מוכן לעזור" }
     ]
   }
 };
@@ -303,27 +375,176 @@ export default async function ServicePage({ params }: any) {
 
   const content = serviceContent[item] || {
     title: decodeSlug(item),
-    subtitle: "Premium Service",
-    description: "Professional solution designed for your success.",
+    subtitle: "שירות פרימיום",
+    description: "פתרון מקצועי שעוצב להצלחתך.",
     icon: Zap,
     color: "#4F46E5",
-    features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"],
+    stats: [
+      { label: "יתרון 1", value: "מעולה", icon: Gauge },
+      { label: "יתרון 2", value: "מעולה", icon: Gauge },
+      { label: "יתרון 3", value: "מעולה", icon: Gauge }
+    ],
+    features: ["תכונה 1", "תכונה 2", "תכונה 3", "תכונה 4"],
     benefits: [
-      { title: "Benefit 1", desc: "Description of benefit" },
-      { title: "Benefit 2", desc: "Description of benefit" },
-      { title: "Benefit 3", desc: "Description of benefit" }
+      { title: "יתרון 1", desc: "תיאור היתרון" },
+      { title: "יתרון 2", desc: "תיאור היתרון" },
+      { title: "יתרון 3", desc: "תיאור היתרון" }
     ]
   };
 
   const Icon = content.icon;
   const categoryTitle = decodeSlug(category);
 
+  // Special handling for unique professional pages
+  if (item === "lex-ai") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <LexAIServicePagePro />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "digital-signature") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <DigitalSignatureServicePage />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "contract-management") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <ContractManagementServicePage />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "freelancers-creators") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <FreelancersServicePage />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "analytics") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <AnalyticsServicePage />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "alerts") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <AlertsServicePage />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "security-privacy") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <SecurityPrivacyServicePageV2 />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "international-contracts") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <InternationalContractsServicePage />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "api") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <APIServicePageV2 />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "integrations") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <IntegrationsServicePageV2 />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "client-management") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <ClientManagementServicePage />
+          <CTA2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
   return (
     <>
       <NavbarWiz />
       <main>
-        {/* Hero Section */}
-        <section className="py-20 md:py-36 relative overflow-hidden bg-white mt-16" style={{ direction: "ltr" }}>
+        {/* Rich Hero Section with Stats */}
+        <section className="py-20 md:py-36 relative overflow-hidden bg-white mt-16" style={{ direction: "rtl" }}>
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-30 blur-3xl"
               style={{ background: `radial-gradient(circle, ${content.color}40 0%, transparent 70%)` }} />
@@ -341,30 +562,46 @@ export default async function ServicePage({ params }: any) {
               </p>
             </div>
 
-            <h1 className="font-black leading-tight mb-4" style={{ fontSize: "clamp(44px, 6vw, 72px)", color: "#1E1B4B" }}>
+            <h1 className="font-black leading-tight mb-4 text-right" style={{ fontSize: "clamp(44px, 6vw, 72px)", color: "#1E1B4B" }}>
               {content.title}
             </h1>
 
-            <p className="text-xl font-semibold mb-6" style={{ color: content.color }}>
+            <p className="text-xl font-semibold mb-6 text-right" style={{ color: content.color }}>
               {content.subtitle}
             </p>
 
-            <p className="text-lg leading-relaxed mb-10 max-w-2xl" style={{ color: "#6B7280" }}>
+            <p className="text-lg leading-relaxed mb-10 max-w-2xl text-right" style={{ color: "#6B7280" }}>
               {content.description}
             </p>
 
             <button className="btn-shimmer flex items-center gap-2 px-8 py-4 text-lg font-bold rounded-xl text-white"
               style={{ background: content.color }}>
-              Start Free Trial <ArrowRight size={20} />
+              <ArrowRight size={20} /> התחל ניסיון חינם
             </button>
+          </div>
+
+          {/* Stats Row */}
+          <div className="max-w-6xl mx-auto px-6 lg:px-10 mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {content.stats.map((stat: any, i: number) => {
+              const StatIcon = stat.icon || Gauge;
+              return (
+                <div key={i} className="rounded-2xl p-6 bg-gradient-to-br from-white to-indigo-50 border border-indigo-100">
+                  <div className="flex items-center gap-3 mb-2">
+                    <StatIcon size={20} color={content.color} />
+                    <p className="text-sm text-gray-600">{stat.label}</p>
+                  </div>
+                  <p className="text-2xl font-black" style={{ color: content.color }}>{stat.value}</p>
+                </div>
+              );
+            })}
           </div>
         </section>
 
         {/* Benefits Section */}
         <section className="py-20 md:py-28 bg-gradient-to-b from-white to-blue-50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <h2 className="font-black text-center mb-16" style={{ fontSize: "clamp(32px, 4.5vw, 52px)", color: "#1E1B4B" }}>
-              Why Choose This Feature?
+            <h2 className="font-black text-center mb-16 text-right" style={{ fontSize: "clamp(32px, 4.5vw, 52px)", color: "#1E1B4B" }}>
+              למה לבחור בתכונה זו?
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -386,16 +623,16 @@ export default async function ServicePage({ params }: any) {
         <section className="py-20 md:py-28 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h2 className="font-black text-center mb-16" style={{ fontSize: "clamp(32px, 4.5vw, 52px)", color: "#1E1B4B" }}>
-              Key Features
+              תכונות עיקריות
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {content.features.map((feature: string, i: number) => (
-                <div key={i} className="rounded-2xl p-6 flex gap-4 bg-white" style={{ border: "1.5px solid #E5E7EB" }}>
-                  <CheckCircle size={24} color={content.color} className="flex-shrink-0 mt-1" />
+                <div key={i} className="rounded-2xl p-6 flex gap-4 bg-white text-right" style={{ border: "1.5px solid #E5E7EB" }}>
                   <p className="font-semibold text-lg" style={{ color: "#1E1B4B" }}>
                     {feature}
                   </p>
+                  <CheckCircle size={24} color={content.color} className="flex-shrink-0 mt-1" />
                 </div>
               ))}
             </div>

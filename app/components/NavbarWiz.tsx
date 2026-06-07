@@ -299,6 +299,7 @@ export default function NavbarWiz() {
   const [open, setOpen] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSelectedCategory, setMobileSelectedCategory] = useState<number | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const menu = useMenuConfig(t);
   const isRtl = t.dir === "rtl";
@@ -396,7 +397,7 @@ export default function NavbarWiz() {
         </div>
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer with hierarchical navigation */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -405,30 +406,78 @@ export default function NavbarWiz() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
             className="lg:hidden overflow-hidden bg-white border-t border-gray-100">
-            <div className="px-6 py-5 flex flex-col gap-3">
-              <a href="/platform" className="text-base font-medium py-2 text-gray-700 border-b border-gray-50">
-                {t.nav.platform}
-              </a>
-              <a href="/solutions" className="text-base font-medium py-2 text-gray-700 border-b border-gray-50">
-                {t.nav.solutions}
-              </a>
-              <a href="/templates" className="text-base font-medium py-2 text-gray-700 border-b border-gray-50">
-                {t.nav.templates}
-              </a>
-              <a href="/pricing" className="text-base font-medium py-2 text-gray-700 border-b border-gray-50">
-                {t.nav.pricing}
-              </a>
-              <a href="/resources" className="text-base font-medium py-2 text-gray-700 border-b border-gray-50">
-                {t.nav.resources}
-              </a>
-              <a href="/about" className="text-base font-medium py-2 text-gray-700 border-b border-gray-50">
-                {t.nav.company}
-              </a>
-              <div className="flex flex-col gap-2 pt-3">
-                <a href="/contact" className="w-full py-3 text-center text-base font-semibold rounded-xl border border-gray-200 text-gray-700">{t.nav.login}</a>
-                <a href="/platform" className="w-full py-3 text-center text-base font-bold text-white rounded-xl"
-                  style={{ background: "#2563EB" }}>{t.nav.cta}</a>
-              </div>
+            <div className="px-6 py-5 flex flex-col gap-0">
+              {mobileSelectedCategory === null ? (
+                // Category list
+                <>
+                  {menu.slice(0, -1).map((category, i) => (
+                    <button key={i}
+                      onClick={() => setMobileSelectedCategory(i)}
+                      className="flex items-center justify-between py-3.5 px-3 border-b border-gray-50 text-base font-medium text-gray-700 hover:bg-indigo-50 rounded-lg transition-colors"
+                      style={{ textAlign: isRtl ? "right" : "left" }}>
+                      <span>{category.label}</span>
+                      <ChevronDown size={16} strokeWidth={2} style={{ transform: isRtl ? "rotate(270deg)" : "rotate(90deg)" }} />
+                    </button>
+                  ))}
+                  {/* Company menu */}
+                  <button onClick={() => setMobileSelectedCategory(menu.length - 1)}
+                    className="flex items-center justify-between py-3.5 px-3 border-b border-gray-50 text-base font-medium text-gray-700 hover:bg-indigo-50 rounded-lg transition-colors"
+                    style={{ textAlign: isRtl ? "right" : "left" }}>
+                    <span>{t.nav.company}</span>
+                    <ChevronDown size={16} strokeWidth={2} style={{ transform: isRtl ? "rotate(270deg)" : "rotate(90deg)" }} />
+                  </button>
+
+                  {/* Pricing & CTA */}
+                  <a href="/pricing" className="py-3.5 px-3 border-b border-gray-50 text-base font-medium text-gray-700 hover:bg-indigo-50 rounded-lg transition-colors block"
+                    style={{ textAlign: isRtl ? "right" : "left" }}>
+                    {t.nav.pricing}
+                  </a>
+
+                  <div className="flex flex-col gap-2 pt-4">
+                    <a href="/contact" className="w-full py-3 text-center text-base font-semibold rounded-xl border border-gray-200 text-gray-700">{t.nav.login}</a>
+                    <a href="/platform" className="w-full py-3 text-center text-base font-bold text-white rounded-xl"
+                      style={{ background: "#2563EB" }}>{t.nav.cta}</a>
+                  </div>
+                </>
+              ) : (
+                // Subcategory list
+                <>
+                  <button onClick={() => setMobileSelectedCategory(null)}
+                    className="flex items-center gap-2.5 py-3.5 px-3 mb-3 text-base font-medium text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                    style={{ textAlign: isRtl ? "right" : "left" }}>
+                    <ChevronDown size={16} strokeWidth={2} style={{ transform: isRtl ? "rotate(90deg)" : "rotate(270deg)" }} />
+                    <span>{t.nav.back || "Back"}</span>
+                  </button>
+
+                  <div className="border-t-2 border-blue-100 pt-3 pb-2">
+                    <p className="text-xs font-black uppercase tracking-widest px-3 py-2"
+                      style={{ color: "#9CA3AF" }}>
+                      {menu[mobileSelectedCategory]?.label}
+                    </p>
+                  </div>
+
+                  {menu[mobileSelectedCategory]?.columns.map((col: any, ci: number) => (
+                    <div key={ci}>
+                      {col.items.map((item: any, ii: number) => (
+                        <a key={ii}
+                          href={`/service/${menu[mobileSelectedCategory].key}/${item.key || item.label}`}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-start gap-3 py-3 px-3 border-b border-gray-50 hover:bg-indigo-50 rounded-lg transition-colors group"
+                          style={{ textAlign: isRtl ? "right" : "left" }}>
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors"
+                            style={{ background: "#EEF2FF" }}>
+                            <item.Icon size={16} color="#4F46E5" strokeWidth={1.75} />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-sm font-bold text-gray-900">{item.label}</p>
+                            {item.desc && <p className="text-xs leading-relaxed mt-0.5" style={{ color: "#9CA3AF" }}>{item.desc}</p>}
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  ))}
+                </>
+              )}
             </div>
           </motion.div>
         )}

@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { GooeyMorphText } from "../../components/GooeyMorphText";
+import { LexAIAnimation } from "../../components/LexAIAnimation";
 import { useLang } from "../../lib/LanguageContext";
 
 export default function Hero2() {
@@ -35,10 +35,10 @@ export default function Hero2() {
           <motion.span className="block"
             initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.24 }}>{h.line2}</motion.span>
-          <motion.span className="block" style={{ color: "#4F46E5" }}
+          <motion.span className="block"
             initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.36 }}>
-            <GooeyMorphText texts={h.morph} morphTime={1.4} cooldownTime={3} />
+            <LexAIAnimation texts={h.morph} />
           </motion.span>
         </h1>
 
