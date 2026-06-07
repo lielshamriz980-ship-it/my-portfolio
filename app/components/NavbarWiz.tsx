@@ -167,19 +167,19 @@ function useMenuConfig(t: ReturnType<typeof useLang>["t"]) {
         {
           header: m.companyMenu.col1,
           items: [
-            { Icon: Info,       label: m.companyMenu.about,   desc: m.companyMenu.aboutDesc },
-            { Icon: Users2,     label: m.companyMenu.team,    desc: m.companyMenu.teamDesc },
-            { Icon: Newspaper,  label: m.companyMenu.press,   desc: m.companyMenu.pressDesc },
-            { Icon: Mail,       label: m.companyMenu.contact, desc: m.companyMenu.contactDesc },
+            { Icon: Info,       label: m.companyMenu.about,   desc: m.companyMenu.aboutDesc, key: "about" },
+            { Icon: Users2,     label: m.companyMenu.team,    desc: m.companyMenu.teamDesc, key: "team" },
+            { Icon: Newspaper,  label: m.companyMenu.press,   desc: m.companyMenu.pressDesc, key: "press" },
+            { Icon: Mail,       label: m.companyMenu.contact, desc: m.companyMenu.contactDesc, key: "contact" },
           ],
         },
         {
           header: m.companyMenu.col2,
           items: [
-            { Icon: CheckSquare, label: m.companyMenu.terms,      desc: null },
-            { Icon: Lock,        label: m.companyMenu.privacy,    desc: null },
-            { Icon: ShieldAlert, label: m.companyMenu.security,   desc: null },
-            { Icon: ShieldCheck, label: m.companyMenu.compliance, desc: null },
+            { Icon: CheckSquare, label: m.companyMenu.terms,      desc: null, key: "terms" },
+            { Icon: Lock,        label: m.companyMenu.privacy,    desc: null, key: "privacy" },
+            { Icon: ShieldAlert, label: m.companyMenu.security,   desc: null, key: "security" },
+            { Icon: ShieldCheck, label: m.companyMenu.compliance, desc: null, key: "compliance" },
           ],
         },
         {
@@ -200,6 +200,10 @@ function useMenuConfig(t: ReturnType<typeof useLang>["t"]) {
 function DropdownPanel({ item, isRtl }: { item: any; isRtl: boolean }) {
   // Generate URL using the key property
   const getHref = (itemKey: string, categoryKey: string) => {
+    // Only generate links for service pages (platform, solutions, templates, resources)
+    if (!["platform", "solutions", "templates", "resources"].includes(categoryKey)) {
+      return "#";
+    }
     return `/service/${categoryKey}/${itemKey}`;
   };
 
@@ -213,20 +217,23 @@ function DropdownPanel({ item, isRtl }: { item: any; isRtl: boolean }) {
               <p className="text-xs font-black uppercase tracking-widest mb-4 pb-2 border-b border-gray-100"
                 style={{ color: "#9CA3AF" }}>{col.header}</p>
               <div className="flex flex-col gap-1">
-                {col.items.map((it: any, ii: number) => (
-                  <a key={ii} href={getHref(it.key || it.label, item.key || "platform")}
-                    className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-indigo-50 transition-colors group"
-                    style={{ textDecoration: "none" }}>
-                    <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors"
-                      style={{ background: "#EEF2FF" }}>
-                      <it.Icon size={17} color="#4F46E5" strokeWidth={1.75} />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-sm font-bold transition-colors" style={{ color: "#1E1B4B" }}>{it.label}</p>
-                      {it.desc && <p className="text-xs leading-relaxed mt-0.5" style={{ color: "#9CA3AF" }}>{it.desc}</p>}
-                    </div>
-                  </a>
-                ))}
+                {col.items.map((it: any, ii: number) => {
+                  const href = getHref(it.key || it.label, item.key || "platform");
+                  return (
+                    <a key={ii} href={href}
+                      className={`flex items-start gap-3 px-3 py-2.5 rounded-xl transition-colors group ${href === "#" ? "cursor-default opacity-50" : "hover:bg-indigo-50"}`}
+                      style={{ textDecoration: "none" }}>
+                      <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors"
+                        style={{ background: "#EEF2FF" }}>
+                        <it.Icon size={17} color="#4F46E5" strokeWidth={1.75} />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-bold transition-colors" style={{ color: "#1E1B4B" }}>{it.label}</p>
+                        {it.desc && <p className="text-xs leading-relaxed mt-0.5" style={{ color: "#9CA3AF" }}>{it.desc}</p>}
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           ))}
