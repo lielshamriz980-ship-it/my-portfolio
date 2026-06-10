@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Assistant, Heebo } from "next/font/google";
+import { Assistant, Heebo, Roboto } from "next/font/google";
 import { ClientProviders } from "./ClientProviders";
 import "./globals.css";
 
@@ -14,6 +14,13 @@ const heebo = Heebo({
   subsets: ["hebrew", "latin"],
   weight: ["400", "500", "700", "800", "900"],
   variable: "--font-heebo",
+  display: "swap",
+});
+
+const roboto = Roboto({
+  subsets: ["hebrew", "latin"],
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-roboto",
   display: "swap",
 });
 
@@ -32,7 +39,7 @@ export default function RootLayout({
     <html
       lang="he"
       dir="rtl"
-      className={`${assistant.variable} ${heebo.variable}`}
+      className={`${assistant.variable} ${heebo.variable} ${roboto.variable}`}
     >
       <body className="min-h-full antialiased">
         <ClientProviders>

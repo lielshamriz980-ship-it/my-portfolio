@@ -9,6 +9,7 @@ import { ContractManagementServicePageV2 } from "../../../components/ContractMan
 import { FreelancersServicePage } from "../../../components/FreelancersServicePage";
 import { AnalyticsServicePageV2 } from "../../../components/AnalyticsServicePageV2";
 import { AlertsServicePageV2 } from "../../../components/AlertsServicePageV2";
+import { AlertsServicePageV3 } from "../../../components/AlertsServicePageV3";
 import { SecurityPrivacyServicePageV3 } from "../../../components/SecurityPrivacyServicePageV3";
 import { InternationalContractsServicePageV2 } from "../../../components/InternationalContractsServicePageV2";
 import { APIServicePageV3 } from "../../../components/APIServicePageV3";
@@ -461,8 +462,8 @@ export default async function ServicePage({ params }: any) {
     return (
       <>
         <NavbarWiz />
-        <main className="mt-16">
-          <AlertsServicePageV2 />
+        <main>
+          <AlertsServicePageV3 />
         </main>
         <Footer2 />
       </>

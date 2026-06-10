@@ -23,7 +23,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="flex items-center justify-between" style={{ height: 72 }}>
+        <div className="flex items-center justify-between" style={{ height: 56, paddingTop: "8px", paddingBottom: "8px" }}>
 
           {/* Logo */}
           <a href="#" className="text-2xl font-black tracking-tight select-none" style={{ color: "#4F46E5" }}>
