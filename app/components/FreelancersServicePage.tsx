@@ -16,7 +16,7 @@ export function FreelancersServicePage() {
             פתרונות לפרילנסרים ויוצרים
           </span>
 
-          <h1 className="text-right font-black mb-8" style={{ fontSize: "clamp(48px, 7vw, 88px)", color: "#1E1B4B", lineHeight: 1.1 }}>
+          <h1 className="text-right font-black mb-8" style={{ fontSize: "clamp(32px, 7vw, 88px)", color: "#1E1B4B", lineHeight: 1.1 }}>
             הגן על הזכויות שלך
           </h1>
 

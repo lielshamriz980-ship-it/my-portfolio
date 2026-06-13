@@ -15,6 +15,10 @@ export function ClientManagementServicePageV2() {
         @keyframes clmPulse { 0%,100%{transform:scale(1);opacity:0.8} 50%{transform:scale(1.1);opacity:1} }
         .clm-card { transition: transform 0.3s, box-shadow 0.3s; }
         .clm-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(79,70,229,0.1); }
+        @media (max-width: 768px) {
+          .clm-grid-2 { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .clm-section { padding: 40px 20px !important; }
+        }
       `}</style>
 
       {/* Page Title Bar */}
@@ -25,7 +29,7 @@ export function ClientManagementServicePageV2() {
       <main style={{ overflow: "hidden" }}>
         {/* ─── Hero Section ─── */}
         <section style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "5fr 7fr", gap: 48, alignItems: "center" }}>
+          <div className="clm-grid-2" style={{ display: "grid", gridTemplateColumns: "5fr 7fr", gap: 48, alignItems: "center" }}>
             {/* Text */}
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "4px 12px", background: "#dbe1ff", color: "#003ea8", borderRadius: 9999, fontSize: 14, fontWeight: 600, alignSelf: "flex-end" }}>

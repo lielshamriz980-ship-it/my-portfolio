@@ -408,7 +408,7 @@ export function InternationalContractsServicePageV2() {
         <section className="bg-[#435EFF] py-16 md:py-20">
           <div className="container mx-auto px-8 text-center">
             <h2 className="text-white text-3xl md:text-4xl font-black mb-8">מוכן להפוך את ניהול החוזים שלך לבינלאומי?</h2>
-            <button className="px-12 py-6 bg-white text-[#435EFF] rounded-xl font-bold text-lg hover:shadow-2xl active:scale-95 transition-all">
+            <button className="px-6 md:px-12 py-6 w-full md:w-auto bg-white text-[#435EFF] rounded-xl font-bold text-lg hover:shadow-2xl active:scale-95 transition-all">
               הצטרף ל-DealLayer היום
             </button>
           </div>

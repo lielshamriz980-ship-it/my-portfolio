@@ -141,14 +141,28 @@ export function RealEstateConstructionServicePageV2() {
         .bar-chart-bar { transition: height 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
         .portfolio-item { opacity: 0; transform: translateX(16px); transition: all 0.7s ease; }
         .portfolio-item.visible { opacity: 1; transform: translateX(0); }
+        @media (max-width: 768px) {
+          .re-hero { padding: 56px 20px !important; min-height: 400px !important; }
+          .re-h1 { font-size: clamp(26px, 7vw, 48px) !important; }
+          .re-section { padding: 64px 20px !important; }
+          .re-grid-2 { grid-template-columns: 1fr !important; gap: 20px !important; }
+          .re-grid-3 { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .re-h2 { font-size: clamp(24px, 6vw, 42px) !important; }
+          .re-order-reset { order: 0 !important; }
+          .re-cta-box { padding: 40px 20px !important; }
+          .re-h-auto { height: auto !important; min-height: 0 !important; }
+        }
+        @media (max-width: 480px) {
+          .re-h1 { font-size: clamp(22px, 6vw, 36px) !important; }
+        }
       `}</style>
 
       {/* HERO SECTION */}
-      <section style={{ background: "linear-gradient(135deg, #0D1B4B 0%, #1A2A66 100%)", color: "#fff", padding: "120px 24px", position: "relative", overflow: "hidden", minHeight: "600px", display: "flex", alignItems: "center" }}>
+      <section className="re-hero" style={{ background: "linear-gradient(135deg, #0D1B4B 0%, #1A2A66 100%)", color: "#fff", padding: "120px 24px", position: "relative", overflow: "hidden", minHeight: "600px", display: "flex", alignItems: "center" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(rgba(67, 94, 255, 0.15) 1px, transparent 1px)", backgroundSize: "28px 28px", opacity: 0.3 }} />
-        <div style={{ maxWidth: 1200, margin: "0 auto", width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", position: "relative", zIndex: 1 }}>
+        <div className="re-grid-2" style={{ maxWidth: 1200, margin: "0 auto", width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", position: "relative", zIndex: 1 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-            <h1 style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.2 }}>כל חוזה נדל"ן. כל הסכם בנייה. <span style={{ color: "#435EFF" }}>מסודר, מוגן, חתום.</span></h1>
+            <h1 className="re-h1" style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.2 }}>כל חוזה נדל"ן. כל הסכם בנייה. <span style={{ color: "#435EFF" }}>מסודר, מוגן, חתום.</span></h1>
             <p style={{ fontSize: 20, color: "rgba(255,255,255,0.8)", lineHeight: 1.6, maxWidth: 500 }}>הפלטפורמה המתקדמת בישראל לניהול מחזור החיים של נכסי נדל"ן ופרויקטים הנדסיים. מאוטומציה של חוזים ועד מעקב תשלומים.</p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <button className="shimmer" style={{ padding: "16px 40px", background: "#435EFF", color: "#fff", border: "none", borderRadius: 16, fontSize: 18, fontWeight: 700, cursor: "pointer", boxShadow: "0 8px 32px rgba(67,94,255,0.4)" }}>התחילו עכשיו</button>
@@ -174,8 +188,8 @@ export function RealEstateConstructionServicePageV2() {
       </section>
 
       {/* FEATURE ROWS */}
-      <section id="typing-section" className="reveal-up" style={{ padding: "120px 24px", background: "#fff" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
+      <section id="typing-section" className="reveal-up re-section" style={{ padding: "120px 24px", background: "#fff" }}>
+        <div className="re-grid-2" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
           <div style={{ order: 2 }}>
             <div style={{ background: "#efebff", padding: 32, borderRadius: 32, border: "1px solid #e3dfff", boxShadow: "0 4px 20px rgba(0,0,0,0.04)", height: 350, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div style={{ background: "#fff", borderRadius: 12, padding: 20, boxShadow: "0 2px 8px rgba(0,0,0,0.05)" }}>
@@ -202,8 +216,8 @@ export function RealEstateConstructionServicePageV2() {
       </section>
 
       {/* PORTFOLIO SECTION */}
-      <section id="portfolio-section" className="reveal-up" style={{ padding: "120px 24px", background: "#F7F8FA" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
+      <section id="portfolio-section" className="reveal-up re-section" style={{ padding: "120px 24px", background: "#F7F8FA" }}>
+        <div className="re-grid-2" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 48, height: 48, borderRadius: 16, background: "rgba(67,94,255,0.1)" }}>
               <Building2 size={24} color="#435EFF" />
@@ -237,8 +251,8 @@ export function RealEstateConstructionServicePageV2() {
       </section>
 
       {/* PAYMENTS & GUARANTEES */}
-      <section id="chart-section" className="reveal-up" style={{ padding: "120px 24px", background: "#fff" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
+      <section id="chart-section" className="reveal-up re-section" style={{ padding: "120px 24px", background: "#fff" }}>
+        <div className="re-grid-2" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
           <div style={{ background: "#efebff", padding: 32, borderRadius: 32, border: "1px solid #e3dfff", height: 350, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "center", gap: 16, height: 200 }}>
               {[0.6, 0.45, 0.85, 0.7].map((height, i) => (
@@ -278,15 +292,15 @@ export function RealEstateConstructionServicePageV2() {
       </section>
 
       {/* TEMPLATES SECTION */}
-      <section className="reveal-up" style={{ padding: "120px 24px", background: "#0D1B4B", color: "#fff", position: "relative", overflow: "hidden" }}>
+      <section className="reveal-up re-section" style={{ padding: "120px 24px", background: "#0D1B4B", color: "#fff", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(rgba(67, 94, 255, 0.15) 1px, transparent 1px)", backgroundSize: "28px 28px", opacity: 0.1 }} />
         <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div style={{ textAlign: "center", marginBottom: 64 }}>
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", color: "#435EFF", textTransform: "uppercase" }}>ספריית תבניות</span>
-            <h2 style={{ fontSize: 42, fontWeight: 700, marginTop: 16, marginBottom: 24 }}>תבניות מקצועיות לנדל"ן ובנייה - מוכנות לשימוש</h2>
+            <h2 className="re-h2" style={{ fontSize: 42, fontWeight: 700, marginTop: 16, marginBottom: 24 }}>תבניות מקצועיות לנדל"ן ובנייה - מוכנות לשימוש</h2>
             <p style={{ fontSize: 18, color: "rgba(255,255,255,0.65)", maxWidth: 600, margin: "0 auto", lineHeight: 1.6 }}>הורידו או ערכו ישירות במערכת - מותאם למשרדי עורכי דין, יזמים ומנהלי נכסים מובילים בישראל.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div className="re-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
             {templates.map((template, i) => (
               <div key={i} className="glass-card reveal-up" style={{ padding: 32, display: "flex", flexDirection: "column", height: "100%", transitionDelay: `${i * 100}ms` }}>
                 <div style={{ marginBottom: 24 }}>
@@ -305,8 +319,8 @@ export function RealEstateConstructionServicePageV2() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="reveal-up" style={{ padding: "120px 24px", background: "#fff" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
+      <section className="reveal-up re-section" style={{ padding: "120px 24px", background: "#fff" }}>
+        <div className="re-grid-3" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
           {testimonials.map((testimonial, i) => (
             <div key={i} className="reveal-up" style={{ padding: 32, background: "#efebff", borderRadius: 24, position: "relative", transitionDelay: `${i * 100}ms` }}>
               <h4 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: "#0D1B4B" }}>{testimonial.title}</h4>
@@ -318,8 +332,8 @@ export function RealEstateConstructionServicePageV2() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="reveal-up" style={{ padding: "120px 24px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", background: "linear-gradient(to left, #0D1B4B, #435EFF)", borderRadius: 32, padding: 96, textAlign: "center", color: "#fff", position: "relative", overflow: "hidden" }}>
+      <section className="reveal-up re-section" style={{ padding: "120px 24px" }}>
+        <div className="re-cta-box" style={{ maxWidth: 1200, margin: "0 auto", background: "linear-gradient(to left, #0D1B4B, #435EFF)", borderRadius: 32, padding: 96, textAlign: "center", color: "#fff", position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px)", backgroundSize: "28px 28px", opacity: 0.2 }} />
           <div style={{ position: "relative", zIndex: 1 }}>
             <h2 style={{ fontSize: 36, fontWeight: 900, marginBottom: 24, lineHeight: 1.2 }}>תפסיק לנהל נדל"ן עם PDF ואקסל</h2>

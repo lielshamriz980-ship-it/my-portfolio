@@ -28,7 +28,7 @@ export default function Hero2() {
         </motion.div>
 
         <h1 className="font-black text-[#1E1B4B] mb-6 text-center"
-          style={{ fontSize: "clamp(44px, 7vw, 88px)", lineHeight: 1.08 }}>
+          style={{ fontSize: "clamp(28px, 7vw, 88px)", lineHeight: 1.08 }}>
           <motion.span className="block"
             initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.12 }}>{h.line1}</motion.span>
@@ -50,12 +50,12 @@ export default function Hero2() {
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.62 }}
           className="flex flex-wrap items-center justify-center gap-4 mb-6">
-          <button className="btn-shimmer flex items-center gap-2.5 px-10 py-4 text-lg font-bold text-white rounded-2xl hover:scale-[1.02] active:scale-[0.97] transition-all"
+          <button className="btn-shimmer flex items-center gap-2.5 px-6 sm:px-10 py-4 text-sm sm:text-lg font-bold text-white rounded-2xl hover:scale-[1.02] active:scale-[0.97] transition-all w-full sm:w-auto"
             style={{ background: "#2563EB", boxShadow: "0 4px 30px rgba(37,99,235,0.35)" }}>
             <span>{h.cta1}</span>
             <ArrowRight size={18} strokeWidth={2.5} />
           </button>
-          <button className="px-8 py-4 text-lg font-semibold rounded-2xl transition-all hover:bg-indigo-50"
+          <button className="px-6 sm:px-8 py-4 text-sm sm:text-lg font-semibold rounded-2xl transition-all hover:bg-indigo-50 w-full sm:w-auto"
             style={{ border: "1.5px solid #C7D2FE", color: "#4F46E5" }}>{h.cta2}</button>
         </motion.div>
 
@@ -72,7 +72,7 @@ export default function Hero2() {
         {/* Product screenshot */}
         <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.9, ease: "easeOut" }}
-          className="relative mx-auto" style={{ maxWidth: 860 }}>
+          className="relative mx-auto w-full" style={{ maxWidth: 860 }}>
           <div className="rounded-2xl overflow-hidden"
             style={{ boxShadow: "0 30px 80px rgba(79,70,229,0.15), 0 0 0 1px rgba(79,70,229,0.1)", border: "1px solid #E0E7FF" }}>
             <div className="flex items-center gap-2 px-5 py-3" style={{ background: "#F8FAFC", borderBottom: "1px solid #E5E7EB" }}>
@@ -85,7 +85,7 @@ export default function Hero2() {
               </div>
             </div>
             <div className="flex" style={{ background: "#F8FAFC", minHeight: 300 }}>
-              <div className="w-14 flex flex-col items-center pt-5 gap-4"
+              <div className="w-14 hidden sm:flex flex-col items-center pt-5 gap-4"
                 style={{ background: "#F1F5F9", borderLeft: "1px solid #E5E7EB" }}>
                 {[0,1,2,3].map(i => <div key={i} className="w-8 h-8 rounded-xl" style={{ background: i===0?"#EEF2FF":"transparent" }} />)}
               </div>

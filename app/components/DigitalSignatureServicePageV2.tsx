@@ -13,6 +13,12 @@ export function DigitalSignatureServicePageV2() {
         @keyframes dsShimmer { 0%{right:-100%} 100%{right:100%} }
         .ds-card { transition: transform 0.3s, box-shadow 0.3s; }
         .ds-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(79,70,229,0.1); }
+        @media (max-width: 768px) {
+          .ds-grid-3 { grid-template-columns: 1fr !important; }
+          .ds-grid-2 { grid-template-columns: 1fr !important; }
+          .ds-section { padding: 48px 20px !important; }
+          .ds-h2 { font-size: clamp(24px, 6vw, 48px) !important; }
+        }
       `}</style>
 
       <div style={{ background: "#f6f2ff", borderBottom: "1px solid #c3c6d7", padding: "12px 0", textAlign: "center" }}>

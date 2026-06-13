@@ -22,7 +22,7 @@ export default function CTA2() {
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.65 }}
           className="font-black leading-tight mb-6"
-          style={{ fontSize: "clamp(36px, 6vw, 72px)", color: "#1E1B4B" }}>
+          style={{ fontSize: "clamp(26px, 6vw, 72px)", color: "#1E1B4B" }}>
           {c.heading}<br />
           <span style={{ color: "#4F46E5" }}>{c.accent}</span>
         </motion.h2>
@@ -37,7 +37,7 @@ export default function CTA2() {
           viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.25 }}
           className="flex flex-col items-center gap-6">
           <button
-            className="btn-shimmer inline-flex items-center gap-3 px-12 py-5 text-xl font-black rounded-2xl hover:scale-[1.03] active:scale-[0.97] transition-transform"
+            className="btn-shimmer inline-flex items-center justify-center gap-3 px-6 sm:px-12 py-4 sm:py-5 text-sm sm:text-xl font-black rounded-2xl hover:scale-[1.03] active:scale-[0.97] transition-transform w-full sm:w-auto"
             style={{ background: "#2563EB", boxShadow: "0 8px 40px rgba(37,99,235,0.35)", color: "white" }}>
             <span>{c.btn}</span>
             <ArrowRight size={20} strokeWidth={2.5} />

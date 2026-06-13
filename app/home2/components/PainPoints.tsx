@@ -48,13 +48,13 @@ export default function PainPoints() {
               initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.55, delay: i * 0.1 }}
               whileHover={{ y: -5, boxShadow: "0 20px 50px rgba(79,70,229,0.1)" }}
-              className="rounded-3xl p-8 transition-all bg-white"
+              className="rounded-3xl p-5 sm:p-8 transition-all bg-white"
               style={{ border: `1.5px solid ${c.border}` }}>
               <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"
                 style={{ background: c.lightBg }}>
                 <c.Icon size={22} color={c.color} strokeWidth={1.75} />
               </div>
-              <div className="font-black mb-1" style={{ fontSize: 46, lineHeight: 1, color: c.color }}>{c.stat}</div>
+              <div className="font-black mb-1" style={{ fontSize: "clamp(28px, 8vw, 46px)", lineHeight: 1, color: c.color }}>{c.stat}</div>
               <p className="text-sm font-bold mb-3" style={{ color: "#374151" }}>{c.label}</p>
               <p className="text-base leading-relaxed" style={{ color: "#6B7280" }}>{c.body}</p>
             </motion.div>

@@ -67,7 +67,7 @@ export default function Testimonials() {
             {/* First set - visible on load */}
             {allItems.slice(0, Math.ceil(allItems.length / 2)).map((r, i) => (
               <div key={`set1-${i}`}
-                className="flex-shrink-0 w-96 bg-white rounded-2xl p-6 transition-all hover:shadow-lg"
+                className="flex-shrink-0 w-[min(384px,85vw)] bg-white rounded-2xl p-6 transition-all hover:shadow-lg"
                 style={{ border: "1.5px solid #E5E7EB" }}>
                 <div className="text-4xl font-black mb-3 leading-none" style={{ color: "#4F46E5", fontFamily: "Georgia, serif" }}>"</div>
                 <p className="text-base leading-relaxed mb-5" style={{ color: "#374151" }}>{r.text}</p>
@@ -86,7 +86,7 @@ export default function Testimonials() {
             {/* Second set - loops seamlessly */}
             {allItems.slice(0, Math.ceil(allItems.length / 2)).map((r, i) => (
               <div key={`set2-${i}`}
-                className="flex-shrink-0 w-96 bg-white rounded-2xl p-6 transition-all hover:shadow-lg"
+                className="flex-shrink-0 w-[min(384px,85vw)] bg-white rounded-2xl p-6 transition-all hover:shadow-lg"
                 style={{ border: "1.5px solid #E5E7EB" }}>
                 <div className="text-4xl font-black mb-3 leading-none" style={{ color: "#4F46E5", fontFamily: "Georgia, serif" }}>"</div>
                 <p className="text-base leading-relaxed mb-5" style={{ color: "#374151" }}>{r.text}</p>
@@ -127,7 +127,7 @@ export default function Testimonials() {
             {/* First set - visible on load */}
             {allItems.slice(Math.ceil(allItems.length / 2)).map((r, i) => (
               <div key={`row2-set1-${i}`}
-                className="flex-shrink-0 w-96 bg-white rounded-2xl p-6 transition-all hover:shadow-lg"
+                className="flex-shrink-0 w-[min(384px,85vw)] bg-white rounded-2xl p-6 transition-all hover:shadow-lg"
                 style={{ border: "1.5px solid #E5E7EB" }}>
                 <div className="text-4xl font-black mb-3 leading-none" style={{ color: "#4F46E5", fontFamily: "Georgia, serif" }}>"</div>
                 <p className="text-base leading-relaxed mb-5" style={{ color: "#374151" }}>{r.text}</p>
@@ -146,7 +146,7 @@ export default function Testimonials() {
             {/* Second set - loops seamlessly */}
             {allItems.slice(Math.ceil(allItems.length / 2)).map((r, i) => (
               <div key={`row2-set2-${i}`}
-                className="flex-shrink-0 w-96 bg-white rounded-2xl p-6 transition-all hover:shadow-lg"
+                className="flex-shrink-0 w-[min(384px,85vw)] bg-white rounded-2xl p-6 transition-all hover:shadow-lg"
                 style={{ border: "1.5px solid #E5E7EB" }}>
                 <div className="text-4xl font-black mb-3 leading-none" style={{ color: "#4F46E5", fontFamily: "Georgia, serif" }}>"</div>
                 <p className="text-base leading-relaxed mb-5" style={{ color: "#374151" }}>{r.text}</p>

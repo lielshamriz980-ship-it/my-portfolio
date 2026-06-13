@@ -13,7 +13,7 @@ export default function Footer2() {
 
   return (
     <footer style={{ background: "#1E1B4B", direction: t.dir }}>
-      <div className="max-w-6xl mx-auto px-6 lg:px-10 py-16">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10 py-10 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="col-span-2 md:col-span-1">
             <div className="text-2xl font-black mb-4 text-white">
@@ -35,9 +35,9 @@ export default function Footer2() {
             </div>
           ))}
         </div>
-        <div className="flex items-center justify-between pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+        <div className="flex flex-wrap items-center justify-between gap-y-3 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
           <p className="text-xs text-white/50">© 2026 DealLayer. {f.rights}</p>
-          <div className="flex gap-5">
+          <div className="flex gap-4 sm:gap-5">
             {["X", "LinkedIn", "Instagram"].map(s => (
               <a key={s} href="#" className="text-xs text-white/60 hover:text-white transition-colors">{s}</a>
             ))}

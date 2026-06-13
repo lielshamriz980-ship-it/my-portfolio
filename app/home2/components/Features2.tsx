@@ -67,7 +67,7 @@ export default function Features2() {
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-2 mb-10">
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
           {TABS.map(t => (
             <button key={t.id} onClick={() => setActive(t.id)}
               className="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold transition-all"
@@ -92,7 +92,7 @@ export default function Features2() {
             style={{ border: "1.5px solid #E5E7EB", boxShadow: "0 8px 40px rgba(79,70,229,0.08)" }}>
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Text */}
-              <div className="p-10 lg:p-14 flex flex-col justify-center">
+              <div className="p-5 sm:p-10 lg:p-14 flex flex-col justify-center">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-6 w-fit"
                   style={{ background: `${tab.color}12`, color: tab.color, border: `1px solid ${tab.color}25` }}>
                   <tab.icon size={12} strokeWidth={2.5} />

@@ -54,10 +54,10 @@ export default function Stats2() {
             <motion.div key={i}
               initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-3xl p-7 text-center bg-white"
+              className="rounded-3xl p-4 sm:p-7 text-center bg-white"
               style={{ border: "1.5px solid #E5E7EB", boxShadow: "0 4px 16px rgba(79,70,229,0.06)" }}>
               <div className="font-black mb-2 leading-none"
-                style={{ fontSize: "clamp(34px, 4.5vw, 56px)", color: "#4F46E5" }}>
+                style={{ fontSize: "clamp(22px, 6vw, 56px)", color: "#4F46E5" }}>
                 <CountUp end={s.end} display={s.display} literal={s.literal} active={inView} />
               </div>
               <p className="text-sm font-bold mb-1" style={{ color: "#1E1B4B" }}>{s.label}</p>

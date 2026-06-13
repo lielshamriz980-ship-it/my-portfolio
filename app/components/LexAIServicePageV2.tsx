@@ -35,6 +35,13 @@ export function LexAIServicePageV2() {
           background-image: radial-gradient(circle, #004ac6 1px, transparent 1px);
           background-size: 24px 24px;
         }
+        @media (max-width: 768px) {
+          .lex-grid-2 { grid-template-columns: 1fr !important; gap: 20px !important; }
+          .lex-grid-3 { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .lex-h2 { font-size: clamp(24px, 6vw, 42px) !important; }
+          .lex-section { padding: 56px 20px !important; }
+          .lex-cta { padding: 40px 20px !important; }
+        }
       `}</style>
 
       {/* Page Title Bar */}
@@ -45,7 +52,7 @@ export function LexAIServicePageV2() {
       <main>
         {/* ─── Hero Section ─── */}
         <section style={{ padding: "48px 24px 96px", position: "relative", overflow: "hidden" }}>
-          <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
+          <div className="lex-grid-2" style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
             {/* Text */}
             <div style={{ textAlign: "right", display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "4px 12px", background: "rgba(0,74,198,0.08)", color: "#004ac6", borderRadius: 9999, border: "1px solid rgba(0,74,198,0.2)", fontSize: 14, fontWeight: 600, alignSelf: "flex-end" }}>
@@ -153,7 +160,7 @@ export function LexAIServicePageV2() {
               <h2 style={{ fontSize: 32, fontWeight: 700, color: "#181445", marginBottom: 8 }}>איך זה עובד?</h2>
               <p style={{ fontSize: 18, color: "#434655" }}>תהליך פשוט, חכם ומדויק בשלושה שלבים</p>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+            <div className="lex-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
               {[
                 { icon: <svg width="32" height="32" fill="#004ac6" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>, title: "שיחה", desc: "ענה על מספר שאלות פשוטות בשיחה קולחת. ה-AI לומד את הצרכים הספציפיים שלך.", border: false },
                 { icon: <svg width="32" height="32" fill="#004ac6" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>, title: "ניתוח", desc: "האלגוריתמים שלנו סורקים תקדימים משפטיים וחוקים עדכניים כדי להבטיח הגנה מקסימלית.", border: true },

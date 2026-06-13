@@ -32,14 +32,30 @@ export function TechDevelopmentServicePageV2() {
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .tech-card-hover { transition: all 0.3s ease; }
         .tech-card-hover:hover { transform: translateY(-8px); }
+        @media (max-width: 768px) {
+          .tech-hero { padding: 56px 20px !important; min-height: 400px !important; }
+          .tech-h1 { font-size: clamp(26px, 7vw, 48px) !important; }
+          .tech-section { padding: 64px 20px !important; }
+          .tech-grid-2 { grid-template-columns: 1fr !important; gap: 20px !important; }
+          .tech-grid-3 { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .tech-grid-4 { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+          .tech-order-reset { order: 0 !important; }
+          .tech-cta-box { padding: 40px 20px !important; }
+          .tech-h2 { font-size: clamp(24px, 6vw, 42px) !important; }
+          .tech-btn { font-size: 14px !important; padding: 12px 24px !important; }
+        }
+        @media (max-width: 480px) {
+          .tech-grid-4 { grid-template-columns: 1fr !important; }
+          .tech-h1 { font-size: clamp(22px, 6vw, 36px) !important; }
+        }
       `}</style>
 
       <main>
         {/* ─── Hero Section ─── */}
-        <section style={{ background: "linear-gradient(135deg, #0D1B4B 0%, #1A2A66 100%)", color: "#fff", padding: "120px 24px", position: "relative", overflow: "hidden", minHeight: "600px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <section className="tech-hero" style={{ background: "linear-gradient(135deg, #0D1B4B 0%, #1A2A66 100%)", color: "#fff", padding: "120px 24px", position: "relative", overflow: "hidden", minHeight: "600px", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <div style={{ maxWidth: 800, width: "100%", textAlign: "center", position: "relative", zIndex: 1 }}>
             <div className="tech-fade-in">
-              <h1 style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.2, marginBottom: 24 }}>
+              <h1 className="tech-h1" style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.2, marginBottom: 24 }}>
                 החוזים של חברת הטק שלך - מהירים כמו הפיתוח שלך
               </h1>
               <p style={{ fontSize: 20, color: "rgba(255,255,255,0.8)", lineHeight: 1.6, marginBottom: 32 }}>
@@ -58,13 +74,13 @@ export function TechDevelopmentServicePageV2() {
         </section>
 
         {/* ─── Pain Points ─── */}
-        <section style={{ padding: "120px 24px", background: "#fff" }}>
+        <section className="tech-section" style={{ padding: "120px 24px", background: "#fff" }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: 64 }}>
-              <h2 style={{ fontSize: 42, fontWeight: 700, marginBottom: 16 }}>האתגרים המשפטיים של צוותי פיתוח</h2>
+              <h2 className="tech-h2" style={{ fontSize: 42, fontWeight: 700, marginBottom: 16 }}>האתגרים המשפטיים של צוותי פיתוח</h2>
               <div style={{ height: 6, width: 96, background: "#435EFF", borderRadius: 9999, margin: "0 auto" }} />
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
+            <div className="tech-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
               {painPoints.map((point, i) => (
                 <div key={i} className="tech-card-hover" style={{ padding: 32, border: "1px solid #c3c6d7", borderRadius: 12, borderTop: "4px solid #ff6b6b", background: "#fff", cursor: "pointer" }}>
                   <div style={{ height: 4, width: 48, background: "#ff6b6b", marginBottom: 24 }} />
@@ -77,10 +93,10 @@ export function TechDevelopmentServicePageV2() {
         </section>
 
         {/* ─── Solutions ─── */}
-        <section style={{ padding: "120px 24px", background: "#f6f2ff" }}>
+        <section className="tech-section" style={{ padding: "120px 24px", background: "#f6f2ff" }}>
           <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 96 }}>
             {/* Solution 1 */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+            <div className="tech-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
               <div>
                 <h3 style={{ fontSize: 32, fontWeight: 700, marginBottom: 16, color: "#1A2A66" }}>NDA ב-5 דקות (לא 5 ימים)</h3>
                 <p style={{ fontSize: 18, color: "#434655", lineHeight: 1.6, marginBottom: 24 }}>
@@ -115,7 +131,7 @@ export function TechDevelopmentServicePageV2() {
             </div>
 
             {/* Solution 2 */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+            <div className="tech-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
               <div style={{ background: "#1A2A66", padding: 32, borderRadius: 16, order: -1 }}>
                 <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                   {[1, 2, 3].map((step) => (
@@ -139,10 +155,10 @@ export function TechDevelopmentServicePageV2() {
         </section>
 
         {/* ─── Templates ─── */}
-        <section style={{ padding: "120px 24px", background: "#0D1B4B", color: "#fff" }}>
+        <section className="tech-section" style={{ padding: "120px 24px", background: "#0D1B4B", color: "#fff" }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-            <h2 style={{ fontSize: 42, fontWeight: 700, marginBottom: 64 }}>ספריית תבניות Tech</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+            <h2 className="tech-h2" style={{ fontSize: 42, fontWeight: 700, marginBottom: 64 }}>ספריית תבניות Tech</h2>
+            <div className="tech-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
               {templates.map((template, i) => {
                 const iconMap = {
                   code: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#435EFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>,
@@ -168,8 +184,8 @@ export function TechDevelopmentServicePageV2() {
         </section>
 
         {/* ─── Benefits ─── */}
-        <section style={{ padding: "120px 24px", background: "#fff" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 48, textAlign: "center" }}>
+        <section className="tech-section" style={{ padding: "120px 24px", background: "#fff" }}>
+          <div className="tech-grid-4" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 48, textAlign: "center" }}>
             {[
               { num: "01", title: "מהירות שיא", desc: "קיצור זמן חתימה ב-85% ממוצע לתעשייה." },
               { num: "02", title: "API & Integrations", desc: "חיבור ישיר ל-Slack, Jira ו-Salesforce." },
@@ -186,8 +202,8 @@ export function TechDevelopmentServicePageV2() {
         </section>
 
         {/* ─── CTA ─── */}
-        <section style={{ padding: "120px 24px" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto", background: "linear-gradient(to right, #435EFF, #2244DD)", borderRadius: 40, padding: 96, textAlign: "center", color: "#fff", position: "relative", overflow: "hidden" }}>
+        <section className="tech-section" style={{ padding: "120px 24px" }}>
+          <div className="tech-cta-box" style={{ maxWidth: 1200, margin: "0 auto", background: "linear-gradient(to right, #435EFF, #2244DD)", borderRadius: 40, padding: 96, textAlign: "center", color: "#fff", position: "relative", overflow: "hidden" }}>
             <div style={{ position: "relative", zIndex: 1 }}>
               <h2 style={{ fontSize: 44, fontWeight: 900, marginBottom: 32, lineHeight: 1.2 }}>מוכנים להאיץ את תהליכי המשפט בארגון?</h2>
               <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap" }}>

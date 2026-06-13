@@ -26,6 +26,11 @@ export function ContractManagementServicePageV2() {
         @keyframes cmPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.1)} }
         .cm-card { transition: transform 0.3s, box-shadow 0.3s; }
         .cm-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,74,198,0.1); }
+        @media (max-width: 768px) {
+          .cm-grid-2 { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .cm-section { padding: 48px 20px !important; }
+          .cm-h2 { font-size: clamp(24px, 6vw, 42px) !important; }
+        }
       `}</style>
 
       {/* Page Title Bar */}
@@ -37,7 +42,7 @@ export function ContractManagementServicePageV2() {
         {/* ─── Hero / Dashboard Mockup ─── */}
         <section style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px" }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <h2 style={{ fontSize: 48, fontWeight: 700, color: "#181445", lineHeight: 1.2, letterSpacing: "-0.02em", marginBottom: 16 }}>
+            <h2 className="cm-h2" style={{ fontSize: 48, fontWeight: 700, color: "#181445", lineHeight: 1.2, letterSpacing: "-0.02em", marginBottom: 16 }}>
               ניהול חוזים בעידן הדיגיטלי
             </h2>
             <p style={{ fontSize: 18, color: "#434655", lineHeight: 1.6, maxWidth: 640, margin: "0 auto" }}>
@@ -46,7 +51,7 @@ export function ContractManagementServicePageV2() {
           </div>
 
           {/* Bento Grid Dashboard */}
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 24 }}>
+          <div className="cm-grid-2" style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 24 }}>
             {/* Main Chart */}
             <div style={{ background: "#fff", borderRadius: 12, border: "1px solid #c3c6d7", padding: 24, boxShadow: "0 20px 40px rgba(79,70,229,0.06)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
