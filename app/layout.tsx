@@ -18,7 +18,7 @@ const heebo = Heebo({
 });
 
 const roboto = Roboto({
-  subsets: ["hebrew", "latin"],
+  subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
   variable: "--font-roboto",
   display: "swap",

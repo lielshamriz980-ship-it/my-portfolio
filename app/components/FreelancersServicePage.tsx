@@ -61,7 +61,7 @@ export function FreelancersServicePage() {
       <section className="py-20 md:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <h2 className="text-right font-black mb-16" style={{ fontSize: "clamp(36px, 5vw, 56px)", color: "#1E1B4B" }}>
-            הבעיות של פרילנסרים — ופתרונות
+            הבעיות של פרילנסרים - ופתרונות
           </h2>
 
           <div className="space-y-12">
@@ -231,7 +231,7 @@ export function FreelancersServicePage() {
             התחל להגן על הזכויות שלך כיום
           </h2>
           <p className="text-white text-xl mb-10 opacity-90 max-w-2xl mx-auto">
-            חוזים משפטיים, דשבורד פרויקטים, וניהול לקוחות — הכל בצד אחד.
+            חוזים משפטיים, דשבורד פרויקטים, וניהול לקוחות - הכל בצד אחד.
           </p>
           <button className="px-10 py-4 text-lg font-bold rounded-2xl flex items-center gap-2 mx-auto" style={{ background: "white", color: "#F59E0B" }}>
             קבל גישה חינם

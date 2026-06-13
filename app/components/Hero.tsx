@@ -37,7 +37,7 @@ export default function Hero() {
               <span>Lex AI · עורך הדין הצמוד שלך</span>
             </motion.div>
 
-            {/* H1 — spans to keep valid HTML + correct line-height */}
+            {/* H1 - spans to keep valid HTML + correct line-height */}
             <h1
               className="font-black text-[#0F172A] mb-6"
               style={{ fontSize: "clamp(48px, 7.5vw, 92px)", lineHeight: 1.08 }}

@@ -143,11 +143,11 @@ export function InternationalContractsServicePageV2() {
               </span>
 
               <h1 className="text-white font-black text-4xl md:text-[64px] leading-tight mb-8">
-                חוזים בינלאומיים — בלי בלגן, <br className="hidden md:block" /> בלי בלבול, בלי עיכובים
+                חוזים בינלאומיים - בלי בלגן, <br className="hidden md:block" /> בלי בלבול, בלי עיכובים
               </h1>
 
               <p className="text-white/80 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed">
-                נהל עסקאות עם לקוחות וספקים מכל העולם — בעברית, באנגלית, ובכל שפה שתצטרך — בצורה מסודרת, מאובטחת, ומקצועית.
+                נהל עסקאות עם לקוחות וספקים מכל העולם - בעברית, באנגלית, ובכל שפה שתצטרך - בצורה מסודרת, מאובטחת, ומקצועית.
               </p>
 
               <div className="flex flex-col md:flex-row gap-6 justify-center">
@@ -214,7 +214,7 @@ export function InternationalContractsServicePageV2() {
         <section className="bg-[#F7F8FA] py-20 md:py-32">
           <div className="container mx-auto px-8">
             <h2 className="text-3xl md:text-4xl font-black text-center mb-16 text-[#1a1b24]">
-              עסקאות בינלאומיות הן מורכבות — <br className="hidden md:block" /> ניהול החוזים שלהן לא חייב להיות
+              עסקאות בינלאומיות הן מורכבות - <br className="hidden md:block" /> ניהול החוזים שלהן לא חייב להיות
             </h2>
 
             <div className="max-w-4xl mx-auto space-y-6">
@@ -292,7 +292,7 @@ export function InternationalContractsServicePageV2() {
               <div className="md:w-1/2 fade-up">
                 <h3 className="text-3xl md:text-4xl font-black text-[#1a1b24] mb-6">חתימה דיגיטלית ממכל מקום</h3>
                 <p className="text-lg text-[#444656] leading-relaxed">
-                  תהליך חתימה מהיר, מאובטח וקביל משפטית המותאם לכל מכשיר — נייד, טאבלט או מחשב — בכל מקום בעולם.
+                  תהליך חתימה מהיר, מאובטח וקביל משפטית המותאם לכל מכשיר - נייד, טאבלט או מחשב - בכל מקום בעולם.
                 </p>
               </div>
               <div className="md:w-1/2 bg-[#eeecfa] rounded-3xl h-64 shadow-inner flex items-center justify-center p-6">

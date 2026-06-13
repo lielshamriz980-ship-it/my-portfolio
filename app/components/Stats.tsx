@@ -25,7 +25,7 @@ function CountUp({ end, display, literal, active }: { end: number; display: stri
     requestAnimationFrame(tick);
   }, [active, end, literal]);
 
-  if (literal || !active) return <span>{active ? display : "—"}</span>;
+  if (literal || !active) return <span>{active ? display : "-"}</span>;
   const suffix = display.replace(/[\d,]/g, "");
   return <span>{count.toLocaleString()}{suffix}</span>;
 }

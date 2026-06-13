@@ -15,6 +15,8 @@ import { InternationalContractsServicePageV2 } from "../../../components/Interna
 import { APIServicePageV3 } from "../../../components/APIServicePageV3";
 import { IntegrationsServicePageV3 } from "../../../components/IntegrationsServicePageV3";
 import { ClientManagementServicePageV2 } from "../../../components/ClientManagementServicePageV2";
+import { TechDevelopmentServicePageV2 } from "../../../components/TechDevelopmentServicePageV2";
+import { RealEstateConstructionServicePageV2 } from "../../../components/RealEstateConstructionServicePageV2";
 
 export async function generateStaticParams() {
   return [
@@ -30,6 +32,8 @@ export async function generateStaticParams() {
     { category: "platform", item: "analytics" },
     { category: "platform", item: "international-contracts" },
     // Solutions
+    { category: "solutions", item: "tech" },
+    { category: "solutions", item: "property" },
     { category: "solutions", item: "freelancers-creators" },
     { category: "solutions", item: "property-owners" },
     { category: "solutions", item: "small-business-owners" },
@@ -433,6 +437,30 @@ export default async function ServicePage({ params }: any) {
     );
   }
 
+  if (item === "tech") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <TechDevelopmentServicePageV2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
+  if (item === "property") {
+    return (
+      <>
+        <NavbarWiz />
+        <main className="mt-16">
+          <RealEstateConstructionServicePageV2 />
+        </main>
+        <Footer2 />
+      </>
+    );
+  }
+
   if (item === "freelancers-creators") {
     return (
       <>
@@ -462,7 +490,7 @@ export default async function ServicePage({ params }: any) {
     return (
       <>
         <NavbarWiz />
-        <main>
+        <main className="mt-16">
           <AlertsServicePageV3 />
         </main>
         <Footer2 />
@@ -481,6 +509,7 @@ export default async function ServicePage({ params }: any) {
       </>
     );
   }
+
 
   if (item === "international-contracts") {
     return (

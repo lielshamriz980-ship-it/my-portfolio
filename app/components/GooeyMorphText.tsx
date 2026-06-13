@@ -89,12 +89,12 @@ export function GooeyMorphText({
   return (
     // inline-block so it flows naturally inside an h1 span.block, centered
     <span className={`relative inline-block mx-auto ${className}`} style={{ verticalAlign: "baseline", display: "inline-block" }}>
-      {/* Invisible placeholder — determines width/height, inherits all parent styles */}
+      {/* Invisible placeholder - determines width/height, inherits all parent styles */}
       <span className="invisible select-none pointer-events-none whitespace-nowrap" aria-hidden="true">
         {longest}
       </span>
 
-      {/* Morphing overlay — absolutely covers the placeholder exactly */}
+      {/* Morphing overlay - absolutely covers the placeholder exactly */}
       <span
         className="absolute top-0 bottom-0 left-0 right-0"
         style={{ filter: "url(#gooey-threshold)" }}

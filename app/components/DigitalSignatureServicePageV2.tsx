@@ -1,237 +1,107 @@
-"use client";
-import { ArrowRight, Pen, Check, Clock, Shield, Zap, FileCheck } from "lucide-react";
+﻿"use client";
 
 export function DigitalSignatureServicePageV2() {
   return (
-    <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-32 bg-gradient-to-br from-indigo-50 to-white" style={{ direction: "rtl" }}>
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 right-10 w-[600px] h-[600px] rounded-full blur-3xl" style={{ background: "#4F46E5" }} />
-          <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] rounded-full blur-3xl" style={{ background: "#E0E7FF15" }} />
-        </div>
+    <div style={{ direction: "rtl", background: "#fcf8ff", color: "#181445", fontFamily: "Assistant, sans-serif", minHeight: "100vh" }}>
+      <style>{`
+        .ds-shimmer { position: relative; overflow: hidden; }
+        .ds-shimmer::after {
+          content: ""; position: absolute; top: 0; right: -100%; width: 100%; height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          animation: dsShimmer 3s linear infinite;
+        }
+        @keyframes dsShimmer { 0%{right:-100%} 100%{right:100%} }
+        .ds-card { transition: transform 0.3s, box-shadow 0.3s; }
+        .ds-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(79,70,229,0.1); }
+      `}</style>
 
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 relative z-10">
-          <span className="inline-block px-4 py-2 rounded-full text-sm font-bold mb-6" style={{ background: "#4F46E520", color: "#4F46E5" }}>
-            חתימה דיגיטלית
-          </span>
+      <div style={{ background: "#f6f2ff", borderBottom: "1px solid #c3c6d7", padding: "12px 0", textAlign: "center" }}>
+        <h1 style={{ fontSize: 32, fontWeight: 700, color: "#181445", margin: 0 }}>חתימה דיגיטלית</h1>
+      </div>
 
-          <h1 className="text-right font-black mb-8" style={{ fontSize: "clamp(48px, 7vw, 88px)", color: "#1E1B4B", lineHeight: 1.1 }}>
-            חתום בשניות, לא בשעות
-          </h1>
-
-          <p className="text-right text-xl leading-relaxed max-w-3xl ml-auto mb-12" style={{ color: "#6B7280", fontWeight: 500 }}>
-            חתימות דיגיטליות כשרות משפטית בישראל וברחבי העולם. חותמים מביתם, במשרד, או בדרך. בטוח, מהיר ופשוט.
-          </p>
-
-          <div className="flex flex-wrap gap-4 justify-end">
-            <button className="px-8 py-4 text-lg font-bold text-white rounded-2xl flex items-center gap-2" style={{ background: "#4F46E5" }}>
-              התחל בחינם
-              <ArrowRight size={20} />
-            </button>
-            <button className="px-8 py-4 text-lg font-bold rounded-2xl" style={{ background: "transparent", border: "2px solid #4F46E5", color: "#4F46E5" }}>
-              צפה בדמו
-            </button>
+      <main>
+        <section style={{ padding: "64px 24px 96px", textAlign: "center" }}>
+          <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+            <h2 style={{ fontSize: 48, fontWeight: 700, color: "#181445", marginBottom: 16 }}>
+              חתימה דיגיטלית מאובטחת<br/><span style={{ color: "#004ac6" }}>בסטנדרט הגבוה ביותר</span>
+            </h2>
+            <p style={{ fontSize: 18, color: "#434655", marginBottom: 32 }}>מערכת חתימה משפטית המשלבת אבטחה ברמה בנקאית עם חוויית משתמש חלקה.</p>
+            <button style={{ background: "#004ac6", color: "#fff", padding: "16px 40px", borderRadius: 12, fontSize: 20, fontWeight: 600, border: "none", cursor: "pointer" }}>התחל לחתום עכשיו</button>
           </div>
-        </div>
+        </section>
 
-        {/* Stats */}
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-8 rounded-2xl" style={{ background: "white", border: "2px solid #4F46E5" }}>
-            <div className="text-sm font-bold mb-3 flex items-center gap-2 justify-end" style={{ color: "#4F46E5" }}>
-              <Zap size={18} />
-              מהירות
-            </div>
-            <div className="text-4xl font-black mb-2" style={{ color: "#1E1B4B" }}>{`< 1`}</div>
-            <div className="text-sm text-gray-600 text-right">דקה בממוצע</div>
-          </div>
-
-          <div className="p-8 rounded-2xl" style={{ background: "white", border: "2px solid #4F46E5" }}>
-            <div className="text-sm font-bold mb-3 flex items-center gap-2 justify-end" style={{ color: "#4F46E5" }}>
-              <FileCheck size={18} />
-              חתימות שנשלחו
-            </div>
-            <div className="text-4xl font-black mb-2" style={{ color: "#1E1B4B" }}>1M+</div>
-            <div className="text-sm text-gray-600 text-right">בחודש</div>
-          </div>
-
-          <div className="p-8 rounded-2xl" style={{ background: "white", border: "2px solid #4F46E5" }}>
-            <div className="text-sm font-bold mb-3 flex items-center gap-2 justify-end" style={{ color: "#4F46E5" }}>
-              <Shield size={18} />
-              כשרות משפטית
-            </div>
-            <div className="text-4xl font-black mb-2" style={{ color: "#1E1B4B" }}>100%</div>
-            <div className="text-sm text-gray-600 text-right">בעולם</div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <h2 className="text-right font-black mb-20" style={{ fontSize: "clamp(36px, 5vw, 56px)", color: "#1E1B4B" }}>
-            תהליך חתימה פשוט
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
-            {[
-              { num: 1, title: "העלה חוזה", desc: "בחר קובץ מהמחשב שלך" },
-              { num: 2, title: "הזמן חותמים", desc: "הוסף אנשים לחתימה" },
-              { num: 3, title: "שלח לחתימה", desc: `דוא"ל מיידי ישירה` },
-              { num: 4, title: "סיום מידי", desc: "קבל תיעוד מלא" },
-            ].map((step, i) => (
-              <div key={i} className="relative">
-                <div className="p-6 rounded-2xl text-center" style={{ background: "#F0F9FF", border: "2px solid #4F46E5" }}>
-                  <div className="text-2xl font-black mb-3" style={{ color: "#4F46E5" }}>{step.num}</div>
-                  <h4 className="font-bold mb-2" style={{ color: "#1E1B4B" }}>
-                    {step.title}
-                  </h4>
-                  <p className="text-sm" style={{ color: "#6B7280" }}>
-                    {step.desc}
-                  </p>
+        <section style={{ padding: "64px 24px", background: "#fcf8ff" }}>
+          <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+            <h2 style={{ fontSize: 32, fontWeight: 700, textAlign: "center", marginBottom: 48 }}>איך זה עובד?</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+              {[
+                { num: 1, title: "העלאת מסמך", desc: "העלה PDF או השתמש בתבניות מובנות." },
+                { num: 2, title: "שליחה לחתימה", desc: "הפץ דרך WhatsApp, SMS או אימייל." },
+                { num: 3, title: "אבטחה וארכיון", desc: "קבל עותק חתום עם Audit Log מלא." },
+              ].map((step, i) => (
+                <div key={i} style={{ padding: 32, borderRadius: 24, background: "#fff", border: "1px solid #c3c6d7" }}>
+                  <div style={{ fontSize: 32, fontWeight: 700, color: "#004ac6", marginBottom: 16 }}>{step.num}</div>
+                  <h3 style={{ fontSize: 24, fontWeight: 600, marginBottom: 12 }}>{step.title}</h3>
+                  <p style={{ fontSize: 16, color: "#434655" }}>{step.desc}</p>
                 </div>
-                {i < 3 && (
-                  <div className="hidden md:block absolute -right-8 top-1/2 -translate-y-1/2 text-2xl" style={{ color: "#4F46E5" }}>→</div>
-                )}
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={{ padding: "64px 24px", background: "#2d2a5b", color: "#fff" }}>
+          <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+            <h2 style={{ fontSize: 32, fontWeight: 700, marginBottom: 32 }}>תשתית אבטחה בדרגת Enterprise</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>
+              <div>
+                <p>אנחנו מגנים על הנכסים היקרים ביותר שלך עם טכנולוגיית ההצפנה המתקדמת בעולם.</p>
+                <ul style={{ fontSize: 16, color: "rgba(227,223,255,0.8)" }}>
+                  <li>הצפנת AES-256</li>
+                  <li>תאימות משפטית מלאה SOC2 ו-GDPR</li>
+                  <li>אימות רב-שלבי (MFA)</li>
+                </ul>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Signature Types */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-indigo-50 to-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <h2 className="text-right font-black mb-20" style={{ fontSize: "clamp(36px, 5vw, 56px)", color: "#1E1B4B" }}>
-            סוגי חתימה בעולם
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Pen,
-                title: "חתימה דיגיטלית",
-                desc: "חתימה מתקדמת עם תעודה דיגיטלית"
-              },
-              {
-                icon: Check,
-                title: "אישור דיגיטלי",
-                desc: "אישור פשוט ומהיר של מסמכים"
-              },
-              {
-                icon: Clock,
-                title: "חותמת זמן",
-                desc: "תעודת זמן המוכחת משפטית"
-              },
-            ].map((sigType, i) => {
-              const Icon = sigType.icon;
-              return (
-                <div key={i} className="p-8 rounded-2xl text-center" style={{ background: "white", border: "2px solid #4F46E5" }}>
-                  <Icon size={32} color="#4F46E5" className="mx-auto mb-4" />
-                  <h4 className="font-bold text-lg mb-3" style={{ color: "#1E1B4B" }}>
-                    {sigType.title}
-                  </h4>
-                  <p style={{ color: "#6B7280" }}>
-                    {sigType.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <h2 className="text-right font-black mb-20" style={{ fontSize: "clamp(36px, 5vw, 56px)", color: "#1E1B4B" }}>
-            תכונות אבטחה חזקות
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "הצפנה מלאה",
-                desc: "כל החתימות מוצפנות בטרנזיט ובאחסון."
-              },
-              {
-                icon: FileCheck,
-                title: "אימות זהות",
-                desc: "אימות זהות שני-שלבי של כל חותם."
-              },
-              {
-                icon: Zap,
-                title: "ניטור 24/7",
-                desc: "ניטור בזמן אמת של כל החתימות."
-              },
-              {
-                icon: Check,
-                title: "דוחות ושקיפות",
-                desc: "דוח מלא של כל אירוע בחוזה."
-              },
-            ].map((feature, i) => {
-              const Icon = feature.icon;
-              return (
-                <div key={i} className="p-8 rounded-2xl" style={{ background: "#F9FAFB", border: "2px solid #E5E7EB" }}>
-                  <Icon size={32} color="#4F46E5" className="mb-4" />
-                  <h4 className="font-bold text-lg mb-3" style={{ color: "#1E1B4B" }}>
-                    {feature.title}
-                  </h4>
-                  <p style={{ color: "#6B7280" }}>
-                    {feature.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-indigo-50 to-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <h2 className="text-right font-black mb-20" style={{ fontSize: "clamp(36px, 5vw, 56px)", color: "#1E1B4B" }}>
-            מקרים שבהם זה משתמש
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              { title: "חוזי עבודה", desc: "חתום עם עובדים חדשים בדקות" },
-              { title: "הסכמים עם לקוחות", desc: "סגור עסקאות במהירות" },
-              { title: "אישורים משפטיים", desc: "אישור מסמכים משפטיים רשמית" },
-              { title: "הלוואות ובנקאות", desc: "חתימה על מסמכים פיננסיים" },
-              { title: "הסכמי בעלות", desc: "חוזי שותפות וחלוקת זכויות" },
-              { title: "תיעוד רפואי", desc: "חתימה על טפסים ברופאים" },
-            ].map((useCase, i) => (
-              <div key={i} className="p-8 rounded-2xl" style={{ background: "white", border: "2px solid #4F46E5" }}>
-                <h4 className="font-bold text-lg mb-3" style={{ color: "#1E1B4B" }}>
-                  {useCase.title}
-                </h4>
-                <p style={{ color: "#6B7280" }}>
-                  {useCase.desc}
-                </p>
+              <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 24, padding: 24, fontSize: 11, fontFamily: "monospace", color: "#fff", opacity: 0.7 }}>
+                <div>[09:42:12] :: Connection established</div>
+                <div>[09:42:15] :: Audit event completed</div>
+                <div>[09:42:20] :: Final PDF generated</div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="py-20 md:py-32" style={{ background: "linear-gradient(135deg, #4F46E5 0%, #6366F1 100%)" }}>
-        <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
-          <h2 className="text-white font-black mb-8" style={{ fontSize: "clamp(36px, 5vw, 56px)" }}>
-            חתום בשניות, לא בשעות
-          </h2>
-          <p className="text-white text-xl mb-10 opacity-90 max-w-2xl mx-auto">
-            חתימות דיגיטליות כשרות משפטית, בטוחות, ומהירות. בישראל וברחבי העולם.
-          </p>
-          <button className="px-10 py-4 text-lg font-bold rounded-2xl flex items-center gap-2 mx-auto" style={{ background: "white", color: "#4F46E5" }}>
-            התחל לחתום
-            <ArrowRight size={20} />
-          </button>
-        </div>
-      </section>
-    </>
+        <section style={{ padding: "64px 24px", background: "#fff" }}>
+          <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+            <h2 style={{ fontSize: 32, fontWeight: 700, textAlign: "center", marginBottom: 48 }}>חתימה מכל מקום, בכל ערוץ</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
+              <div style={{ padding: 40, borderRadius: 24, background: "#f0fdf4" }}>
+                <h3 style={{ fontSize: 24, fontWeight: 600, color: "#166534", marginBottom: 12 }}>WhatsApp Signing</h3>
+                <p style={{ fontSize: 16, color: "#166534cc" }}>קצב חתימה מהיר פי 3 לעומת אימייל.</p>
+              </div>
+              <div style={{ padding: 40, borderRadius: 24, background: "#eff6ff" }}>
+                <h3 style={{ fontSize: 24, fontWeight: 600, color: "#1e40af", marginBottom: 12 }}>Email Distribution</h3>
+                <p style={{ fontSize: 16, color: "#1e40afcc" }}>מערכת שליחה חכמה עם מעקב בזמן אמת.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ padding: "64px 24px", background: "#fcf8ff" }}>
+          <div style={{ maxWidth: 640, margin: "0 auto" }}>
+            <h2 style={{ fontSize: 32, fontWeight: 700, textAlign: "center", marginBottom: 48 }}>שאלות נפוצות</h2>
+          </div>
+        </section>
+
+        <section style={{ padding: "64px 24px" }}>
+          <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+            <div style={{ background: "#004ac6", borderRadius: 40, padding: 80, textAlign: "center", color: "#fff" }}>
+              <h2 style={{ fontSize: 48, fontWeight: 700, marginBottom: 16 }}>מוכנים לשדרג את תהליכי החתימה?</h2>
+              <p style={{ fontSize: 18, marginBottom: 32 }}>הצטרפו למאות חברות שכבר עברו לחתימה דיגיטלית חכמה.</p>
+              <button style={{ background: "#fff", color: "#004ac6", padding: "16px 48px", borderRadius: 24, fontSize: 20, fontWeight: 600, border: "none", cursor: "pointer" }}>התחל לחתום עכשיו</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   );
 }

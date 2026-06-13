@@ -33,7 +33,7 @@ export function AnalyticsServicePageV2() {
                 כל החוזים שלך. כל הנתונים. תמונה אחת ברורה.
               </h1>
               <p style={{ fontSize: "18px", color: "rgba(255, 255, 255, 0.85)", maxWidth: "500px", lineHeight: 1.6, marginBottom: "32px" }}>
-                לוח בקרה אנליטי שמאגד את כל מחזור חיי החוזים, ביצועי צוות, וסיכונים — בזמן אמת וברמת פירוט גבוהה.
+                לוח בקרה אנליטי שמאגד את כל מחזור חיי החוזים, ביצועי צוות, וסיכונים - בזמן אמת וברמת פירוט גבוהה.
               </p>
               <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
                 <button style={{ padding: "14px 32px", background: "#435eff", color: "white", fontWeight: "600", borderRadius: "12px", border: "none", cursor: "pointer", fontSize: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
@@ -186,7 +186,7 @@ export function AnalyticsServicePageV2() {
                   סטטוסים חכמים לכל שלב בחוזה
                 </h3>
                 <p style={{ fontSize: "18px", color: "#444656", lineHeight: 1.6, marginBottom: "20px" }}>
-                  המערכת מסווגת אוטומטית כל חוזה לפי שלב החיים שלו — טיוטה, ביקורת, משא ומתן, או חתום — כך שאתה תמיד יודע איפה קל להתחיל.
+                  המערכת מסווגת אוטומטית כל חוזה לפי שלב החיים שלו - טיוטה, ביקורת, משא ומתן, או חתום - כך שאתה תמיד יודע איפה קל להתחיל.
                 </p>
                 <ul style={{ color: "#444656" }}>
                   {["טיוטה וקבצים ראשוניים", "בתהליך ביקורת משפטית", "במשא ומתן עם הצד השני", "חתום וסגור"].map((item, i) => (
@@ -199,7 +199,7 @@ export function AnalyticsServicePageV2() {
               </div>
 
               <div className="reveal-on-scroll" style={{ background: "#f4f2ff", padding: "32px", borderRadius: "16px", opacity: 0, transition: "all 0.8s ease-out" }}>
-                <div style={{ space: "16px" }}>
+                <div style={{ gap: "16px" }}>
                   {[
                     { stage: "טיוטה", count: "450", color: "#2241e6" },
                     { stage: "ביקורת", count: "380", color: "#435eff" },
