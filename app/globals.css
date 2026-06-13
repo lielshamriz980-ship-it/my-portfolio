@@ -263,3 +263,113 @@ h1, h2, h3, h4, h5, h6 {
 .dark-section-glow {
   background: radial-gradient(ellipse at 50% 0%, rgba(79,70,229,0.12) 0%, transparent 65%);
 }
+
+/* ─── MOBILE RESPONSIVENESS ────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* Reduce section padding on mobile */
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Collapse grids from 2+ columns to 1 column */
+  [style*="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Responsive font sizes for large headings */
+  h1 {
+    font-size: clamp(24px, 6vw, 64px) !important;
+  }
+
+  h2 {
+    font-size: clamp(20px, 5vw, 48px) !important;
+  }
+
+  h3 {
+    font-size: clamp(18px, 4vw, 32px) !important;
+  }
+
+  /* Ensure buttons don't overflow */
+  button {
+    max-width: 100% !important;
+  }
+
+  /* Responsive gap for grids */
+  [style*="gap"] {
+    gap: 16px !important;
+  }
+
+  /* Reduce large paddings */
+  [style*="padding: \"120px"] {
+    padding: 48px 16px !important;
+  }
+
+  [style*="padding: \"96px"] {
+    padding: 40px 16px !important;
+  }
+
+  [style*="padding: \"80px"] {
+    padding: 32px 16px !important;
+  }
+
+  [style*="padding: \"64px"] {
+    padding: 32px 16px !important;
+  }
+
+  /* Hero sections should be shorter on mobile */
+  [style*="minHeight: \"600px"] {
+    min-height: 400px !important;
+  }
+
+  [style*="minHeight: \"800px"] {
+    min-height: 500px !important;
+  }
+
+  /* Container max-widths shouldn't constrain mobile */
+  [style*="maxWidth"] {
+    max-width: 100% !important;
+  }
+
+  /* Flexible width for grid cells */
+  [style*="gridTemplateColumns: \"1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ensure text stays readable */
+  [style*="fontSize: 64"] {
+    font-size: clamp(26px, 7vw, 48px) !important;
+  }
+
+  [style*="fontSize: 48"] {
+    font-size: clamp(22px, 6vw, 42px) !important;
+  }
+
+  [style*="fontSize: 42"] {
+    font-size: clamp(20px, 5vw, 38px) !important;
+  }
+
+  [style*="fontSize: 36"] {
+    font-size: clamp(18px, 4.5vw, 32px) !important;
+  }
+
+  [style*="fontSize: 32"] {
+    font-size: clamp(16px, 4vw, 28px) !important;
+  }
+
+  /* Ensure consistent padding on small screens */
+  [style*="padding: \"48px"] {
+    padding: 32px 16px !important;
+  }
+
+  [style*="padding: \"40px"] {
+    padding: 24px 16px !important;
+  }
+
+  /* Responsive margins */
+  [style*="margin: \"0 auto"] {
+    width: 100% !important;
+    padding: 0 16px !important;
+  }
+}
