@@ -24,6 +24,12 @@ export function SecurityPrivacyServicePageV3() {
           75%,100%{transform:scale(2);opacity:0}
         }
         .sec-ping { animation: secPing 1.5s cubic-bezier(0,0,0.2,1) infinite; }
+        @media (max-width: 768px) {
+          .sec-grid-2 { grid-template-columns: 1fr !important; }
+          .sec-grid-3 { grid-template-columns: 1fr !important; }
+          .sec-section { padding: 48px 16px !important; }
+          .sec-h2 { font-size: clamp(22px, 6vw, 36px) !important; }
+        }
       `}</style>
 
       {/* Page Title Bar */}

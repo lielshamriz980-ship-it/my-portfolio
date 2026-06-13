@@ -28,6 +28,11 @@ export function AlertsServicePageV3() {
         .alerts-card { transition: transform 0.25s, box-shadow 0.25s; }
         .alerts-more { opacity: 0; transition: opacity 0.2s; }
         .alerts-card:hover .alerts-more { opacity: 1; }
+        @media (max-width: 768px) {
+          .alerts-grid-2 { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .alerts-section { padding: 48px 16px !important; }
+          .alerts-h2 { font-size: clamp(22px, 6vw, 36px) !important; }
+        }
         .alerts-toggle-track {
           width: 44px; height: 24px; border-radius: 9999px;
           background: #c3c6d7; position: relative; cursor: pointer;

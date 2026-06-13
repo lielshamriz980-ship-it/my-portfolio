@@ -303,6 +303,11 @@ export function AnalyticsServicePageV2() {
             transform: translateY(0);
           }
         }
+        @media (max-width: 768px) {
+          section { padding: 40px 16px !important; }
+          h2 { font-size: clamp(22px, 6vw, 36px) !important; }
+          [style*="grid"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+        }
       `}</style>
     </div>
   );

@@ -19,6 +19,12 @@ export function APIServicePageV3() {
         .api-card { transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
         .api-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(79,70,229,0.08); border-color: #004ac6 !important; }
         .terminal-bg { background: #1e1e2e; color: #cdd6f4; }
+        @media (max-width: 768px) {
+          .api-grid-2 { grid-template-columns: 1fr !important; }
+          .api-grid-3 { grid-template-columns: 1fr !important; }
+          .api-section { padding: 48px 16px !important; }
+          .api-h2 { font-size: clamp(22px, 6vw, 36px) !important; }
+        }
       `}</style>
 
       {/* Page Title Bar */}
