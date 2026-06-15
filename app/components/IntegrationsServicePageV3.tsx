@@ -94,10 +94,13 @@ export function IntegrationsServicePageV3() {
         .int-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(79,70,229,0.1); }
         .int-card:hover .int-btn { background: #004ac6 !important; color: #fff !important; }
         @media (max-width: 768px) {
-          .int-grid-2 { grid-template-columns: 1fr !important; }
-          .int-grid-3 { grid-template-columns: 1fr !important; }
+          .int-grid-2 { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .int-grid-3 { grid-template-columns: 1fr !important; gap: 16px !important; }
           .int-section { padding: 48px 16px !important; }
           .int-h2 { font-size: clamp(22px, 6vw, 36px) !important; }
+          header { padding: 32px 16px !important; overflow: hidden !important; max-width: 100vw !important; }
+          main { overflow: hidden !important; max-width: 100vw !important; }
+          section { overflow: hidden !important; max-width: 100vw !important; }
         }
       `}</style>
 
@@ -109,7 +112,7 @@ export function IntegrationsServicePageV3() {
       <main>
         {/* ─── Hero Section ─── */}
         <header style={{ padding: "64px 24px 96px", position: "relative", overflow: "hidden" }}>
-          <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
+          <div className="int-grid-2" style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
             {/* Text */}
             <div style={{ textAlign: "right" }}>
               <span style={{ display: "inline-block", padding: "4px 16px", background: "rgba(100,94,251,0.1)", color: "#4b41e1", fontSize: 14, fontWeight: 600, borderRadius: 9999, marginBottom: 16 }}>חיבורים חכמים</span>
@@ -126,7 +129,7 @@ export function IntegrationsServicePageV3() {
             </div>
 
             {/* Connection Animation */}
-            <div style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center", height: 400 }}>
+            <div style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center", height: 400, overflow: "hidden", maxWidth: "100%" }}>
               {/* Background circles */}
               <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", opacity: 0.15, pointerEvents: "none" }}>
                 <svg width="100%" height="100%" viewBox="0 0 400 400">
@@ -179,7 +182,7 @@ export function IntegrationsServicePageV3() {
             </div>
 
             {/* Cards grid */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+            <div className="int-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
               {integrations.map((int) => (
                 <div key={int.name} className="int-card" style={{ background: "rgba(255,255,255,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(227,223,255,0.5)", borderRadius: 16, padding: 24 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
@@ -203,7 +206,7 @@ export function IntegrationsServicePageV3() {
 
         {/* ─── No-Code Automation Section ─── */}
         <section style={{ padding: "48px 24px", background: "#fcf8ff" }}>
-          <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
+          <div className="int-grid-2" style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
             {/* Visual */}
             <div style={{ background: "#181445", borderRadius: 24, padding: 32, minHeight: 400, position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <div style={{ position: "absolute", inset: 0, opacity: 0.08, backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "20px 20px" }} />

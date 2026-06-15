@@ -23,6 +23,17 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
+    // Check URL parameter first
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get("lang") as Lang | null;
+      if (urlLang && ["he", "en", "ar"].includes(urlLang)) {
+        setLang(urlLang);
+        return;
+      }
+    } catch {}
+
+    // Then check localStorage
     try {
       const saved = localStorage.getItem("dl-lang") as Lang | null;
       if (saved && ["he", "en", "ar"].includes(saved)) {
@@ -30,7 +41,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         return;
       }
     } catch {}
-    // default: Hebrew
+
+    // Default: Hebrew
     document.documentElement.lang = "he";
     document.documentElement.dir = "rtl";
   // eslint-disable-next-line react-hooks/exhaustive-deps

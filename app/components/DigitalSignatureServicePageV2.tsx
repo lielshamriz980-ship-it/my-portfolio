@@ -28,8 +28,8 @@ export function DigitalSignatureServicePageV2() {
       <main>
         <section style={{ padding: "64px 24px 96px", textAlign: "center" }}>
           <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-            <h2 style={{ fontSize: 48, fontWeight: 700, color: "#181445", marginBottom: 16 }}>
-              חתימה דיגיטלית מאובטחת<br/><span style={{ color: "#004ac6" }}>בסטנדרט הגבוה ביותר</span>
+            <h2 style={{ fontSize: 48, fontWeight: 800, color: "#181445", marginBottom: 16, lineHeight: 1.2 }}>
+              חתימה דיגיטלית מאובטחת<br/><span style={{ color: "#004ac6", fontWeight: 800 }}>בסטנדרט הגבוה ביותר</span>
             </h2>
             <p style={{ fontSize: 18, color: "#434655", marginBottom: 32 }}>מערכת חתימה משפטית המשלבת אבטחה ברמה בנקאית עם חוויית משתמש חלקה.</p>
             <button style={{ background: "#004ac6", color: "#fff", padding: "16px 40px", borderRadius: 12, fontSize: 20, fontWeight: 600, border: "none", cursor: "pointer" }}>התחל לחתום עכשיו</button>
@@ -89,12 +89,6 @@ export function DigitalSignatureServicePageV2() {
                 <p style={{ fontSize: 16, color: "#1e40afcc" }}>מערכת שליחה חכמה עם מעקב בזמן אמת.</p>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section style={{ padding: "64px 24px", background: "#fcf8ff" }}>
-          <div style={{ maxWidth: 640, margin: "0 auto" }}>
-            <h2 style={{ fontSize: 32, fontWeight: 700, textAlign: "center", marginBottom: 48 }}>שאלות נפוצות</h2>
           </div>
         </section>
 
