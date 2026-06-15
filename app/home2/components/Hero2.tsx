@@ -91,25 +91,23 @@ export default function Hero2() {
               </div>
               <div className="flex-1 p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-base font-bold" style={{ color: "#1E1B4B" }}>החוזים שלי</span>
-                  <button className="px-4 py-2 rounded-xl text-sm font-bold text-white" style={{ background: "#4F46E5" }}>+ חוזה חדש</button>
+                  <span className="text-base font-bold" style={{ color: "#1E1B4B" }}>{h.dashboard.title}</span>
+                  <button className="px-4 py-2 rounded-xl text-sm font-bold text-white" style={{ background: "#4F46E5" }}>{h.dashboard.newButton}</button>
                 </div>
                 <div className="flex flex-col gap-2.5">
-                  {[
-                    { name: "הסכם פיתוח - StartupIL",  date: "12.06.26", s: "חתום",  c: "#10B981", bg: "#ECFDF5" },
-                    { name: "שכירות - רמת אביב",         date: "10.06.26", s: "ממתין", c: "#F59E0B", bg: "#FFFBEB" },
-                    { name: "NDA - משקיע פוטנציאלי",    date: "08.06.26", s: "חתום",  c: "#10B981", bg: "#ECFDF5" },
-                    { name: "הסכם שותפות - TechVenture", date: "05.06.26", s: "ממתין", c: "#F59E0B", bg: "#FFFBEB" },
-                  ].map(r => (
-                    <div key={r.name} className="flex items-center justify-between rounded-xl px-5 py-3 bg-white"
-                      style={{ border: "1px solid #F1F5F9", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
-                      <div>
-                        <p className="text-sm font-semibold" style={{ color: "#1E1B4B" }}>{r.name}</p>
-                        <p className="text-xs mt-0.5" style={{ color: "#9CA3AF" }}>{r.date}</p>
+                  {h.dashboard.contracts.map(contract => {
+                    const statusColor = h.dashboard.statusColors[contract.status as keyof typeof h.dashboard.statusColors];
+                    return (
+                      <div key={contract.name} className="flex items-center justify-between rounded-xl px-5 py-3 bg-white"
+                        style={{ border: "1px solid #F1F5F9", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+                        <div>
+                          <p className="text-sm font-semibold" style={{ color: "#1E1B4B" }}>{contract.name}</p>
+                          <p className="text-xs mt-0.5" style={{ color: "#9CA3AF" }}>{contract.date}</p>
+                        </div>
+                        <span className="text-xs font-bold px-3 py-1.5 rounded-full" style={{ background: statusColor.bg, color: statusColor.color }}>{contract.status}</span>
                       </div>
-                      <span className="text-xs font-bold px-3 py-1.5 rounded-full" style={{ background: r.bg, color: r.c }}>{r.s}</span>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>

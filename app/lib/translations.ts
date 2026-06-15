@@ -68,6 +68,12 @@ export type T = {
     badge: string; line1: string; line2: string;
     morph: string[]; sub: string;
     cta1: string; cta2: string; trust: string[];
+    dashboard: {
+      title: string;
+      newButton: string;
+      contracts: { name: string; date: string; status: string }[];
+      statusColors: Record<string, { color: string; bg: string }>;
+    };
   };
   trustbar: { label: string; items: string[] };
   pain: {
@@ -259,6 +265,17 @@ const he: T = {
   hero: {
     badge: "הגנה משפטית לכל עסק ישראלי",
     line1: "הגן על כל עסקה", line2: "שאתה בונה ומנהל",
+    dashboard: {
+      title: "החוזים שלי",
+      newButton: "+ חוזה חדש",
+      contracts: [
+        { name: "הסכם פיתוח - StartupIL", date: "12.06.26", status: "חתום" },
+        { name: "שכירות - רמת אביב", date: "10.06.26", status: "ממתין" },
+        { name: "NDA - משקיע פוטנציאלי", date: "08.06.26", status: "חתום" },
+        { name: "הסכם שותפות - TechVenture", date: "05.06.26", status: "ממתין" },
+      ],
+      statusColors: { "חתום": { color: "#10B981", bg: "#ECFDF5" }, "ממתין": { color: "#F59E0B", bg: "#FFFBEB" } },
+    },
     morph: ["בדקות.", "ללא עורך דין.", "בוואטסאפ.", "בלי בירוקרטיה."],
     sub: "DealLayer מחברת בין החוזה, הלקוח, והחתימה - למערכת אחת חכמה. בלי עורכי דין, בלי המתנה.",
     cta1: "קבל הדגמה חינם", cta2: "ראה את הפלטפורמה",
@@ -778,6 +795,17 @@ const en: T = {
   hero: {
     badge: "Legal protection for every Israeli business",
     line1: "Protect every deal", line2: "you build and manage",
+    dashboard: {
+      title: "My Contracts",
+      newButton: "+ New Contract",
+      contracts: [
+        { name: "Development Agreement - StartupIL", date: "12.06.26", status: "Signed" },
+        { name: "Rental - Ramat Aviv", date: "10.06.26", status: "Pending" },
+        { name: "NDA - Potential Investor", date: "08.06.26", status: "Signed" },
+        { name: "Partnership Agreement - TechVenture", date: "05.06.26", status: "Pending" },
+      ],
+      statusColors: { "Signed": { color: "#10B981", bg: "#ECFDF5" }, "Pending": { color: "#F59E0B", bg: "#FFFBEB" } },
+    },
     morph: ["in minutes.", "no lawyers.", "via WhatsApp.", "no bureaucracy."],
     sub: "DealLayer connects contract, client, and signature into one smart system. No lawyers, no waiting.",
     cta1: "Get a Free Demo", cta2: "See the Platform",
@@ -1293,6 +1321,17 @@ const ar: T = {
     sub: "DealLayer تربط العقد والعميل والتوقيع في نظام واحد ذكي. بدون محامين، بدون انتظار.",
     cta1: "احصل على عرض مجاني", cta2: "شاهد المنصة",
     trust: ["بدون بطاقة ائتمان", "3 عقود مجانية", "جاهز في دقيقتين"],
+    dashboard: {
+      title: "عقودي",
+      newButton: "+ عقد جديد",
+      contracts: [
+        { name: "اتفاقية التطوير - StartupIL", date: "12.06.26", status: "موقّع" },
+        { name: "الإيجار - رامات أفيف", date: "10.06.26", status: "معلق" },
+        { name: "اتفاقية سرية - مستثمر محتمل", date: "08.06.26", status: "موقّع" },
+        { name: "اتفاقية الشراكة - TechVenture", date: "05.06.26", status: "معلق" },
+      ],
+      statusColors: { "موقّع": { color: "#10B981", bg: "#ECFDF5" }, "معلق": { color: "#F59E0B", bg: "#FFFBEB" } },
+    },
   },
   trustbar: { label: "يستخدمه آلاف الإسرائيليين يومياً", items: ["المستقلون","أصحاب العقارات","أصحاب الأعمال","رواد الأعمال","المقاولون","المدربون","المستشارون","المصورون","المطورون","المصممون"] },
   pain: {
