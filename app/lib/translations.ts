@@ -176,7 +176,7 @@ export type T = {
     techDevelopment: {
       hero: { title: string; subtitle: string; cta1: string; cta2: string };
       painPoints: { heading: string; items: { title: string; desc: string }[] };
-      solutions: { heading: string; description: string; benefits?: string[]; steps?: { num: number; label: string; status: string }[]; docName?: string; docStatus?: string; docMeta?: { sent: string; id: string } }[];
+      solutions: { heading: string; description: string; benefits?: string[]; steps?: { num: number; label: string; status: string }[]; docName?: string; docStatus?: string; docMeta?: { sent: string; id: string }; docMeta_labels?: { sent: string; label_step: string; label_complete: string; label_inprogress: string; label_pending: string } }[];
       templatesHeading: string;
       templates: { title: string; desc: string; iconType: string }[];
       benefits: { num: string; title: string; desc: string }[];
@@ -668,6 +668,7 @@ const he: T = {
           docName: "הסכם סודיות (NDA)",
           docStatus: "נחתם",
           docMeta: { sent: "היום, 10:24", id: "#NDA-9821" },
+          docMeta_labels: { sent: "נשלח:", label_step: "שלב", label_complete: "הושלם", label_inprogress: "בתהליך", label_pending: "ממתין" },
         },
         {
           heading: "הסכמי פיתוח עם Scope מוגדר",
@@ -1178,6 +1179,7 @@ const en: T = {
           docName: "Confidentiality Agreement (NDA)",
           docStatus: "Signed",
           docMeta: { sent: "Today, 10:24 AM", id: "#NDA-9821" },
+          docMeta_labels: { sent: "Sent:", label_step: "Step", label_complete: "Complete", label_inprogress: "In Progress", label_pending: "Pending" },
         },
         {
           heading: "Development Agreements With Defined Scope",
@@ -1688,6 +1690,7 @@ const ar: T = {
           docName: "اتفاقية الحفاظ على السرية (NDA)",
           docStatus: "موقّع",
           docMeta: { sent: "اليوم، 10:24 ص", id: "#NDA-9821" },
+          docMeta_labels: { sent: "أرسل:", label_step: "خطوة", label_complete: "مكتمل", label_inprogress: "قيد الإنجاز", label_pending: "معلق" },
         },
         {
           heading: "اتفاقيات التطوير بنطاق محدد",

@@ -95,20 +95,18 @@ export function TechDevelopmentServicePageV2() {
                   {tp.solutions[0].description}
                 </p>
                 <ul style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                  <li style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 16, fontWeight: 600, color: "#435EFF" }}>
-                    <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#435EFF" }} />
-                    מעקב אחר צפיות בזמן אמת
-                  </li>
-                  <li style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 16, fontWeight: 600, color: "#435EFF" }}>
-                    <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#435EFF" }} />
-                    חתימה דיגיטלית מאובטחת
-                  </li>
+                  {tp.solutions[0].benefits?.map((benefit, idx) => (
+                    <li key={idx} style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 16, fontWeight: 600, color: "#435EFF" }}>
+                      <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#435EFF" }} />
+                      {benefit}
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div style={{ background: "#fff", padding: 24, borderRadius: 16, border: "1px solid #c3c6d7", boxShadow: "0 4px 20px rgba(0,0,0,0.04)" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, paddingBottom: 16, borderBottom: "1px solid #e3dfff" }}>
-                  <span style={{ fontWeight: 700, color: "#1A2A66" }}>הסכם סודיות (NDA)</span>
-                  <span style={{ padding: "4px 8px", background: "#d4edda", color: "#155724", borderRadius: 16, fontSize: 12 }}>נחתם</span>
+                  <span style={{ fontWeight: 700, color: "#1A2A66" }}>{tp.solutions[0].docName}</span>
+                  <span style={{ padding: "4px 8px", background: "#d4edda", color: "#155724", borderRadius: 16, fontSize: 12 }}>{tp.solutions[0].docStatus}</span>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 16 }}>
                   <div style={{ height: 8, background: "#f0f0f0", borderRadius: 4, width: "100%" }} />
@@ -116,8 +114,8 @@ export function TechDevelopmentServicePageV2() {
                   <div style={{ height: 8, background: "#f0f0f0", borderRadius: 4, width: "70%" }} />
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12, color: "#999", paddingTop: 16, borderTop: "1px solid #e3dfff" }}>
-                  <span>נשלח: היום, 10:24</span>
-                  <span style={{ fontFamily: "monospace" }}>#NDA-9821</span>
+                  <span>{tp.solutions[0].docMeta_labels?.sent} {tp.solutions[0].docMeta?.sent}</span>
+                  <span style={{ fontFamily: "monospace" }}>{tp.solutions[0].docMeta?.id}</span>
                 </div>
               </div>
             </div>
@@ -126,11 +124,11 @@ export function TechDevelopmentServicePageV2() {
             <div className="tech-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
               <div style={{ background: "#1A2A66", padding: 32, borderRadius: 16, order: -1 }}>
                 <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                  {[1, 2, 3].map((step) => (
-                    <div key={step} style={{ padding: 12, background: "rgba(255,255,255,0.1)", borderRadius: 8, border: "1px solid rgba(255,255,255,0.1)", display: "flex", justifyContent: "space-between" }}>
-                      <span style={{ color: "#fff", fontWeight: 700 }}>שלב {step}: {step === 1 ? "איפיון" : step === 2 ? "פיתוח" : "בדיקות"}</span>
-                      <span style={{ padding: "2px 8px", background: step === 1 ? "rgba(51, 204, 102, 0.3)" : step === 2 ? "rgba(255, 193, 7, 0.3)" : "rgba(150, 150, 150, 0.3)", color: step === 1 ? "#66ff66" : step === 2 ? "#ffff66" : "#cccccc", borderRadius: 4, fontSize: 11 }}>
-                        {step === 1 ? "הושלם" : step === 2 ? "בתהליך" : "ממתין"}
+                  {tp.solutions[1].steps?.map((step, idx) => (
+                    <div key={idx} style={{ padding: 12, background: "rgba(255,255,255,0.1)", borderRadius: 8, border: "1px solid rgba(255,255,255,0.1)", display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "#fff", fontWeight: 700 }}>{tp.solutions[0].docMeta_labels?.label_step} {step.num}: {step.label}</span>
+                      <span style={{ padding: "2px 8px", background: step.status === tp.solutions[0].docMeta_labels?.label_complete ? "rgba(51, 204, 102, 0.3)" : step.status === tp.solutions[0].docMeta_labels?.label_inprogress ? "rgba(255, 193, 7, 0.3)" : "rgba(150, 150, 150, 0.3)", color: step.status === tp.solutions[0].docMeta_labels?.label_complete ? "#66ff66" : step.status === tp.solutions[0].docMeta_labels?.label_inprogress ? "#ffff66" : "#cccccc", borderRadius: 4, fontSize: 11 }}>
+                        {step.status}
                       </span>
                     </div>
                   ))}

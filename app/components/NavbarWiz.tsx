@@ -421,18 +421,18 @@ export default function NavbarWiz() {
                   {menu.slice(0, -1).map((category, i) => (
                     <button key={i}
                       onClick={() => setMobileSelectedCategory(i)}
-                      className="flex items-center justify-between py-3.5 px-3 border-b border-gray-50 text-base font-medium text-gray-700 hover:bg-indigo-50 rounded-lg transition-colors"
-                      style={{ textAlign: isRtl ? "right" : "left" }}>
+                      className="flex items-center py-3.5 px-3 border-b border-gray-50 text-base font-medium text-gray-700 hover:bg-indigo-50 rounded-lg transition-colors"
+                      style={{ flexDirection: isRtl ? "row-reverse" : "row", justifyContent: "space-between" }}>
                       <span>{category.label}</span>
-                      <ChevronDown size={16} strokeWidth={2} style={{ transform: isRtl ? "rotate(270deg)" : "rotate(90deg)" }} />
+                      <ChevronDown size={16} strokeWidth={2} style={{ transform: isRtl ? "rotate(270deg)" : "rotate(90deg)", flexShrink: 0 }} />
                     </button>
                   ))}
                   {/* Company menu */}
                   <button onClick={() => setMobileSelectedCategory(menu.length - 1)}
-                    className="flex items-center justify-between py-3.5 px-3 border-b border-gray-50 text-base font-medium text-gray-700 hover:bg-indigo-50 rounded-lg transition-colors"
-                    style={{ textAlign: isRtl ? "right" : "left" }}>
+                    className="flex items-center py-3.5 px-3 border-b border-gray-50 text-base font-medium text-gray-700 hover:bg-indigo-50 rounded-lg transition-colors"
+                    style={{ flexDirection: isRtl ? "row-reverse" : "row", justifyContent: "space-between" }}>
                     <span>{t.nav.company}</span>
-                    <ChevronDown size={16} strokeWidth={2} style={{ transform: isRtl ? "rotate(270deg)" : "rotate(90deg)" }} />
+                    <ChevronDown size={16} strokeWidth={2} style={{ transform: isRtl ? "rotate(270deg)" : "rotate(90deg)", flexShrink: 0 }} />
                   </button>
 
                   {/* Pricing & CTA */}
@@ -452,8 +452,8 @@ export default function NavbarWiz() {
                 <>
                   <button onClick={() => setMobileSelectedCategory(null)}
                     className="flex items-center gap-2.5 py-3.5 px-3 mb-3 text-base font-medium text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                    style={{ textAlign: isRtl ? "right" : "left" }}>
-                    <ChevronDown size={16} strokeWidth={2} style={{ transform: isRtl ? "rotate(90deg)" : "rotate(270deg)" }} />
+                    style={{ flexDirection: isRtl ? "row-reverse" : "row" }}>
+                    <ChevronDown size={16} strokeWidth={2} style={{ transform: isRtl ? "rotate(90deg)" : "rotate(270deg)", flexShrink: 0 }} />
                     <span>{t.nav.back || "Back"}</span>
                   </button>
 
@@ -471,12 +471,12 @@ export default function NavbarWiz() {
                           href={`/service/${menu[mobileSelectedCategory].key}/${item.key || item.label}`}
                           onClick={() => setMobileOpen(false)}
                           className="flex items-start gap-3 py-3 px-3 border-b border-gray-50 hover:bg-indigo-50 rounded-lg transition-colors group"
-                          style={{ textAlign: isRtl ? "right" : "left" }}>
+                          style={{ flexDirection: isRtl ? "row-reverse" : "row" }}>
                           <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors"
                             style={{ background: "#EEF2FF" }}>
                             <item.Icon size={16} color="#4F46E5" strokeWidth={1.75} />
                           </div>
-                          <div className="min-w-0 flex-1">
+                          <div className="min-w-0 flex-1" style={{ textAlign: isRtl ? "right" : "left" }}>
                             <p className="text-sm font-bold text-gray-900">{item.label}</p>
                             {item.desc && <p className="text-xs leading-relaxed mt-0.5" style={{ color: "#9CA3AF" }}>{item.desc}</p>}
                           </div>
