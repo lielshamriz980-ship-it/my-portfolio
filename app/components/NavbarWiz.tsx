@@ -412,8 +412,9 @@ export default function NavbarWiz() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden overflow-hidden bg-white border-t border-gray-100">
-            <div className="px-6 py-5 flex flex-col gap-0">
+            className="lg:hidden overflow-hidden bg-white border-t border-gray-100"
+            style={{ direction: isRtl ? "rtl" : "ltr" }}>
+            <div className="px-6 py-5 flex flex-col gap-0" style={{ direction: isRtl ? "rtl" : "ltr" }}>
               {mobileSelectedCategory === null ? (
                 // Category list
                 <>
