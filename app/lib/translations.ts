@@ -171,6 +171,18 @@ export type T = {
       submit: string;
     };
   };
+  // Service Pages
+  servicePages: {
+    techDevelopment: {
+      hero: { title: string; subtitle: string; cta1: string; cta2: string };
+      painPoints: { heading: string; items: { title: string; desc: string }[] };
+      solutions: { heading: string; description: string; benefits?: string[]; steps?: { num: number; label: string; status: string }[]; docName?: string; docStatus?: string; docMeta?: { sent: string; id: string } }[];
+      templatesHeading: string;
+      templates: { title: string; desc: string; iconType: string }[];
+      benefits: { num: string; title: string; desc: string }[];
+      cta: { heading: string; button1: string; button2: string };
+    };
+  };
 };
 
 const he: T = {
@@ -630,6 +642,65 @@ const he: T = {
       submit: "שלח הודעה",
     },
   },
+
+  servicePages: {
+    techDevelopment: {
+      hero: {
+        title: "החוזים של חברת הטק שלך - מהירים כמו הפיתוח שלך",
+        subtitle: "ניהול מחזור חיי חוזה המותאם לדינמיקה של עולם הטכנולוגיה. מ-NDA ועד הסכמי SaaS מורכבים, אנחנו דואגים שהמשפט לא יעכב את המוצר.",
+        cta1: "ניהול חוזי טק",
+        cta2: "צפייה בתבניות",
+      },
+      painPoints: {
+        heading: "האתגרים המשפטיים של צוותי פיתוח",
+        items: [
+          { title: "NDAs שנשכחו בדרך", desc: "חשיפת סודות מסחריים לפני חתימה פורמלית עם שותפים פוטנציאליים או עובדים חדשים." },
+          { title: "חריגה מהגדרות הפרויקט", desc: "Scope Creep שנובע מהסכמי פיתוח מעורפלים שאינם מגדירים אבני דרך ברורות." },
+          { title: "עבודה ללא חוזה בתוקף", desc: "התחלת עבודה עם פרילנסרים \"על אמון\" ללא העברת בעלות על הקניין הרוחני (IP)." },
+          { title: "מסמכי SaaS מפוזרים", desc: "קושי במעקב אחר תנאי שימוש (ToS) ומדיניות פרטיות שמתעדכנים בנפרד מהמוצר." },
+        ],
+      },
+      solutions: [
+        {
+          heading: "NDA ב-5 דקות (לא 5 ימים)",
+          description: "אל תתנו לבירוקרטיה לעצור שיחות עסקיות חשובות. מערכת ה-DealLayer מאפשלת שליחה וחתימה אוטומטית של הסכמי סודיות מותאמים אישית בתוך שניות.",
+          benefits: ["מעקב אחר צפיות בזמן אמת", "חתימה דיגיטלית מאובטחת"],
+          docName: "הסכם סודיות (NDA)",
+          docStatus: "נחתם",
+          docMeta: { sent: "היום, 10:24", id: "#NDA-9821" },
+        },
+        {
+          heading: "הסכמי פיתוח עם Scope מוגדר",
+          description: "צרו הסכמי פיתוח שמתרגמים אבני דרך טכנולוגיות לסעיפים משפטיים מחייבים.",
+          steps: [
+            { num: 1, label: "איפיון", status: "הושלם" },
+            { num: 2, label: "פיתוח", status: "בתהליך" },
+            { num: 3, label: "בדיקות", status: "ממתין" },
+          ],
+        },
+      ],
+      templatesHeading: "ספריית תבניות Tech",
+      templates: [
+        { title: "Software Development", desc: "הסכם פיתוח תוכנה מקיף כולל העברת קניין רוחני.", iconType: "code" },
+        { title: "NDA", desc: "הסכם סודיות דו-צדדי מהיר לשימוש מול שותפים.", iconType: "lock" },
+        { title: "Subcontractor", desc: "ניהול פרילנסרים ויועצים חיצוניים בצורה בטוחה.", iconType: "user" },
+        { title: "SaaS Terms", desc: "תנאי שימוש למוצרי ענן ושירותים דיגיטליים.", iconType: "cloud" },
+        { title: "Strategic Partnership", desc: "הסכם שיתוף פעולה אסטרטגי לשיווק או פיתוח משותף.", iconType: "handshake" },
+        { title: "Tech Consulting", desc: "הסכם למתן שירותי ייעוץ טכנולוגי וארכיטקטורה.", iconType: "chart" },
+      ],
+      benefits: [
+        { num: "01", title: "מהירות שיא", desc: "קיצור זמן חתימה ב-85% ממוצע לתעשייה." },
+        { num: "02", title: "API & Integrations", desc: "חיבור ישיר ל-Slack, Jira ו-Salesforce." },
+        { num: "03", title: "Enterprise Security", desc: "אבטחה ברמת בנקאות ותאימות SOC2." },
+        { num: "04", title: "Lex AI for Tech", desc: "ניתוח סיכונים אוטומטי המבוסס על AI." },
+      ],
+      cta: {
+        heading: "מוכנים להאיץ את תהליכי המשפט בארגון?",
+        button1: "קבלו דמו חינם",
+        button2: "דברו איתנו",
+      },
+    },
+  },
 };
 
 const en: T = {
@@ -1081,6 +1152,65 @@ const en: T = {
       submit: "Send message",
     },
   },
+
+  servicePages: {
+    techDevelopment: {
+      hero: {
+        title: "Your Tech Company's Contracts - As Fast as Your Development",
+        subtitle: "Manage contract lifecycle tailored to tech dynamics. From NDAs to complex SaaS agreements, we ensure legal won't slow down your product.",
+        cta1: "Manage Tech Contracts",
+        cta2: "View Templates",
+      },
+      painPoints: {
+        heading: "Legal Challenges for Development Teams",
+        items: [
+          { title: "Forgotten NDAs", desc: "Exposing trade secrets before formal agreements with potential partners or new hires." },
+          { title: "Scope Creep", desc: "Uncontrolled growth from vague development agreements that don't define clear milestones." },
+          { title: "Working Without Active Contract", desc: "Starting work with freelancers on trust without transferring intellectual property (IP) ownership." },
+          { title: "Scattered SaaS Documents", desc: "Difficulty tracking terms of service (ToS) and privacy policies that update separately from the product." },
+        ],
+      },
+      solutions: [
+        {
+          heading: "NDA in 5 Minutes (Not 5 Days)",
+          description: "Don't let bureaucracy stop important business calls. DealLayer enables sending and auto-signing customized NDAs within seconds.",
+          benefits: ["Real-time view tracking", "Secure digital signature"],
+          docName: "Confidentiality Agreement (NDA)",
+          docStatus: "Signed",
+          docMeta: { sent: "Today, 10:24 AM", id: "#NDA-9821" },
+        },
+        {
+          heading: "Development Agreements With Defined Scope",
+          description: "Create development agreements that translate tech milestones into binding legal terms.",
+          steps: [
+            { num: 1, label: "Requirements", status: "Complete" },
+            { num: 2, label: "Development", status: "In Progress" },
+            { num: 3, label: "Testing", status: "Pending" },
+          ],
+        },
+      ],
+      templatesHeading: "Tech Templates Library",
+      templates: [
+        { title: "Software Development", desc: "Comprehensive software development agreement including IP transfer.", iconType: "code" },
+        { title: "NDA", desc: "Fast bilateral confidentiality agreement for use with partners.", iconType: "lock" },
+        { title: "Subcontractor", desc: "Safely manage freelancers and external consultants.", iconType: "user" },
+        { title: "SaaS Terms", desc: "Terms of service for cloud products and digital services.", iconType: "cloud" },
+        { title: "Strategic Partnership", desc: "Strategic collaboration agreement for joint marketing or development.", iconType: "handshake" },
+        { title: "Tech Consulting", desc: "Agreement for providing technology consulting and architecture services.", iconType: "chart" },
+      ],
+      benefits: [
+        { num: "01", title: "Peak Speed", desc: "Reduce signing time by 85% vs industry average." },
+        { num: "02", title: "API & Integrations", desc: "Direct connection to Slack, Jira, and Salesforce." },
+        { num: "03", title: "Enterprise Security", desc: "Bank-level security and SOC2 compliance." },
+        { num: "04", title: "Lex AI for Tech", desc: "Automated risk analysis powered by AI." },
+      ],
+      cta: {
+        heading: "Ready to Accelerate Legal Processes in Your Organization?",
+        button1: "Get Free Demo",
+        button2: "Talk to Us",
+      },
+    },
+  },
 };
 
 const ar: T = {
@@ -1530,6 +1660,65 @@ const ar: T = {
         message: "أخبرنا المزيد...",
       },
       submit: "أرسل الرسالة",
+    },
+  },
+
+  servicePages: {
+    techDevelopment: {
+      hero: {
+        title: "عقود شركتك التقنية - سريعة مثل التطوير الخاص بك",
+        subtitle: "إدارة دورة حياة العقد المصممة لديناميكيات التكنولوجيا. من NDAs إلى اتفاقيات SaaS المعقدة، نتأكد من أن القانون لن يبطئ من منتجك.",
+        cta1: "إدارة عقود التكنولوجيا",
+        cta2: "عرض القوالب",
+      },
+      painPoints: {
+        heading: "التحديات القانونية لفرق التطوير",
+        items: [
+          { title: "اتفاقيات سرية منسية", desc: "الكشف عن أسرار تجارية قبل الاتفاقيات الرسمية مع الشركاء المحتملين أو الموظفين الجدد." },
+          { title: "الزحف في النطاق", desc: "نمو غير محكوم من اتفاقيات التطوير الغامضة التي لا تحدد معالم واضحة." },
+          { title: "العمل بدون عقد نشط", desc: "بدء العمل مع العاملين بالعمل الحر على الثقة دون نقل ملكية الملكية الفكرية (IP)." },
+          { title: "مستندات SaaS المشتتة", desc: "صعوبة تتبع شروط الخدمة (ToS) وسياسات الخصوصية التي تتحدث بشكل منفصل عن المنتج." },
+        ],
+      },
+      solutions: [
+        {
+          heading: "اتفاقية سرية في 5 دقائق (وليس 5 أيام)",
+          description: "لا تدع البيروقراطية توقف المكالمات التجارية المهمة. يمكّن DealLayer إرسال وتوقيع اتفاقيات سرية مخصصة بشكل آلي في ثوان.",
+          benefits: ["تتبع العروض في الوقت الفعلي", "توقيع رقمي آمن"],
+          docName: "اتفاقية الحفاظ على السرية (NDA)",
+          docStatus: "موقّع",
+          docMeta: { sent: "اليوم، 10:24 ص", id: "#NDA-9821" },
+        },
+        {
+          heading: "اتفاقيات التطوير بنطاق محدد",
+          description: "إنشاء اتفاقيات تطوير تترجم معالم التكنولوجيا إلى شروط قانونية ملزمة.",
+          steps: [
+            { num: 1, label: "المتطلبات", status: "مكتمل" },
+            { num: 2, label: "التطوير", status: "قيد الإنجاز" },
+            { num: 3, label: "الاختبار", status: "معلق" },
+          ],
+        },
+      ],
+      templatesHeading: "مكتبة قوالب التكنولوجيا",
+      templates: [
+        { title: "تطوير البرمجيات", desc: "اتفاقية تطوير برمجيات شاملة تشمل نقل الملكية الفكرية.", iconType: "code" },
+        { title: "اتفاقية سرية", desc: "اتفاقية سرية ثنائية سريعة للاستخدام مع الشركاء.", iconType: "lock" },
+        { title: "المقاول من الباطن", desc: "إدارة آمنة للعاملين بالعمل الحر والاستشاريين الخارجيين.", iconType: "user" },
+        { title: "شروط SaaS", desc: "شروط الخدمة للمنتجات السحابية والخدمات الرقمية.", iconType: "cloud" },
+        { title: "الشراكة الإستراتيجية", desc: "اتفاقية التعاون الإستراتيجي للتسويق أو التطوير المشترك.", iconType: "handshake" },
+        { title: "استشارات التكنولوجيا", desc: "اتفاقية لتقديم خدمات استشارات التكنولوجيا والهندسة المعمارية.", iconType: "chart" },
+      ],
+      benefits: [
+        { num: "01", title: "سرعة القمة", desc: "تقليل وقت التوقيع بنسبة 85% عن متوسط الصناعة." },
+        { num: "02", title: "API والتكاملات", desc: "الاتصال المباشر بـ Slack و Jira و Salesforce." },
+        { num: "03", title: "أمان المستوى الإنتربرايز", desc: "أمان على مستوى البنك وامتثال SOC2." },
+        { num: "04", title: "Lex AI للتكنولوجيا", desc: "تحليل المخاطر الآلي المدعوم بالذكاء الاصطناعي." },
+      ],
+      cta: {
+        heading: "هل أنت مستعد لتسريع العمليات القانونية في مؤسستك؟",
+        button1: "احصل على عرض توضيحي مجاني",
+        button2: "تحدث معنا",
+      },
     },
   },
 };

@@ -1,24 +1,16 @@
 ﻿"use client";
+import { useLang } from "@/app/lib/LanguageContext";
 
 export function TechDevelopmentServicePageV2() {
-  const painPoints = [
-    { title: "NDAs שנשכחו בדרך", desc: "חשיפת סודות מסחריים לפני חתימה פורמלית עם שותפים פוטנציאליים או עובדים חדשים." },
-    { title: "חריגה מהגדרות הפרויקט", desc: "Scope Creep שנובע מהסכמי פיתוח מעורפלים שאינם מגדירים אבני דרך ברורות." },
-    { title: "עבודה ללא חוזה בתוקף", desc: "התחלת עבודה עם פרילנסרים \"על אמון\" ללא העברת בעלות על הקניין הרוחני (IP)." },
-    { title: "מסמכי SaaS מפוזרים", desc: "קושי במעקב אחר תנאי שימוש (ToS) ומדיניות פרטיות שמתעדכנים בנפרד מהמוצר." },
-  ];
+  const { t } = useLang();
+  const tp = t.servicePages.techDevelopment;
+  const isRtl = t.dir === "rtl";
 
-  const templates = [
-    { title: "Software Development", desc: "הסכם פיתוח תוכנה מקיף כולל העברת קניין רוחני.", iconType: "code" },
-    { title: "NDA", desc: "הסכם סודיות דו-צדדי מהיר לשימוש מול שותפים.", iconType: "lock" },
-    { title: "Subcontractor", desc: "ניהול פרילנסרים ויועצים חיצוניים בצורה בטוחה.", iconType: "user" },
-    { title: "SaaS Terms", desc: "תנאי שימוש למוצרי ענן ושירותים דיגיטליים.", iconType: "cloud" },
-    { title: "Strategic Partnership", desc: "הסכם שיתוף פעולה אסטרטגי לשיווק או פיתוח משותף.", iconType: "handshake" },
-    { title: "Tech Consulting", desc: "הסכם למתן שירותי ייעוץ טכנולוגי וארכיטקטורה.", iconType: "chart" },
-  ];
+  const painPoints = tp.painPoints.items;
+  const templates = tp.templates;
 
   return (
-    <div style={{ direction: "rtl", fontFamily: "Assistant, sans-serif", color: "#181445", background: "#fcf8ff", minHeight: "100vh" }}>
+    <div style={{ direction: t.dir, fontFamily: "Assistant, sans-serif", color: "#181445", background: "#fcf8ff", minHeight: "100vh" }}>
       <style>{`
         .tech-shimmer { position: relative; overflow: hidden; }
         .tech-shimmer::after {
@@ -56,17 +48,17 @@ export function TechDevelopmentServicePageV2() {
           <div style={{ maxWidth: 800, width: "100%", textAlign: "center", position: "relative", zIndex: 1 }}>
             <div className="tech-fade-in">
               <h1 className="tech-h1" style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.2, marginBottom: 24 }}>
-                החוזים של חברת הטק שלך - מהירים כמו הפיתוח שלך
+                {tp.hero.title}
               </h1>
               <p style={{ fontSize: 20, color: "rgba(255,255,255,0.8)", lineHeight: 1.6, marginBottom: 32 }}>
-                ניהול מחזור חיי חוזה המותאם לדינמיקה של עולם הטכנולוגיה. מ-NDA ועד הסכמי SaaS מורכבים, אנחנו דואגים שהמשפט לא יעכב את המוצר.
+                {tp.hero.subtitle}
               </p>
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
                 <button className="tech-shimmer" style={{ padding: "16px 32px", background: "#435EFF", color: "#fff", border: "none", borderRadius: 12, fontSize: 18, fontWeight: 700, cursor: "pointer", boxShadow: "0 8px 32px rgba(67,94,255,0.4)" }}>
-                  ניהול חוזי טק
+                  {tp.hero.cta1}
                 </button>
                 <button style={{ padding: "16px 32px", background: "rgba(255,255,255,0.1)", color: "#fff", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 12, fontSize: 18, fontWeight: 700, cursor: "pointer" }}>
-                  צפייה בתבניות
+                  {tp.hero.cta2}
                 </button>
               </div>
             </div>
@@ -77,7 +69,7 @@ export function TechDevelopmentServicePageV2() {
         <section className="tech-section" style={{ padding: "120px 24px", background: "#fff" }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: 64 }}>
-              <h2 className="tech-h2" style={{ fontSize: 42, fontWeight: 700, marginBottom: 16 }}>האתגרים המשפטיים של צוותי פיתוח</h2>
+              <h2 className="tech-h2" style={{ fontSize: 42, fontWeight: 700, marginBottom: 16 }}>{tp.painPoints.heading}</h2>
               <div style={{ height: 6, width: 96, background: "#435EFF", borderRadius: 9999, margin: "0 auto" }} />
             </div>
             <div className="tech-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
@@ -98,9 +90,9 @@ export function TechDevelopmentServicePageV2() {
             {/* Solution 1 */}
             <div className="tech-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
               <div>
-                <h3 style={{ fontSize: 32, fontWeight: 700, marginBottom: 16, color: "#1A2A66" }}>NDA ב-5 דקות (לא 5 ימים)</h3>
+                <h3 style={{ fontSize: 32, fontWeight: 700, marginBottom: 16, color: "#1A2A66" }}>{tp.solutions[0].heading}</h3>
                 <p style={{ fontSize: 18, color: "#434655", lineHeight: 1.6, marginBottom: 24 }}>
-                  אל תתנו לבירוקרטיה לעצור שיחות עסקיות חשובות. מערכת ה-DealLayer מאפשרת שליחה וחתימה אוטומטית של הסכמי סודיות מותאמים אישית בתוך שניות.
+                  {tp.solutions[0].description}
                 </p>
                 <ul style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                   <li style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 16, fontWeight: 600, color: "#435EFF" }}>
@@ -145,9 +137,9 @@ export function TechDevelopmentServicePageV2() {
                 </div>
               </div>
               <div>
-                <h3 style={{ fontSize: 32, fontWeight: 700, marginBottom: 16, color: "#1A2A66" }}>הסכמי פיתוח עם Scope מוגדר</h3>
+                <h3 style={{ fontSize: 32, fontWeight: 700, marginBottom: 16, color: "#1A2A66" }}>{tp.solutions[1].heading}</h3>
                 <p style={{ fontSize: 18, color: "#434655", lineHeight: 1.6, marginBottom: 24 }}>
-                  צרו הסכמי פיתוח שמתרגמים אבני דרך טכנולוגיות לסעיפים משפטיים מחייבים.
+                  {tp.solutions[1].description}
                 </p>
               </div>
             </div>
@@ -157,7 +149,7 @@ export function TechDevelopmentServicePageV2() {
         {/* ─── Templates ─── */}
         <section className="tech-section" style={{ padding: "120px 24px", background: "#0D1B4B", color: "#fff" }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-            <h2 className="tech-h2" style={{ fontSize: 42, fontWeight: 700, marginBottom: 64 }}>ספריית תבניות Tech</h2>
+            <h2 className="tech-h2" style={{ fontSize: 42, fontWeight: 700, marginBottom: 64 }}>{tp.templatesHeading}</h2>
             <div className="tech-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
               {templates.map((template, i) => {
                 const iconMap = {
@@ -186,12 +178,7 @@ export function TechDevelopmentServicePageV2() {
         {/* ─── Benefits ─── */}
         <section className="tech-section" style={{ padding: "120px 24px", background: "#fff" }}>
           <div className="tech-grid-4" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 48, textAlign: "center" }}>
-            {[
-              { num: "01", title: "מהירות שיא", desc: "קיצור זמן חתימה ב-85% ממוצע לתעשייה." },
-              { num: "02", title: "API & Integrations", desc: "חיבור ישיר ל-Slack, Jira ו-Salesforce." },
-              { num: "03", title: "Enterprise Security", desc: "אבטחה ברמת בנקאות ותאימות SOC2." },
-              { num: "04", title: "Lex AI for Tech", desc: "ניתוח סיכונים אוטומטי המבוסס על AI." },
-            ].map((benefit, i) => (
+            {tp.benefits.map((benefit, i) => (
               <div key={i} className="tech-card-hover" style={{ cursor: "pointer" }}>
                 <div style={{ fontSize: 64, fontWeight: 900, color: "rgba(67,94,255,0.1)", marginBottom: 12 }}>{benefit.num}</div>
                 <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8 }}>{benefit.title}</h3>
@@ -205,13 +192,13 @@ export function TechDevelopmentServicePageV2() {
         <section className="tech-section" style={{ padding: "120px 24px" }}>
           <div className="tech-cta-box" style={{ maxWidth: 1200, margin: "0 auto", background: "linear-gradient(to right, #435EFF, #2244DD)", borderRadius: 40, padding: 96, textAlign: "center", color: "#fff", position: "relative", overflow: "hidden" }}>
             <div style={{ position: "relative", zIndex: 1 }}>
-              <h2 style={{ fontSize: 44, fontWeight: 900, marginBottom: 32, lineHeight: 1.2 }}>מוכנים להאיץ את תהליכי המשפט בארגון?</h2>
+              <h2 style={{ fontSize: 44, fontWeight: 900, marginBottom: 32, lineHeight: 1.2 }}>{tp.cta.heading}</h2>
               <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap" }}>
                 <button className="tech-shimmer" style={{ padding: "16px 40px", background: "#fff", color: "#435EFF", border: "none", borderRadius: 16, fontSize: 18, fontWeight: 700, cursor: "pointer", boxShadow: "0 8px 32px rgba(0,0,0,0.2)" }}>
-                  קבלו דמו חינם
+                  {tp.cta.button1}
                 </button>
                 <button style={{ padding: "16px 40px", background: "transparent", color: "#fff", border: "2px solid rgba(255,255,255,0.3)", borderRadius: 16, fontSize: 18, fontWeight: 700, cursor: "pointer" }}>
-                  דברו איתנו
+                  {tp.cta.button2}
                 </button>
               </div>
             </div>
