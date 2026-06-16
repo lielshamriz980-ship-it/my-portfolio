@@ -28,7 +28,7 @@ export function DigitalSignatureServicePageV2() {
       <main>
         <section style={{ padding: "64px 24px 96px", textAlign: "center" }}>
           <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-            <h2 style={{ fontSize: 48, fontWeight: 800, color: "#181445", marginBottom: 16, lineHeight: 1.2 }}>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 64px)", fontWeight: 800, color: "#181445", marginBottom: 16, lineHeight: 1.15 }}>
               חתימה דיגיטלית מאובטחת<br/><span style={{ color: "#004ac6", fontWeight: 800 }}>בסטנדרט הגבוה ביותר</span>
             </h2>
             <p style={{ fontSize: 18, color: "#434655", marginBottom: 32 }}>מערכת חתימה משפטית המשלבת אבטחה ברמה בנקאית עם חוויית משתמש חלקה.</p>

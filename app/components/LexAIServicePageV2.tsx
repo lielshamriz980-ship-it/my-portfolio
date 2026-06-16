@@ -59,7 +59,7 @@ export function LexAIServicePageV2() {
                 <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/></svg>
                 הדור הבא של עריכת הדין
               </div>
-              <h2 style={{ fontSize: 48, fontWeight: 700, color: "#181445", lineHeight: 1.2, letterSpacing: "-0.02em", margin: 0 }}>
+              <h2 style={{ fontSize: "clamp(28px, 5vw, 64px)", fontWeight: 800, color: "#181445", lineHeight: 1.15, letterSpacing: "-0.02em", margin: 0 }}>
                 Lex AI: המוח המשפטי שבונה את החוזים שלך בזמן אמת
               </h2>
               <p style={{ fontSize: 18, color: "#434655", lineHeight: 1.6, maxWidth: 520 }}>

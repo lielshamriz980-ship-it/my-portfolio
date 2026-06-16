@@ -116,7 +116,7 @@ export function IntegrationsServicePageV3() {
             {/* Text */}
             <div style={{ textAlign: "right" }}>
               <span style={{ display: "inline-block", padding: "4px 16px", background: "rgba(100,94,251,0.1)", color: "#4b41e1", fontSize: 14, fontWeight: 600, borderRadius: 9999, marginBottom: 16 }}>חיבורים חכמים</span>
-              <h2 style={{ fontSize: 48, fontWeight: 700, color: "#181445", lineHeight: 1.2, letterSpacing: "-0.02em", marginBottom: 24 }}>
+              <h2 style={{ fontSize: "clamp(28px, 5vw, 64px)", fontWeight: 800, color: "#181445", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: 24 }}>
                 חברו את DealLayer לכל הכלים שלכם
               </h2>
               <p style={{ fontSize: 18, color: "#434655", lineHeight: 1.6, maxWidth: 560, marginBottom: 32 }}>

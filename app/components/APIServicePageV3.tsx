@@ -39,7 +39,7 @@ export function APIServicePageV3() {
             {/* Text */}
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <span style={{ display: "inline-block", background: "rgba(88,91,230,0.1)", color: "#3e3fcc", fontSize: 14, fontWeight: 600, padding: "4px 12px", borderRadius: 9999 }}>Developer Portal</span>
-              <h2 style={{ fontSize: 48, fontWeight: 700, color: "#181445", lineHeight: 1.2, letterSpacing: "-0.02em", margin: 0 }}>
+              <h2 style={{ fontSize: "clamp(28px, 5vw, 64px)", fontWeight: 800, color: "#181445", lineHeight: 1.15, letterSpacing: "-0.02em", margin: 0 }}>
                 בנו אינטגרציות משפטיות חכמות עם ה-API של DealLayer
               </h2>
               <p style={{ fontSize: 18, color: "#434655", lineHeight: 1.6, maxWidth: 560, margin: 0 }}>

@@ -47,7 +47,7 @@ export function SecurityPrivacyServicePageV3() {
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z"/></svg>
               סטנדרט אבטחה ארגוני
             </div>
-            <h2 style={{ fontSize: 48, fontWeight: 700, color: "#181445", lineHeight: 1.2, letterSpacing: "-0.02em", marginBottom: 16 }}>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 64px)", fontWeight: 800, color: "#181445", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: 16 }}>
               הגנה רב-שכבתית על המידע המשפטי שלך
             </h2>
             <p style={{ fontSize: 18, color: "#434655", lineHeight: 1.6, marginBottom: 32, maxWidth: 600 }}>

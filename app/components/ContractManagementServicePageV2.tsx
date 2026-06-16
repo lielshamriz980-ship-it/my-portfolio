@@ -42,7 +42,7 @@ export function ContractManagementServicePageV2() {
         {/* ─── Hero / Dashboard Mockup ─── */}
         <section style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px" }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <h2 className="cm-h2" style={{ fontSize: 48, fontWeight: 700, color: "#181445", lineHeight: 1.2, letterSpacing: "-0.02em", marginBottom: 16 }}>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 64px)", fontWeight: 800, color: "#181445", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: 16 }}>
               ניהול חוזים בעידן הדיגיטלי
             </h2>
             <p style={{ fontSize: 18, color: "#434655", lineHeight: 1.6, maxWidth: 640, margin: "0 auto" }}>

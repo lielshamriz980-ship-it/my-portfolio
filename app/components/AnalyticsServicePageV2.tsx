@@ -29,7 +29,7 @@ export function AnalyticsServicePageV2() {
 
           <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "32px", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", display: "grid", gap: "48px", alignItems: "center", position: "relative", zIndex: 10, width: "100%" }}>
             <div>
-              <h1 style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: "800", color: "white", lineHeight: 1.1, marginBottom: "24px" }}>
+              <h1 style={{ fontSize: "clamp(28px, 5vw, 64px)", fontWeight: 800, color: "white", lineHeight: 1.15, marginBottom: "24px" }}>
                 כל החוזים שלך. כל הנתונים. תמונה אחת ברורה.
               </h1>
               <p style={{ fontSize: "18px", color: "rgba(255, 255, 255, 0.85)", maxWidth: "500px", lineHeight: 1.6, marginBottom: "32px" }}>

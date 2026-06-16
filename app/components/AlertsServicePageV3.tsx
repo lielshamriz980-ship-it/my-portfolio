@@ -58,7 +58,7 @@ export function AlertsServicePageV3() {
 
         {/* Hero */}
         <div style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 32, fontWeight: 700, color: "#181445", marginBottom: 8 }}>מרכז התראות ומעקב חוזים</h2>
+          <h2 style={{ fontSize: "clamp(28px, 5vw, 64px)", fontWeight: 800, color: "#181445", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: 12 }}>מרכז התראות ומעקב חוזים</h2>
           <p style={{ fontSize: 18, color: "#434655", maxWidth: 640, margin: 0 }}>
             נהלו את מחזור חיי החוזה שלכם עם התראות חכמות, מעקב אחר חתימות ותזכורות אוטומטיות למועדי פקיעה.
           </p>
